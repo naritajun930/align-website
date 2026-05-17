@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | ALIGN Personal Gym</title>
+<link rel="stylesheet" href="../assets/css/blog.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="/">Align</a>
+</nav>
+
+<main class="blog-post-page" id="post-content">
+  <p class="loading">読み込み中...</p>
+</main>
+
+<footer class="footer">
+  <a class="footer-logo" href="/">Align</a>
+  <p class="footer-copy">© 2026 ALIGN Personal Gym</p>
+</footer>
+
+<script src="../assets/js/microcms.js"></script>
+<script>
+async function renderPost() {
+  const slug = new URLSearchParams(location.search).get('slug');
+  if (!slug) { location.href = '/blog/'; return; }
+
+  const post = await fetchPost(slug);
+
+  document.title = `${post.title} | ALIGN Personal Gym`;
+
+  document.getElementById('post-content').innerHTML = `
+    <article class="post-article">
+      <header class="post-header">
+        ${post.category ? `<span class="blog-card-cat">${post.category.name}</span>` : ''}
+        <h1 class="post-title">${post.title}</h1>
+        <time class="blog-card-date">${new Date(post.publishedAt).toLocaleDateString('ja-JP')}</time>
+      </header>
+      ${post.eyecatch ? `<img class="post-eyecatch" src="${post.eyecatch.url}?w=1200&q=85" alt="${post.title}">` : ''}
+      <div class="post-body">${post.content}</div>
+      <div class="post-back">
+        <a href="/blog/" class="back-link">← ブログ一覧へ</a>
+      </div>
+    </article>
+  `;
+}
+
+renderPost();
+</script>
+</body>
+</html>

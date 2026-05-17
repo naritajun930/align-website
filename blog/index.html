@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | ALIGN Personal Gym</title>
+<link rel="stylesheet" href="../assets/css/blog.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="/">Align</a>
+</nav>
+
+<main class="blog-list-page">
+  <header class="blog-header">
+    <p class="blog-eyebrow">Journal</p>
+    <h1 class="blog-title">Blog</h1>
+  </header>
+
+  <div class="blog-grid" id="blog-grid">
+    <p class="loading">読み込み中...</p>
+  </div>
+
+  <div class="pagination" id="pagination"></div>
+</main>
+
+<footer class="footer">
+  <a class="footer-logo" href="/">Align</a>
+  <p class="footer-copy">© 2026 ALIGN Personal Gym</p>
+</footer>
+
+<script src="../assets/js/microcms.js"></script>
+<script>
+const LIMIT = 9;
+let currentPage = 0;
+
+async function renderPosts(page = 0) {
+  const grid = document.getElementById('blog-grid');
+  grid.innerHTML = '<p class="loading">読み込み中...</p>';
+
+  const data = await fetchPosts({
+    limit: LIMIT,
+    offset: page * LIMIT,
+    fields: 'id,title,eyecatch,publishedAt,category',
+  });
+
+  grid.innerHTML = data.contents.map(post => `
+    <a class="blog-card" href="/blog/post.html?slug=${post.id}">
+      <div class="blog-card-img">
+        ${post.eyecatch ? `<img src="${post.eyecatch.url}?w=600&q=80" alt="${post.title}" loading="lazy">` : ''}
+      </div>
+      <div class="blog-card-body">
+        ${post.category ? `<span class="blog-card-cat">${post.category.name}</span>` : ''}
+        <h2 class="blog-card-title">${post.title}</h2>
+        <time class="blog-card-date">${new Date(post.publishedAt).toLocaleDateString('ja-JP')}</time>
+      </div>
+    </a>
+  `).join('');
+
+  renderPagination(data.totalCount, page);
+}
+
+function renderPagination(total, current) {
+  const pages = Math.ceil(total / LIMIT);
+  if (pages <= 1) return;
+
+  const el = document.getElementById('pagination');
+  el.innerHTML = Array.from({ length: pages }, (_, i) => `
+    <button class="page-btn ${i === current ? 'active' : ''}" onclick="renderPosts(${i})">${i + 1}</button>
+  `).join('');
+}
+
+renderPosts();
+</script>
+</body>
+</html>
