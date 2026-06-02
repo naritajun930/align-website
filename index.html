@@ -127,8 +127,8 @@ a{text-decoration:none;color:inherit}
 /* ── PROFILE ── */
 .profile{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);}
 .profile-img{background:var(--off);position:relative;min-height:560px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.profile-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;filter:brightness(.88) saturate(.85);transition:transform .8s cubic-bezier(.4,0,.2,1);}
-.profile-img:hover img{transform:scale(1.03)}
+.profile-img .slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;filter:brightness(.88) saturate(.85);opacity:0;transition:opacity 1.4s ease;}
+.profile-img .slide.active{opacity:1;}
 .profile-img-lbl{position:absolute;bottom:24px;left:24px;right:24px;font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.55);text-transform:uppercase;border-top:1px solid rgba(255,255,255,.2);padding-top:12px;z-index:1;}
 .profile-content{padding:100px 72px 80px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--line);}
 .profile-en{font-size:11px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:12px;}
@@ -405,11 +405,8 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
 <!-- PROFILE -->
 <section class="profile" id="profile">
   <div class="profile-img" data-anim>
-    <img
-      src="/assets/images/profile.jpg"
-      alt="赤澤 優 トレーナー"
-      loading="lazy"
-    >
+    <img class="slide active" id="slideA" src="/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_1.jpg" alt="赤澤 優 トレーナー">
+    <img class="slide" id="slideB" src="/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_16.jpg" alt="赤澤 優 トレーナー">
     <div class="profile-img-lbl">赤澤 優 ／ Personal Trainer</div>
   </div>
   <div class="profile-content" data-anim data-delay="2">
@@ -717,6 +714,40 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
 </a>
 
 <script>
+// Portrait slideshow
+(function () {
+  const portraits = [
+    '/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_1.jpg',
+    '/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_16.jpg',
+    '/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_20.jpg',
+    '/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_27.jpg',
+    '/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_39.jpg',
+    '/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_44.jpg',
+  ];
+
+  const slideA = document.getElementById('slideA');
+  const slideB = document.getElementById('slideB');
+  let current = 0;
+  let useA = true;
+
+  // 全画像をプリロード
+  portraits.forEach(src => { new Image().src = src; });
+
+  setInterval(() => {
+    current = (current + 1) % portraits.length;
+    if (useA) {
+      slideB.src = portraits[current];
+      slideB.classList.add('active');
+      slideA.classList.remove('active');
+    } else {
+      slideA.src = portraits[current];
+      slideA.classList.add('active');
+      slideB.classList.remove('active');
+    }
+    useA = !useA;
+  }, 2500);
+})();
+
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q => {
   q.addEventListener('click', () => {
