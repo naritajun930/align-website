@@ -27,24 +27,33 @@ async function renderPost() {
   const slug = new URLSearchParams(location.search).get('slug');
   if (!slug) { location.href = '/blog/'; return; }
 
-  const post = await fetchPost(slug);
+  try {
+    const post = await fetchPost(slug);
 
-  document.title = `${post.title} | ALIGN Personal Gym`;
+    document.title = `${post.title} | ALIGN Personal Gym`;
 
-  document.getElementById('post-content').innerHTML = `
-    <article class="post-article">
-      <header class="post-header">
-        ${post.category ? `<span class="blog-card-cat">${post.category.name}</span>` : ''}
-        <h1 class="post-title">${post.title}</h1>
-        <time class="blog-card-date">${new Date(post.publishedAt).toLocaleDateString('ja-JP')}</time>
-      </header>
-      ${post.eyecatch ? `<img class="post-eyecatch" src="${post.eyecatch.url}?w=1200&q=85" alt="${post.title}">` : ''}
-      <div class="post-body">${post.content}</div>
-      <div class="post-back">
+    document.getElementById('post-content').innerHTML = `
+      <article class="post-article">
+        <header class="post-header">
+          ${post.category ? `<span class="blog-card-cat">${post.category.name}</span>` : ''}
+          <h1 class="post-title">${post.title}</h1>
+          <time class="blog-card-date">${new Date(post.publishedAt).toLocaleDateString('ja-JP')}</time>
+        </header>
+        ${post.eyecatch ? `<img class="post-eyecatch" src="${post.eyecatch.url}?w=1200&q=85" alt="${post.title}">` : ''}
+        <div class="post-body">${post.content}</div>
+        <div class="post-back">
+          <a href="/blog/" class="back-link">← ブログ一覧へ</a>
+        </div>
+      </article>
+    `;
+  } catch (e) {
+    document.getElementById('post-content').innerHTML = `
+      <p class="loading">記事の読み込みに失敗しました。</p>
+      <div class="post-back" style="margin-top:40px">
         <a href="/blog/" class="back-link">← ブログ一覧へ</a>
       </div>
-    </article>
-  `;
+    `;
+  }
 }
 
 renderPost();

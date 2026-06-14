@@ -16,6 +16,7 @@ a{text-decoration:none;color:inherit}
   --white:#fafaf8;--off:#f3f1ec;--pale:#eceae3;
   --dark:#1c1a17;--mid:#5c5850;--muted:#9a9288;
   --line:#e0dcd5;--gold:#a08848;
+  --hero-img: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80');
 }
 
 /* ── SCROLL ANIMATIONS ── */
@@ -55,7 +56,7 @@ a{text-decoration:none;color:inherit}
 .hero-right{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 .hero-right-bg{
   position:absolute;inset:0;
-  background-image:url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80');
+  background-image:var(--hero-img);
   background-size:cover;background-position:center;
   filter:brightness(.55) saturate(.8);
   transform:scale(1.03);
@@ -182,6 +183,26 @@ a{text-decoration:none;color:inherit}
 .coming-soon-badge{display:inline-block;font-size:10px;letter-spacing:.2em;color:var(--muted);border:1px solid var(--line);padding:4px 12px;text-transform:uppercase;margin-bottom:12px;}
 .plan-notice{background:var(--off);border:1px solid var(--line);padding:32px 40px;font-size:13px;color:var(--mid);line-height:1.9;}
 .plan-notice strong{color:var(--dark);font-weight:400}
+
+/* ── PLAN TIERS & ACCORDION ── */
+.plan-tier-label{font-size:11px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-bottom:14px;padding:12px 0;border-top:1px solid var(--line);}
+.plan-flagship-label{color:rgba(160,136,72,.7);border-top:none;border-bottom:1px solid var(--line);margin-top:4px;margin-bottom:0;}
+.plan-basic-wrap{margin-bottom:2px;}
+.plan-toggle{background:none;border:1px solid rgba(255,255,255,.2);color:rgba(240,237,230,.65);font-size:12px;letter-spacing:.12em;padding:13px 28px;cursor:pointer;margin-top:28px;transition:all .3s;display:inline-flex;align-items:center;gap:10px;font-family:'Noto Sans JP',sans-serif;}
+.plan-toggle:hover{border-color:rgba(255,255,255,.5);color:#f0ede6;}
+.plan-toggle-icon{font-size:16px;display:inline-block;transition:transform .35s cubic-bezier(.4,0,.2,1);}
+.plan-toggle.open .plan-toggle-icon{transform:rotate(45deg);}
+.plan-journey{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.4,0,.2,1),margin-top .4s;}
+.plan-journey.open{grid-template-rows:1fr;margin-top:32px;}
+.plan-journey-inner{overflow:hidden;}
+.journey-label{font-size:10px;letter-spacing:.3em;color:rgba(160,136,72,.8);text-transform:uppercase;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.07);}
+.journey-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.journey-block{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:36px 28px;}
+.journey-period{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin-bottom:12px;}
+.journey-block-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:300;color:#f0ede6;margin-bottom:10px;line-height:1.5;}
+.journey-block-body{font-size:12.5px;color:rgba(240,237,230,.45);line-height:1.9;margin-bottom:16px;}
+.journey-block-img{aspect-ratio:4/3;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.15em;color:rgba(240,237,230,.2);text-transform:uppercase;}
+@media(max-width:960px){.journey-blocks{grid-template-columns:1fr;}}
 
 /* ── FLOW ── */
 .flow{background:var(--dark);padding:140px 56px;border-bottom:1px solid rgba(255,255,255,.06);}
@@ -320,11 +341,11 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">Private Studio · 栄</div>
+    <div class="hero-eyebrow">Personal Gym · 栄</div>
     <h1 class="hero-title">本来の<em>私</em>へ<br>還る場所。</h1>
     <p class="hero-copy">日常のノイズを脱ぎ捨て、心身をチューニングする。<br>身体と思考を整え直す、新しい習慣を。</p>
     <div class="cta-group">
-      <a href="#line" class="btn-line-hero">
+      <a href="https://lin.ee/X7WmsSR" class="btn-line-hero">
         <svg width="18" height="18" viewBox="0 0 20 20" fill="white"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
         LINEで無料カウンセリングを予約する
       </a>
@@ -461,35 +482,92 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
         <h3>初回カウンセリング</h3>
         <div class="sub">60分 · 無料</div>
         <p class="plan-card-desc">目標設定・思考の整理・施設見学。あなたの現在地とライフスタイルを丁寧にヒアリングします。</p>
-        <a href="#line" class="plan-card-cta">LINEで予約する</a>
+        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">LINEで予約する</a>
       </div>
       <div class="plan-card" data-anim data-delay="2">
         <div class="plan-card-tag">Step 02</div>
         <h3>パーソナル体験セッション</h3>
         <div class="sub">90分 · 詳しくはLINEにて</div>
         <p class="plan-card-desc">カウンセリング＋姿勢分析＋ピラティス・トレーニング体験。体験当日ご入会の方への特典もご用意しています。</p>
-        <a href="#line" class="plan-card-cta">詳細を聞く</a>
+        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
       </div>
     </div>
   </div>
 
-  <h3 style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:300;color:var(--gold);letter-spacing:.15em;margin-bottom:16px;text-transform:uppercase">Plans · ご入会プラン</h3>
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:300;color:var(--gold);letter-spacing:.15em;margin-bottom:24px;text-transform:uppercase">Plans · ご入会プラン</h3>
+
+  <!-- ベーシックプラン -->
+  <div class="plan-basic-wrap" data-anim>
+    <div class="plan-tier-label">ベーシックプラン</div>
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="plan-card-tag">Basic 01</div>
+        <h3>トレーニング</h3>
+        <div class="sub">（詳細は後日記入）</div>
+        <p class="plan-card-desc">（内容は後日記入）</p>
+        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-card-tag">Basic 02</div>
+        <h3>ストレッチ・<br>ピラティス</h3>
+        <div class="sub">（詳細は後日記入）</div>
+        <p class="plan-card-desc">（内容は後日記入）</p>
+        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-card-tag">Basic 03</div>
+        <h3>コーチング</h3>
+        <div class="sub">（詳細は後日記入）</div>
+        <p class="plan-card-desc">（内容は後日記入）</p>
+        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- パフォーマンス設計 Flagship -->
+  <div class="plan-tier-label plan-flagship-label" data-anim>パフォーマンス設計プログラム · フルサポート</div>
   <div class="plan-featured" data-anim>
     <div class="plan-featured-tag">Plan 01 · Flagship</div>
     <h3>パフォーマンス設計プログラム</h3>
     <div class="sub">期間契約（1〜12ヶ月） · ALIGNの最高峰フルサポートパッケージ</div>
     <div class="plan-featured-grid">
-      <p class="plan-featured-desc">最短で理想の自分を作り上げる、ALIGNが最も力を入れるプログラム。ピラティス・トレーニング・コーチング・AI食事管理を統合し、身体と思考の両方を確実に変えます。</p>
+      <p class="plan-featured-desc">最短で理想の自分を作り上げる、ALIGNが最も力を入れるプログラム。ピラティス・トレーニング・コーチングを統合し、身体と思考の両方を確実に変えます。</p>
       <ul class="plan-featured-items">
         <li>ピラティス ／ トレーニング（週1〜複数回）</li>
         <li>コーチング（月2回）</li>
-        <li>AI食事サポート</li>
-        <li>ウェア等無料レンタル</li>
         <li>月次パフォーマンスレビュー</li>
       </ul>
     </div>
+    <button class="plan-toggle" id="journey-toggle" onclick="toggleJourney()">
+      詳しく見る <span class="plan-toggle-icon" id="journey-icon">＋</span>
+    </button>
+    <div class="plan-journey" id="plan-journey">
+      <div class="plan-journey-inner">
+        <div class="journey-label">6ヶ月ジャーニー · Program Timeline</div>
+        <div class="journey-blocks">
+          <div class="journey-block">
+            <div class="journey-period">1〜2ヶ月目</div>
+            <h4 class="journey-block-title">（見出しは後日記入）</h4>
+            <p class="journey-block-body">（内容は後日記入）</p>
+            <div class="journey-block-img">Photo</div>
+          </div>
+          <div class="journey-block">
+            <div class="journey-period">3〜4ヶ月目</div>
+            <h4 class="journey-block-title">（見出しは後日記入）</h4>
+            <p class="journey-block-body">（内容は後日記入）</p>
+            <div class="journey-block-img">Photo</div>
+          </div>
+          <div class="journey-block">
+            <div class="journey-period">5〜6ヶ月目</div>
+            <h4 class="journey-block-title">（見出しは後日記入）</h4>
+            <p class="journey-block-body">（内容は後日記入）</p>
+            <div class="journey-block-img">Photo</div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="plan-featured-cta">
-      <a href="#line">
+      <a href="https://lin.ee/X7WmsSR">
         <svg width="18" height="18" viewBox="0 0 20 20" fill="white"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
         詳細・料金をLINEで聞く
       </a>
@@ -508,7 +586,7 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
         <li>スタンダード（月6回）</li>
         <li>エグゼクティブ（通い放題）</li>
       </ul>
-      <a href="#line" class="plan-card-cta">詳細を聞く</a>
+      <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
     </div>
     <div class="plan-card" data-anim data-delay="2">
       <div class="plan-card-tag">Plan 03 · 回数券</div>
@@ -519,15 +597,16 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
         <li>10回券</li>
         <li>20回券</li>
         <li>30回券 / プレミアム枠（50・100回）</li>
+        <li>ペアトレーニング（2名同時受講）</li>
       </ul>
-      <a href="#line" class="plan-card-cta">詳細を聞く</a>
+      <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
     </div>
     <div class="plan-card" data-anim data-delay="3">
       <div class="plan-card-tag">単発利用 · Visitor</div>
       <h3>ビジタープラン</h3>
       <div class="sub">1回から</div>
       <p class="plan-card-desc">まず1回試してみたい方、旅行中の方。パーソナルトレーニング・ピラティス・コーチング各種。</p>
-      <a href="#line" class="plan-card-cta">詳細を聞く</a>
+      <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
     </div>
   </div>
 
@@ -591,7 +670,7 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
     <div class="flow-card" data-anim data-delay="3">
       <div class="flow-step">Step 06</div>
       <div class="flow-title">プログラム開始<br>（変革のスタート）</div>
-      <p class="flow-desc">設計したロードマップに沿って専属セッションがスタート。月2回のコーチングとAI食事サポートで確実な変化を生み出します。</p>
+      <p class="flow-desc">設計したロードマップに沿って専属セッションがスタート。月2回のコーチングで、確実な変化を生み出します。</p>
     </div>
   </div>
   <div class="flow-after" data-anim>
@@ -673,7 +752,7 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
   <div class="eyebrow" data-anim>First Step</div>
   <h2 data-anim data-delay="1">まず、話しましょう。<br>無料で。</h2>
   <p data-anim data-delay="2">いきなりご入会いただく必要はありません。<br>お互いに合いそうかを確かめる時間です。<br>まずはLINEで、あなたのお悩みをお聞かせください。</p>
-  <a href="#" class="btn-line-main" data-anim data-delay="3">
+  <a href="https://lin.ee/X7WmsSR" class="btn-line-main" data-anim data-delay="3">
     <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
     LINEで無料カウンセリングを予約する
   </a>
@@ -724,7 +803,7 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
 </footer>
 
 <!-- MOBILE FIXED LINE BUTTON -->
-<a href="#line" class="mobile-line-fixed">
+<a href="https://lin.ee/X7WmsSR" class="mobile-line-fixed">
   <svg width="18" height="18" viewBox="0 0 20 20" fill="white"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
   LINEで無料カウンセリングを予約する
 </a>
@@ -763,6 +842,14 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
     useA = !useA;
   }, 2500);
 })();
+
+// Plan journey accordion
+function toggleJourney() {
+  const journey = document.getElementById('plan-journey');
+  const toggle = document.getElementById('journey-toggle');
+  journey.classList.toggle('open');
+  toggle.classList.toggle('open');
+}
 
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q => {

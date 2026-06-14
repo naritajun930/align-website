@@ -39,26 +39,35 @@ async function renderPosts(page = 0) {
   const grid = document.getElementById('blog-grid');
   grid.innerHTML = '<p class="loading">読み込み中...</p>';
 
-  const data = await fetchPosts({
-    limit: LIMIT,
-    offset: page * LIMIT,
-    fields: 'id,title,eyecatch,publishedAt,category',
-  });
+  try {
+    const data = await fetchPosts({
+      limit: LIMIT,
+      offset: page * LIMIT,
+      fields: 'id,title,eyecatch,publishedAt,category',
+    });
 
-  grid.innerHTML = data.contents.map(post => `
-    <a class="blog-card" href="/blog/post.html?slug=${post.id}">
-      <div class="blog-card-img">
-        ${post.eyecatch ? `<img src="${post.eyecatch.url}?w=600&q=80" alt="${post.title}" loading="lazy">` : ''}
-      </div>
-      <div class="blog-card-body">
-        ${post.category ? `<span class="blog-card-cat">${post.category.name}</span>` : ''}
-        <h2 class="blog-card-title">${post.title}</h2>
-        <time class="blog-card-date">${new Date(post.publishedAt).toLocaleDateString('ja-JP')}</time>
-      </div>
-    </a>
-  `).join('');
+    if (!data.contents || data.contents.length === 0) {
+      grid.innerHTML = '<p class="loading">まだ記事がありません。</p>';
+      return;
+    }
 
-  renderPagination(data.totalCount, page);
+    grid.innerHTML = data.contents.map(post => `
+      <a class="blog-card" href="/blog/post.html?slug=${post.id}">
+        <div class="blog-card-img">
+          ${post.eyecatch ? `<img src="${post.eyecatch.url}?w=600&q=80" alt="${post.title}" loading="lazy">` : ''}
+        </div>
+        <div class="blog-card-body">
+          ${post.category ? `<span class="blog-card-cat">${post.category.name}</span>` : ''}
+          <h2 class="blog-card-title">${post.title}</h2>
+          <time class="blog-card-date">${new Date(post.publishedAt).toLocaleDateString('ja-JP')}</time>
+        </div>
+      </a>
+    `).join('');
+
+    renderPagination(data.totalCount, page);
+  } catch (e) {
+    grid.innerHTML = '<p class="loading">記事の読み込みに失敗しました。<br>しばらくしてからお試しください。</p>';
+  }
 }
 
 function renderPagination(total, current) {
