@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALIGN診断 — 本来のあなたは、どこにいる？</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@200;300;400;500;700&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fafaf8; --ink:#1c1a17; --mid:#5c5850; --muted:#9a9288;
+  --gold:#a08848; --orange:#E0521C; --line:#e6e2d8; --pale:#f3f1ec; --dark:#1a1814;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Noto Sans JP',sans-serif;font-weight:300;line-height:1.85;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:600px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;}
+.screen{flex:1;display:none;flex-direction:column;justify-content:center;padding:56px 28px;animation:fade .6s ease}
+.screen.active{display:flex}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ===== START ===== */
+.eyebrow{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.start h1{font-family:'Noto Serif JP',serif;font-size:clamp(30px,8vw,42px);font-weight:300;line-height:1.4;letter-spacing:.02em;margin-bottom:8px;}
+.start .sub-en{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.2em;color:var(--muted);font-style:italic;margin-bottom:32px}
+.start p{font-size:14.5px;color:var(--mid);line-height:2.1;margin-bottom:14px;max-width:440px}
+.start .meta{font-size:12px;color:var(--muted);letter-spacing:.05em;margin:28px 0 36px}
+.dot{display:inline-block;width:5px;height:5px;background:var(--orange);border-radius:50%;margin:0 8px;vertical-align:middle}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--ink);color:var(--cream);font-size:15px;letter-spacing:.08em;padding:19px 0;font-family:'Noto Sans JP',sans-serif;font-weight:400;cursor:pointer;border:none;width:100%;max-width:380px;transition:background .3s;border-radius:2px}
+.btn:hover{background:#3a3228}
+.btn-line{background:#06C755}.btn-line:hover{background:#05b34d}
+.btn-ghost{background:transparent;color:var(--mid);border:1px solid var(--line)}
+.btn-ghost:hover{background:var(--pale)}
+.btn-arrow::after{content:'→';font-size:17px}
+
+/* ===== QUESTION ===== */
+.q-top{margin-bottom:40px}
+.progress{height:2px;background:var(--line);border-radius:2px;overflow:hidden;margin-bottom:14px}
+.progress-bar{height:100%;background:var(--orange);width:0;transition:width .4s ease}
+.q-count{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.2em;color:var(--muted)}
+.q-count b{color:var(--ink);font-size:16px}
+.q-text{font-family:'Noto Serif JP',serif;font-size:clamp(20px,5.5vw,26px);font-weight:300;line-height:1.6;margin-bottom:40px;min-height:90px;display:flex;align-items:center}
+.options{display:flex;flex-direction:column;gap:12px}
+.opt{text-align:left;background:#fff;border:1px solid var(--line);border-radius:4px;padding:18px 22px;font-size:14.5px;color:var(--ink);font-family:'Noto Sans JP',sans-serif;font-weight:300;cursor:pointer;transition:all .25s;line-height:1.6;position:relative}
+.opt:hover{border-color:var(--gold);background:#fffdf9;transform:translateX(2px)}
+.opt:active{transform:scale(.99)}
+
+/* ===== RESULT ===== */
+.result{padding:48px 28px 40px;display:none;flex-direction:column;animation:fade .7s ease}
+.result.active{display:flex}
+.r-eyebrow{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:18px;text-align:center}
+.r-type-en{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--orange);text-align:center;margin-bottom:6px}
+.r-type{font-family:'Noto Serif JP',serif;font-size:clamp(26px,7vw,36px);font-weight:300;text-align:center;line-height:1.4;margin-bottom:10px}
+.r-catch{font-size:14px;color:var(--mid);text-align:center;margin-bottom:36px;letter-spacing:.03em}
+.r-divider{width:40px;height:1px;background:var(--gold);margin:0 auto 36px}
+
+.r-block{margin-bottom:30px}
+.r-label{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.r-label .jp{font-family:'Noto Sans JP',sans-serif;font-size:12px;color:var(--muted);letter-spacing:.1em}
+.r-block p{font-size:14.5px;color:var(--ink);line-height:2.05}
+.r-block.now p{color:var(--mid)}
+.r-gap{background:var(--pale);border-left:2px solid var(--orange);padding:20px 24px;margin-bottom:30px}
+.r-gap .gap-ttl{font-size:13px;color:var(--orange);letter-spacing:.05em;margin-bottom:8px;font-weight:500}
+.r-gap p{font-size:14px;color:var(--ink);line-height:2}
+.r-hint{background:var(--dark);color:var(--cream);padding:28px 26px;border-radius:4px;margin-bottom:40px}
+.r-hint .hint-ttl{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.25em;color:#c8a87a;text-transform:uppercase;margin-bottom:12px}
+.r-hint p{font-size:14px;color:rgba(250,250,248,.82);line-height:2}
+
+.r-bridge{text-align:center;margin-bottom:24px}
+.r-bridge .bridge-lead{font-family:'Noto Serif JP',serif;font-size:17px;line-height:1.9;color:var(--ink);margin-bottom:10px}
+.r-bridge .bridge-sub{font-size:13px;color:var(--mid);line-height:1.9;margin-bottom:32px}
+.r-cta{display:flex;flex-direction:column;align-items:center;gap:12px}
+.r-note{font-size:11.5px;color:var(--muted);margin-top:6px;letter-spacing:.03em}
+.r-foot{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);text-align:center}
+.r-foot .logo{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.35em;text-transform:uppercase;color:var(--ink);margin-bottom:6px}
+.r-foot .tag{font-size:11px;color:var(--muted);letter-spacing:.1em}
+.r-retry{margin-top:18px;font-size:12px;color:var(--muted);text-decoration:underline;cursor:pointer;background:none;border:none;font-family:inherit}
+
+.share-row{display:flex;gap:10px;width:100%;max-width:380px;margin-top:4px}
+.share-row .btn{font-size:13px;padding:15px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== START SCREEN ===== -->
+  <section class="screen start active" id="screen-start">
+    <div class="eyebrow">ALIGN 診断</div>
+    <h1>本来のあなたは、<br>どこにいる？</h1>
+    <div class="sub-en">Where is the real you?</div>
+    <p>がんばっているのに、なんだか満たされない。<br>そんな感覚があるとしたら、それは「本来のあなた」から、少しズレているサインかもしれません。</p>
+    <p>10個の質問で、いまのあなたの「ズレ」がどこにあるのかを、そっと見つけにいきます。</p>
+    <div class="meta">所要 約1分<span class="dot"></span>全10問<span class="dot"></span>登録不要</div>
+    <button class="btn btn-arrow" onclick="startQuiz()">診断を始める</button>
+  </section>
+
+  <!-- ===== QUESTION SCREEN ===== -->
+  <section class="screen question" id="screen-question">
+    <div class="q-top">
+      <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="q-count">Q<b id="qNum">1</b> <span style="color:var(--muted)">/ 10</span></div>
+    </div>
+    <div class="q-text" id="qText"></div>
+    <div class="options" id="qOptions"></div>
+  </section>
+
+  <!-- ===== RESULT SCREEN ===== -->
+  <section class="result" id="screen-result">
+    <div class="r-eyebrow">Your Result</div>
+    <div class="r-type-en" id="rTypeEn"></div>
+    <div class="r-type" id="rType"></div>
+    <div class="r-catch" id="rCatch"></div>
+    <div class="r-divider"></div>
+
+    <div class="r-block now">
+      <div class="r-label">Now <span class="jp">いまのあなた</span></div>
+      <p id="rNow"></p>
+    </div>
+    <div class="r-block true">
+      <div class="r-label">True Self <span class="jp">本来のあなた</span></div>
+      <p id="rTrue"></p>
+    </div>
+    <div class="r-gap">
+      <div class="gap-ttl">そのあいだにある「ズレ」</div>
+      <p id="rGap"></p>
+    </div>
+    <div class="r-hint">
+      <div class="hint-ttl">今日からできる、整えるヒント</div>
+      <p id="rHint"></p>
+    </div>
+
+    <div class="r-bridge">
+      <div class="bridge-lead" id="rBridge"></div>
+      <div class="bridge-sub">ALIGNは、その「ズレ」を6ヶ月かけて一緒に整えていく場所です。<br>まずは話だけ、聞きに来てください。売り込みはしません。</div>
+    </div>
+    <div class="r-cta">
+      <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで、無料カウンセリングを予約する</a>
+      <div class="r-note">毎月10名様限定 <span class="dot"></span> 初回60分 無料</div>
+      <div class="share-row">
+        <button class="btn btn-ghost" onclick="shareResult()">結果をシェア</button>
+        <button class="btn btn-ghost" onclick="copyResult()">リンクをコピー</button>
+      </div>
+    </div>
+
+    <div class="r-foot">
+      <div class="logo">Align</div>
+      <div class="tag">本来の自分に整える、コンディショニング・ジム ／ 栄</div>
+      <button class="r-retry" onclick="resetQuiz()">もう一度診断する</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+// ===== 質問：4軸（karada/atama/kurashi/kokoro）にスコアを振る =====
+const questions = [
+  { q:"夜、布団に入っても、頭の中でいろんなことを考えてしまう。",
+    opts:[ {t:"まさに毎晩そう",s:{atama:2}}, {t:"たまにある",s:{atama:1}}, {t:"あまりない",s:{}} ] },
+  { q:"気づくと、自分のことはいつも後回しにしている。",
+    opts:[ {t:"耳が痛い…",s:{kokoro:2}}, {t:"そういう時もある",s:{kokoro:1}}, {t:"ちゃんと自分を優先できてる",s:{}} ] },
+  { q:"鏡や写真にうつる自分の姿勢に、ハッとすることがある。",
+    opts:[ {t:"よくある",s:{karada:2}}, {t:"たまに",s:{karada:1}}, {t:"特にない",s:{}} ] },
+  { q:"「やろう」と決めたことが、いつのまにか続かなくなる。",
+    opts:[ {t:"いつものこと",s:{kurashi:2}}, {t:"ときどき",s:{kurashi:1}}, {t:"続けられるほう",s:{}} ] },
+  { q:"一日の終わりに、ぐったり疲れている感覚がある。",
+    opts:[ {t:"毎日へとへと",s:{karada:1,atama:1}}, {t:"忙しい日は",s:{atama:1}}, {t:"わりと元気",s:{}} ] },
+  { q:"人から見た自分と、本当の自分がズレている気がする。",
+    opts:[ {t:"よく感じる",s:{kokoro:1,atama:1}}, {t:"少し",s:{kokoro:1}}, {t:"だいたい一致してる",s:{}} ] },
+  { q:"休みの日も、なんだか心から休めていない。",
+    opts:[ {t:"まさにそう",s:{atama:1,kokoro:1}}, {t:"ときどき",s:{atama:1}}, {t:"しっかり休めてる",s:{}} ] },
+  { q:"運動や食事を整えたい気持ちはあるけど、何から始めればいいか分からない。",
+    opts:[ {t:"まさにそれ",s:{kurashi:1,karada:1}}, {t:"少しある",s:{kurashi:1}}, {t:"自分なりにできてる",s:{}} ] },
+  { q:"自分の「強み」を、人に言葉で説明できる。",
+    opts:[ {t:"うまく言えない",s:{kokoro:1,atama:1}}, {t:"なんとなくは",s:{kokoro:1}}, {t:"はっきり言える",s:{}} ] },
+  { q:"いまの自分を、5年前の自分はどう思うだろう。",
+    opts:[ {t:"ちょっと胸が痛い",s:{kokoro:1,karada:1}}, {t:"複雑な気持ち",s:{kokoro:1}}, {t:"胸を張れる",s:{}} ] },
+];
+
+// ===== 結果タイプ =====
+const types = {
+  overheat:{
+    en:"The Overheated",
+    name:"オーバーヒート型",
+    catch:"考えすぎて、止まれない人",
+    now:"いつも頭のどこかが動いていて、本当の意味で「オフ」になれていないかもしれません。やるべきことは人一倍こなせるのに、ふとした瞬間に、なんのために走っているんだっけ、と分からなくなる。そんな感覚に、心当たりはありませんか。",
+    truth:"本来のあなたは、もっと静かで、まっすぐに物事を決められる人です。頭の中のノイズが減れば、判断も、人との関わりも、驚くほど軽くなります。",
+    gap:"足りないのは「がんばり」ではなく、頭を休ませる時間と、考えを整理する相手。あなたはもう十分、走っています。",
+    hint:"今夜、寝る前の3分だけ。今日あったことを、良し悪しを判断せずに、頭の中で3つだけ振り返ってみてください。「考える」と「整理する」は、違う作業です。",
+    bridge:"止まり方を、思い出しにきませんか。"
+  },
+  okizari:{
+    en:"The Disconnected",
+    name:"置き去り型",
+    catch:"頭ばかりで、身体を忘れてきた人",
+    now:"仕事も段取りも頭で完璧にこなす一方で、自分の身体のことは、ずっと後回しにしてきたのかもしれません。肩や腰のこわばり、なんとなくの不調を「いつものこと」で片づけていませんか。",
+    truth:"本来のあなたの身体は、もっと軽く、まっすぐ立てるはずです。身体が整うと、不思議と気持ちまで前を向きます。頭と身体は、つながっているからです。",
+    gap:"あなたに必要なのは、いきなりの激しい運動ではありません。固まった身体を、まずは「ほどく」こと。順番が逆だと、身体は悲鳴をあげます。",
+    hint:"今、椅子に座ったまま、ゆっくり肩を後ろに5回まわしてみてください。それだけで呼吸が変わるのが分かるはず。身体は、いつでもあなたの合図を待っています。",
+    bridge:"後回しにしてきた身体と、もう一度向き合いませんか。"
+  },
+  gasuketsu:{
+    en:"The Giver",
+    name:"ガス欠型",
+    catch:"人のために、整え続けてきた人",
+    now:"家族、仕事、まわりの人。誰かのために動くのが当たり前になって、自分のためのエネルギーが、いつのまにか空っぽになっていませんか。「私さえがんばれば」で、ずっと回してきたのかもしれません。",
+    truth:"本来のあなたは、自分を満たすことに、もっと罪悪感がなくていい人です。あなたが整えば、まわりにもっと優しくできる。自分を後回しにしない人ほど、長く誰かを支えられます。",
+    gap:"あなたに足りないのは、休む許可です。「自分のために時間を使っていい」——それを誰かに、はっきり言ってもらう必要があるのかもしれません。",
+    hint:"今日、一つだけ「自分のためだけのこと」をしてみてください。好きな飲み物を一杯、ていねいに淹れるだけでも十分。それは、わがままではありません。",
+    bridge:"今度は、あなた自身を整える番です。"
+  },
+  riset:{
+    en:"The Restarter",
+    name:"リセット難民型",
+    catch:"整えたいのに、続かない人",
+    now:"何度も「今度こそ」と思って始めては、いつのまにかフェードアウト。続かない自分を、責めてしまっていませんか。でも、それはあなたの意志が弱いからではありません。",
+    truth:"本来のあなたは、ちゃんと続けられる人です。続かなかったのは、一人で、いきなり、大きく変えようとしたから。仕組みと伴走者がいれば、結果は変わります。",
+    gap:"足りないのは「やる気」ではなく、続く設計と、隣で見ていてくれる人。三日坊主は、性格ではなく、環境の問題です。",
+    hint:"大きな目標を立てるのを、今日はやめてみましょう。代わりに「明日の朝、コップ一杯の水を飲む」くらい小さなことを一つだけ決める。続く感覚を、思い出すことから。",
+    bridge:"今度こそ続く環境を、一緒につくりませんか。"
+  },
+  almost:{
+    en:"The Almost-Aligned",
+    name:"もうすぐ整う型",
+    catch:"あと一歩で、本来に還る人",
+    now:"自分のこともよく分かっていて、生活も大きくは崩れていない。でも、どこか「あと一歩、本来の自分になりきれていない」もどかしさがあるのではないでしょうか。",
+    truth:"本来のあなたは、もう目の前にいます。あとは、今ある良い状態を「整え続ける」習慣と、たまに軌道を確認してくれる存在があれば、ぐっと深まります。",
+    gap:"あなたに必要なのは、大きな変化ではなく、微調整。すでに整いつつあるからこそ、ほんの少しの調律で、見える景色が変わります。",
+    hint:"今の自分の「良いところ」を3つ、書き出してみてください。整っている人ほど、自分のできていることを見落としがちです。土台は、もうできています。",
+    bridge:"その「あと一歩」を、一緒に踏み出しませんか。"
+  }
+};
+
+let current = 0;
+let scores = { karada:0, atama:0, kurashi:0, kokoro:0 };
+let resultKey = null;
+
+function show(id){
+  document.querySelectorAll('.screen, .result').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+function startQuiz(){
+  current=0; scores={karada:0,atama:0,kurashi:0,kokoro:0};
+  show('screen-question'); renderQuestion();
+}
+function renderQuestion(){
+  const q = questions[current];
+  document.getElementById('qNum').textContent = current+1;
+  document.getElementById('progressBar').style.width = ((current)/questions.length*100)+'%';
+  document.getElementById('qText').textContent = q.q;
+  const box = document.getElementById('qOptions');
+  box.innerHTML='';
+  q.opts.forEach(opt=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.textContent=opt.t;
+    b.onclick=()=>choose(opt.s);
+    box.appendChild(b);
+  });
+}
+function choose(s){
+  for(const k in s){ scores[k]+=s[k]; }
+  current++;
+  if(current<questions.length){ renderQuestion(); }
+  else { calcResult(); }
+}
+function calcResult(){
+  document.getElementById('progressBar').style.width='100%';
+  // 最大スコアの軸でタイプ決定。合計が低ければ almost。
+  const total = scores.karada+scores.atama+scores.kurashi+scores.kokoro;
+  if(total<=3){ resultKey='almost'; }
+  else {
+    const entries = Object.entries(scores);
+    entries.sort((a,b)=>b[1]-a[1]);
+    const topAxis = entries[0][0];
+    const map = { atama:'overheat', karada:'okizari', kokoro:'gasuketsu', kurashi:'riset' };
+    resultKey = map[topAxis] || 'almost';
+    // 拮抗時の微調整：kurashi と karada が並ぶ等はそのままtop採用
+  }
+  renderResult();
+}
+function renderResult(){
+  const t = types[resultKey];
+  document.getElementById('rTypeEn').textContent = t.en;
+  document.getElementById('rType').textContent = t.name;
+  document.getElementById('rCatch').textContent = t.catch;
+  document.getElementById('rNow').textContent = t.now;
+  document.getElementById('rTrue').textContent = t.truth;
+  document.getElementById('rGap').textContent = t.gap;
+  document.getElementById('rHint').textContent = t.hint;
+  document.getElementById('rBridge').textContent = t.bridge;
+  show('screen-result');
+}
+function resetQuiz(){ show('screen-start'); }
+
+function shareResult(){
+  const t = types[resultKey];
+  const text = `【ALIGN診断】私は「${t.name}」— ${t.catch}でした。\n本来のあなたは、どこにいる？`;
+  const url = location.href;
+  if(navigator.share){
+    navigator.share({title:'ALIGN診断', text:text, url:url}).catch(()=>{});
+  } else {
+    copyResult();
+  }
+}
+function copyResult(){
+  const t = types[resultKey];
+  const text = `【ALIGN診断】私は「${t.name}」— ${t.catch}でした。\n本来のあなたは、どこにいる？ ${location.href}`;
+  navigator.clipboard.writeText(text).then(()=>{
+    alert('結果のテキストをコピーしました。SNSに貼り付けてシェアできます。');
+  }).catch(()=>{ alert('コピーできませんでした'); });
+}
+</script>
+</body>
+</html>

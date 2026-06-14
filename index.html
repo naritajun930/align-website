@@ -132,6 +132,20 @@ a{text-decoration:none;color:inherit}
   .method-conclusion{padding:32px 24px;}
 }
 
+/* ── JOURNEY ── */
+.journey{padding:140px 56px;background:var(--white);border-bottom:1px solid var(--line);}
+.journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:56px;}
+.journey-card{background:var(--off);padding:48px 36px;position:relative;border-top:2px solid transparent;transition:border-color .3s,background .3s;}
+.journey-card:hover{background:var(--pale);border-top-color:var(--gold)}
+.journey-month{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;}
+.journey-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:300;color:var(--dark);line-height:1.5;margin-bottom:14px;}
+.journey-desc{font-size:13px;color:var(--mid);line-height:1.95;}
+.journey-close{max-width:640px;margin:0 auto;text-align:center;font-family:'Noto Serif JP',serif;font-size:clamp(15px,1.5vw,18px);font-weight:200;color:var(--dark);line-height:1.9;padding:40px 0 0;border-top:1px solid var(--line);}
+@media(max-width:960px){
+  .journey{padding:80px 24px;}
+  .journey-grid{grid-template-columns:1fr;}
+}
+
 /* ── PROFILE ── */
 .profile{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);}
 .profile-img{background:var(--off);position:relative;min-height:560px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
@@ -320,9 +334,9 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">Private Studio · 栄</div>
-    <h1 class="hero-title">本来の<em>私</em>へ<br>還る場所。</h1>
-    <p class="hero-copy">日常のノイズを脱ぎ捨て、心身をチューニングする。<br>身体と思考を整え直す、新しい習慣を。</p>
+    <div class="hero-eyebrow">Personal Gym · 栄</div>
+    <h1 class="hero-title">本来の<em>私</em>へ、<br>還る。</h1>
+    <p class="hero-copy">「ちゃんとしなきゃ」で、すり減っていませんか。<br>ここは、整えるための場所です。</p>
     <div class="cta-group">
       <a href="#line" class="btn-line-hero">
         <svg width="18" height="18" viewBox="0 0 20 20" fill="white"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
@@ -353,7 +367,7 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
       alt="ALIGN スタジオ空間"
       loading="lazy"
     >
-    <div class="concept-img-lbl">ALIGN Studio · 栄</div>
+    <div class="concept-img-lbl">ALIGN Personal Gym · 栄</div>
   </div>
   <div class="concept-text" data-anim data-delay="2">
     <div class="sec-label">
@@ -361,10 +375,10 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
       <span class="sec-jp">コンセプト</span>
     </div>
     <div class="sec-rule"></div>
-    <p class="quote">「痩せる」ためだけの場所では<br>ありません。</p>
-    <div class="concept-worldview">身体・思考・習慣の、統合チューニング</div>
-    <p>現代を生きる私たちは、日々の忙しさやプレッシャー、溢れる情報といった多くの「ノイズ」に囲まれています。身体の疲れは判断を鈍らせ、心の余裕のなさは姿勢や表情に表れてしまいます。</p>
-    <p>ALIGNは、都会の喧騒から切り離された洗練されたプライベート空間で、身体と思考のノイズをクリアにし、本来の整った状態へ「チューニング（調律）」するための、日常の中の特別な習慣です。</p>
+    <p class="quote">痩せたいだけじゃないこと、<br>自分でも気づいていませんか。</p>
+    <div class="concept-worldview">整える、を習慣に。</div>
+    <p>仕事、家庭、終わらないやること。気づけば自分のことだけ、いつも後回し。</p>
+    <p>ALIGNは、そんな毎日で固まったからだと頭を、ほどいて整え直す場所です。</p>
   </div>
 </section>
 
@@ -378,21 +392,21 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
   <div class="approach-grid">
     <div class="appr-card" data-anim data-delay="1">
       <div class="appr-num">01</div>
-      <div class="appr-en">Pilates · 整える</div>
-      <div class="appr-title">骨格を、<br>正しい位置へ還す。</div>
-      <p class="appr-desc">ピラティスの緻密な動きで、骨格や自律神経を本来の正しい位置（ニュートラル）へとリセット。すべての変化の起点になります。</p>
+      <div class="appr-en">からだを、ほどく（Pilates）</div>
+      <div class="appr-title">こわばりを、<br>ゆるめるところから。</div>
+      <p class="appr-desc">呼吸とピラティスで、日常の姿勢や緊張で固まったからだをほどきます。「整える」はここから始まります。</p>
     </div>
     <div class="appr-card" data-anim data-delay="2">
       <div class="appr-num">02</div>
-      <div class="appr-en">Training · 鍛える</div>
-      <div class="appr-title">整った身体に、<br>しなやかな力を。</div>
-      <p class="appr-desc">整った骨格の上にしなやかな筋肉を作ることで、疲れにくく、どんな服も着こなせる凛としたシルエットへ。</p>
+      <div class="appr-en">からだを、つくる（Training）</div>
+      <div class="appr-title">無理なく動ける、<br>しなやかな身体へ。</div>
+      <p class="appr-desc">ほどいた身体に、自然に動ける力をつけます。疲れにくく、どんな服も似合う。そういう変化が、じわじわ来ます。</p>
     </div>
     <div class="appr-card" data-anim data-delay="3">
       <div class="appr-num">03</div>
-      <div class="appr-en">Coaching · 思考をクリアに</div>
-      <div class="appr-title">思考のノイズを、<br>手放すために。</div>
-      <p class="appr-desc">行動心理学やポジティブ心理学を用いた対話により、ストレスや決断疲労を解放。意志に頼らない「良い習慣」を構築します。</p>
+      <div class="appr-en">頭の中を、片づける（Coaching）</div>
+      <div class="appr-title">もやもやを整理して、<br>自分の軸を取り戻す。</div>
+      <p class="appr-desc">行動心理学を使った対話で、頭の中のノイズを片づけます。意志に頼らず「整え続けられる自分」になるために。</p>
     </div>
   </div>
 </section>
@@ -417,6 +431,33 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
   </div>
 </section>
 
+<!-- JOURNEY -->
+<section class="journey" id="journey">
+  <div class="sec-label" data-anim>
+    <span class="sec-en">Journey</span>
+    <span class="sec-jp">6ヶ月で、自分を取り戻す</span>
+  </div>
+  <div class="sec-rule"></div>
+  <div class="journey-grid">
+    <div class="journey-card" data-anim data-delay="1">
+      <div class="journey-month">Month 1 – 2</div>
+      <div class="journey-title">自己理解を深める</div>
+      <p class="journey-desc">今の自分を知るところから始めます。からだの癖、思考のパターン、生活の習慣。「なぜ続かないのか」の答えが、ここで見えてきます。</p>
+    </div>
+    <div class="journey-card" data-anim data-delay="2">
+      <div class="journey-month">Month 3 – 4</div>
+      <div class="journey-title">強みと弱みを知り、<br>ベクトルを整える</div>
+      <p class="journey-desc">自分の得意と苦手を正直に見て、進む方向を決めます。「みんながやっていること」ではなく、あなたに合った整え方へ。</p>
+    </div>
+    <div class="journey-card" data-anim data-delay="3">
+      <div class="journey-month">Month 5 – 6</div>
+      <div class="journey-title">自分で自走できるように</div>
+      <p class="journey-desc">自己肯定感と小さな成功体験を積み重ね、ALIGNを卒業しても整え続けられる自分をつくります。</p>
+    </div>
+  </div>
+  <p class="journey-close" data-anim>痩せて終わり、ではありません。<br>終わった後も、整え続けられる自分になる。</p>
+</section>
+
 <!-- PROFILE -->
 <section class="profile" id="profile">
   <div class="profile-img" data-anim>
@@ -429,8 +470,8 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
     <div class="profile-name">Masaru<br>Akazawa</div>
     <div class="profile-name-jp">赤澤 優 ／ パーソナルトレーナー</div>
     <p class="profile-bio">
-      高校で5年間、体育を教えていました。生徒たちの姿勢、息遣い、心の状態を毎日見続ける中で気づいたのは、身体と心はいつも一緒に変わるということでした。<br><br>
-      その経験を土台に、大手パーソナルジムでトレーナーとして3年間、1,000名以上のお客様と向き合い、ピラティスと行動心理学を学び直しました。<br><br>
+      高校で5年間、体育を教えていました。生徒一人ひとりの心とからだに向き合ってきた経験が、今の指導の土台です。<br><br>
+      その後、大手パーソナルジムでトレーナーとして3年間、1,000名以上のお客様と向き合いながら、ピラティスと行動心理学を学び直しました。<br><br>
       ALIGNは、その全てを一つにした場所です。
     </p>
     <div class="profile-creds">
@@ -451,45 +492,51 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
   </div>
   <div class="sec-rule"></div>
 
-  <p class="plan-intro" data-anim>ALIGNでは、いきなりご入会いただくことはありません。まずは実際の空間で、あなたのお悩みと思考を整理し、身体の現在地を評価する「体験セッション」へお越しください。カウンセリング後、ライフスタイルや目標に合わせた最適なプランをご提案します。</p>
+  <p class="plan-intro" data-anim>いきなり入会は不要です。まずは体験から。あなたのペースに合ったプランを、カウンセリング後にご提案します。</p>
 
-  <div style="margin-bottom:2px">
-    <h3 style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:300;color:var(--gold);letter-spacing:.15em;margin-bottom:16px;text-transform:uppercase">First Step · まずは体験から</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:40px">
-      <div class="plan-card" data-anim data-delay="1">
-        <div class="plan-card-tag">Step 01</div>
-        <h3>初回カウンセリング</h3>
-        <div class="sub">60分 · 無料</div>
-        <p class="plan-card-desc">目標設定・思考の整理・施設見学。あなたの現在地とライフスタイルを丁寧にヒアリングします。</p>
-        <a href="#line" class="plan-card-cta">LINEで予約する</a>
-      </div>
-      <div class="plan-card" data-anim data-delay="2">
-        <div class="plan-card-tag">Step 02</div>
-        <h3>パーソナル体験セッション</h3>
-        <div class="sub">90分 · 詳しくはLINEにて</div>
-        <p class="plan-card-desc">カウンセリング＋姿勢分析＋ピラティス・トレーニング体験。体験当日ご入会の方への特典もご用意しています。</p>
-        <a href="#line" class="plan-card-cta">詳細を聞く</a>
-      </div>
+  <!-- ① ベーシック -->
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:300;color:var(--gold);letter-spacing:.15em;margin-bottom:16px;text-transform:uppercase">① Basic · まず整えたい方へ</h3>
+  <div class="plan-grid" style="margin-bottom:40px">
+    <div class="plan-card" data-anim data-delay="1">
+      <div class="plan-card-tag">パーソナルトレーニング</div>
+      <h3>からだを、つくる</h3>
+      <div class="sub">トレーナーと1対1のトレーニング</div>
+      <p class="plan-card-desc">姿勢改善・体型変化・体力向上。目的に合わせて毎回設計します。</p>
+      <a href="#line" class="plan-card-cta">まずは話を聞いてみる</a>
+    </div>
+    <div class="plan-card" data-anim data-delay="2">
+      <div class="plan-card-tag">ピラティス</div>
+      <h3>からだを、ほどく</h3>
+      <div class="sub">呼吸・骨格・インナーマッスル</div>
+      <p class="plan-card-desc">こわばりをほどいて、からだを本来の位置に整えます。運動が苦手な方にも。</p>
+      <a href="#line" class="plan-card-cta">まずは話を聞いてみる</a>
+    </div>
+    <div class="plan-card" data-anim data-delay="3">
+      <div class="plan-card-tag">コーチング</div>
+      <h3>頭の中を、片づける</h3>
+      <div class="sub">思考整理・習慣設計</div>
+      <p class="plan-card-desc">からだより先に、頭のもやもやを整理したい方へ。行動心理学を使った対話セッション。</p>
+      <a href="#line" class="plan-card-cta">まずは話を聞いてみる</a>
     </div>
   </div>
 
-  <h3 style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:300;color:var(--gold);letter-spacing:.15em;margin-bottom:16px;text-transform:uppercase">Plans · ご入会プラン</h3>
+  <!-- ② パフォーマンス設計（主役） -->
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:300;color:var(--gold);letter-spacing:.15em;margin-bottom:16px;text-transform:uppercase">② Flagship · 本気で変わりたい方へ</h3>
   <div class="plan-featured" data-anim>
-    <div class="plan-featured-tag">Plan 01 · Flagship</div>
-    <h3>パフォーマンス設計プログラム</h3>
-    <div class="sub">期間契約（1〜12ヶ月） · ALIGNの最高峰フルサポートパッケージ</div>
+    <div class="plan-featured-tag">パフォーマンス設計プログラム · 6ヶ月</div>
+    <h3>からだと頭を、まるごと整える。</h3>
+    <div class="sub">ALIGNが最も力を入れる、フルサポートプログラム</div>
     <div class="plan-featured-grid">
-      <p class="plan-featured-desc">最短で理想の自分を作り上げる、ALIGNが最も力を入れるプログラム。ピラティス・トレーニング・コーチング・AI食事管理を統合し、身体と思考の両方を確実に変えます。</p>
+      <p class="plan-featured-desc">トレーニング・ピラティス・コーチングを一つのプロセスとして統合。6ヶ月で「整え続けられる自分」になるための、唯一のプログラムです。</p>
       <ul class="plan-featured-items">
         <li>ピラティス ／ トレーニング（週1〜複数回）</li>
         <li>コーチング（月2回）</li>
-        <li>AI食事サポート</li>
-        <li>ウェア等無料レンタル</li>
         <li>月次パフォーマンスレビュー</li>
+        <li>期間中LINEサポート</li>
       </ul>
     </div>
     <div class="plan-featured-cta">
-      <a href="#line">
+      <a href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 20 20" fill="white"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
         詳細・料金をLINEで聞く
       </a>
@@ -497,36 +544,26 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
     </div>
   </div>
 
-  <div class="plan-grid" style="margin-top:2px;margin-bottom:2px">
+  <!-- ③ 回数券・ビジター -->
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:300;color:var(--gold);letter-spacing:.15em;margin-top:40px;margin-bottom:16px;text-transform:uppercase">③ その他 · 自分のペースで</h3>
+  <div class="plan-grid-2" style="margin-bottom:2px">
     <div class="plan-card" data-anim data-delay="1">
-      <div class="plan-card-tag">Plan 02 · サブスクリプション</div>
-      <h3>コンディショニング<br>サブスクリプション</h3>
-      <div class="sub">月額制（月4〜通い放題）</div>
-      <p class="plan-card-desc">日常のメンテナンスとして通い続けるトレーニング・ピラティス特化の月額プラン。</p>
+      <div class="plan-card-tag">回数券</div>
+      <h3>セレクト回数券</h3>
+      <div class="sub">10〜30回（プレミアム枠あり）</div>
+      <p class="plan-card-desc">自分のペースで通いたい方向けのチケット制プラン。ペアトレーニングにも対応しています。</p>
       <ul class="plan-card-items">
-        <li>ライト（月4回）</li>
-        <li>スタンダード（月6回）</li>
-        <li>エグゼクティブ（通い放題）</li>
+        <li>10回券 / 20回券 / 30回券</li>
+        <li>プレミアム枠（50・100回）</li>
+        <li>ペアトレーニング利用可</li>
       </ul>
       <a href="#line" class="plan-card-cta">詳細を聞く</a>
     </div>
     <div class="plan-card" data-anim data-delay="2">
-      <div class="plan-card-tag">Plan 03 · 回数券</div>
-      <h3>セレクト回数券</h3>
-      <div class="sub">10〜30回（プレミアム枠あり）</div>
-      <p class="plan-card-desc">質の高いセッションを、自分のペースで利用したい方向けのチケット制プラン。</p>
-      <ul class="plan-card-items">
-        <li>10回券</li>
-        <li>20回券</li>
-        <li>30回券 / プレミアム枠（50・100回）</li>
-      </ul>
-      <a href="#line" class="plan-card-cta">詳細を聞く</a>
-    </div>
-    <div class="plan-card" data-anim data-delay="3">
       <div class="plan-card-tag">単発利用 · Visitor</div>
       <h3>ビジタープラン</h3>
       <div class="sub">1回から</div>
-      <p class="plan-card-desc">まず1回試してみたい方、旅行中の方。パーソナルトレーニング・ピラティス・コーチング各種。</p>
+      <p class="plan-card-desc">まず1回試してみたい方、出張中の方。パーソナルトレーニング・ピラティス・コーチング各種。</p>
       <a href="#line" class="plan-card-cta">詳細を聞く</a>
     </div>
   </div>
