@@ -16,7 +16,6 @@ a{text-decoration:none;color:inherit}
   --white:#fafaf8;--off:#f3f1ec;--pale:#eceae3;
   --dark:#1c1a17;--mid:#5c5850;--muted:#9a9288;
   --line:#e0dcd5;--gold:#a08848;
-  --hero-img: url('/assets/images/hero-bg.jpg');
 }
 
 /* ── SCROLL ANIMATIONS ── */
@@ -54,15 +53,15 @@ a{text-decoration:none;color:inherit}
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:var(--white);}
 .hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:120px 56px 80px;position:relative;}
 .hero-right{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.hero-right-bg{
+.hero-bg-a,.hero-bg-b{
   position:absolute;inset:0;
-  background-image:var(--hero-img);
   background-size:cover;background-position:center;
   filter:brightness(.55) saturate(.8);
   transform:scale(1.03);
-  transition:transform 8s ease;
+  transition:opacity 1.5s ease,transform 8s ease;
 }
-.hero-right:hover .hero-right-bg{transform:scale(1.06)}
+.hero-bg-b{opacity:0;}
+.hero-right:hover .hero-bg-a,.hero-right:hover .hero-bg-b{transform:scale(1.06)}
 .hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(250,250,248,.08) 0%,transparent 100%);}
 .hero-video-wrap{position:relative;z-index:1;width:min(340px,75%);display:flex;flex-direction:column;align-items:center;gap:16px;}
 .hero-video-box{width:100%;aspect-ratio:9/16;background:rgba(30,28,22,.25);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.15);}
@@ -354,7 +353,8 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
     <div class="hero-scroll">Scroll</div>
   </div>
   <div class="hero-right">
-    <div class="hero-right-bg"></div>
+    <div class="hero-bg-a" id="heroBgA"></div>
+    <div class="hero-bg-b" id="heroBgB"></div>
     <div class="hero-video-wrap">
       <div class="hero-video-box">
         <div class="play-ring">
@@ -809,6 +809,38 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
 </a>
 
 <script>
+// Hero background slideshow
+(function () {
+  const slides = [
+    '/assets/images/hero-1.jpg',
+    '/assets/images/hero-2.jpg',
+    '/assets/images/hero-3.jpg',
+    '/assets/images/hero-4.jpg',
+    '/assets/images/hero-5.jpg',
+  ];
+  const bgA = document.getElementById('heroBgA');
+  const bgB = document.getElementById('heroBgB');
+  let current = 0;
+  let useA = true;
+
+  bgA.style.backgroundImage = `url('${slides[0]}')`;
+  slides.forEach(src => { new Image().src = src; });
+
+  setInterval(() => {
+    current = (current + 1) % slides.length;
+    if (useA) {
+      bgB.style.backgroundImage = `url('${slides[current]}')`;
+      bgB.style.opacity = '1';
+      bgA.style.opacity = '0';
+    } else {
+      bgA.style.backgroundImage = `url('${slides[current]}')`;
+      bgA.style.opacity = '1';
+      bgB.style.opacity = '0';
+    }
+    useA = !useA;
+  }, 5000);
+})();
+
 // Portrait slideshow
 (function () {
   const portraits = [
