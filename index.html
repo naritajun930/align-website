@@ -125,9 +125,27 @@ a{text-decoration:none;color:inherit}
 .method-conclusion{padding:40px 48px;border:1px solid rgba(255,255,255,.07);border-top:none;font-size:14px;line-height:2.1;color:rgba(240,237,230,.55);font-family:'Noto Serif JP',serif;font-weight:200;text-align:left;}
 .method-conclusion strong{color:rgba(240,237,230,.85);font-weight:300;}
 @media(max-width:960px){
-  .method-cards{grid-template-columns:1fr;}.method-divider{display:none;}
-  .method-card{padding:36px 24px;}
-  .method-conclusion{padding:32px 24px;}
+  .method{padding:64px 20px;}
+  .method-title{font-size:24px;margin-bottom:36px;line-height:1.5;}
+  .method-cards{grid-template-columns:1fr;border:none;margin-bottom:0;}
+  .method-divider{display:none;}
+  .method-card{
+    padding:24px 20px;
+    border-left:2px solid rgba(160,136,72,.6);
+    margin-bottom:12px;
+    background:rgba(255,255,255,.03);
+    text-align:left;
+  }
+  .method-card-num{font-size:32px;margin-bottom:10px;color:rgba(160,136,72,.6);}
+  .method-card p{font-size:14px;line-height:1.95;}
+  .method-conclusion{
+    padding:20px;
+    margin-top:12px;
+    border:1px solid rgba(255,255,255,.08);
+    border-top:2px solid rgba(160,136,72,.3);
+    font-size:13px;
+    line-height:2;
+  }
 }
 
 /* ── PROFILE ── */
