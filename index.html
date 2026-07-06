@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ALIGN Personal Gym | 栄</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+JP:wght@200;300;400;500&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500&family=Noto+Sans+JP:wght@200;300;400;500&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px}
@@ -219,6 +219,54 @@ a{text-decoration:none;color:inherit}
 .journey-block-img{aspect-ratio:4/3;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.15em;color:rgba(240,237,230,.2);text-transform:uppercase;}
 @media(max-width:960px){.journey-blocks{grid-template-columns:1fr;}}
 
+/* ── PLAN REDESIGN ── */
+.num{font-family:'Inter',sans-serif;}
+.plan-type-row{display:grid;grid-template-columns:1fr 80px 1fr;gap:2px;margin-bottom:2px;}
+.plan-type-card{background:var(--off);padding:48px 40px;position:relative;}
+.plan-type-exec{background:var(--dark);}
+.plan-type-eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.plan-type-badge{font-family:'Noto Serif JP',serif;font-size:clamp(20px,2vw,26px);font-weight:300;color:var(--dark);margin-bottom:8px;line-height:1.3;}
+.plan-type-sub{font-size:12px;letter-spacing:.05em;color:var(--muted);margin-bottom:28px;}
+.plan-type-options{display:flex;flex-direction:column;gap:20px;}
+.plan-type-opt{border-top:1px solid var(--line);padding-top:18px;}
+.plan-type-opt-name{font-size:10px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.plan-type-opt-tag{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:300;color:var(--dark);margin-bottom:8px;line-height:1.4;}
+.plan-type-opt p{font-size:12.5px;color:var(--mid);line-height:1.85;}
+.plan-type-eq{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--pale);padding:24px 12px;text-align:center;}
+.plan-eq-sym{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);display:block;line-height:1;}
+.plan-eq-txt{font-size:10px;letter-spacing:.1em;color:var(--muted);margin-top:6px;line-height:1.6;}
+.plan-exec-desc{font-size:13px;color:rgba(240,237,230,.65);line-height:2;margin-bottom:24px;}
+.plan-exec-items{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
+.plan-exec-items li{font-size:12.5px;color:rgba(240,237,230,.5);padding-left:20px;position:relative;line-height:1.7;}
+.plan-exec-items li::before{content:'';position:absolute;left:0;top:9px;width:8px;height:1px;background:var(--gold);}
+.plan-card-cta-light{color:rgba(240,237,230,.5);}
+.plan-card-cta-light::after{content:'→'}
+.plan-duration-wrap{background:var(--off);padding:48px 40px;margin-bottom:2px;}
+.plan-sec-label{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:300;letter-spacing:.1em;color:var(--gold);margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--line);}
+.plan-duration-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:16px;}
+.plan-dur-card{background:var(--white);padding:32px 24px;border-top:2px solid transparent;}
+.plan-dur-card.plan-dur-featured{border-top-color:var(--gold);}
+.plan-dur-recommend{font-size:10px;letter-spacing:.2em;color:var(--gold);margin-bottom:10px;text-transform:uppercase;}
+.plan-dur-period{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.25em;color:var(--muted);margin-bottom:8px;text-transform:uppercase;}
+.plan-dur-name{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:300;color:var(--dark);margin-bottom:12px;line-height:1.4;}
+.plan-dur-card p{font-size:12px;color:var(--mid);line-height:1.85;}
+.plan-duration-note{font-size:11.5px;color:var(--muted);letter-spacing:.04em;}
+.plan-journey-section{background:var(--dark);padding:56px 40px;margin-bottom:2px;}
+.plan-journey-section .plan-sec-label{color:rgba(160,136,72,.85);border-bottom-color:rgba(255,255,255,.07);}
+.plan-sub-wrap{background:var(--off);padding:48px 40px;margin-bottom:2px;}
+.plan-sub-note{font-size:12px;color:var(--muted);letter-spacing:.04em;margin-bottom:20px;margin-top:-8px;}
+.plan-compare-wrap{background:var(--pale);padding:48px 40px;margin-bottom:2px;}
+.plan-compare-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.plan-compare-table{width:100%;border-collapse:collapse;min-width:480px;}
+.plan-compare-table th{font-size:11px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;padding:12px 16px;text-align:center;border-bottom:2px solid var(--line);font-weight:400;}
+.plan-compare-table th:first-child{text-align:left;}
+.plan-compare-table th.col-exec{color:var(--gold);}
+.plan-compare-table td{font-size:12.5px;color:var(--mid);padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:middle;text-align:center;}
+.plan-compare-table td:first-child{text-align:left;color:var(--dark);}
+.plan-compare-table tr:last-child td{border-bottom:none;}
+.plan-compare-table .chk{color:var(--gold);font-size:15px;}
+.plan-compare-table .dash{color:var(--line);font-size:14px;}
+
 /* ── FLOW ── */
 .flow{background:var(--dark);padding:140px 56px;border-bottom:1px solid rgba(255,255,255,.06);}
 .flow .sec-en,.flow .sec-jp{color:#f0ede6}
@@ -338,6 +386,14 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
   footer{flex-direction:column;gap:24px;padding:40px 24px 100px;text-align:center}
   .footer-nav{flex-wrap:wrap;justify-content:center}
   .mobile-line-fixed{display:flex}
+  .plan-type-row{grid-template-columns:1fr}
+  .plan-type-card{padding:36px 24px}
+  .plan-type-exec{border-top:2px solid var(--gold)}
+  .plan-type-eq{flex-direction:row;gap:12px;padding:16px 24px}
+  .plan-eq-txt{margin-top:0}
+  .plan-duration-grid{grid-template-columns:repeat(2,1fr)}
+  .plan-journey-section{padding:40px 24px}
+  .plan-sub-wrap,.plan-compare-wrap,.plan-duration-wrap{padding:40px 24px}
 }
 </style>
 </head>
@@ -485,11 +541,11 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
   </div>
   <div class="sec-rule"></div>
 
-  <p class="plan-intro" data-anim>ALIGNでは、いきなりご入会いただくことはありません。まずは実際の空間で、あなたのお悩みと思考を整理し、身体の現在地を評価する「体験セッション」へお越しください。カウンセリング後、ライフスタイルや目標に合わせた最適なプランをご提案します。</p>
+  <p class="plan-intro" data-anim>あなたに合う、整え方を。まずはベーシックかエグゼクティブか——その選択から始まります。カウンセリング後、ライフスタイルや目標に合わせた最適なプランをご提案します。</p>
 
   <div style="margin-bottom:2px">
     <h3 style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:300;color:var(--gold);letter-spacing:.15em;margin-bottom:16px;text-transform:uppercase">First Step · まずは体験から</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:40px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:48px">
       <div class="plan-card" data-anim data-delay="1">
         <div class="plan-card-tag">Step 01</div>
         <h3>初回カウンセリング</h3>
@@ -500,147 +556,214 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
       <div class="plan-card" data-anim data-delay="2">
         <div class="plan-card-tag">Step 02</div>
         <h3>パーソナル体験セッション</h3>
-        <div class="sub">90分 · 詳しくはLINEにて</div>
+        <div class="sub"><span class="num">¥3,300</span>（税込）/ <span class="num">90</span>分</div>
         <p class="plan-card-desc">カウンセリング＋姿勢分析＋ピラティス・トレーニング体験。体験当日ご入会の方への特典もご用意しています。</p>
-        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
+        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">体験を予約する</a>
       </div>
     </div>
   </div>
 
   <h3 style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:300;color:var(--gold);letter-spacing:.15em;margin-bottom:24px;text-transform:uppercase">Plans · ご入会プラン</h3>
 
-  <!-- ベーシックプラン -->
-  <div class="plan-basic-wrap" data-anim>
-    <div class="plan-tier-label">ベーシックプラン</div>
-    <div class="plan-grid">
-      <div class="plan-card">
-        <div class="plan-card-tag">Basic 01</div>
-        <h3>トレーニング</h3>
-        <div class="sub">（詳細は後日記入）</div>
-        <p class="plan-card-desc">（内容は後日記入）</p>
-        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
+  <!-- ベーシック / エグゼクティブ -->
+  <div class="plan-type-row" data-anim>
+    <div class="plan-type-card">
+      <div class="plan-type-eyebrow">Basic</div>
+      <div class="plan-type-badge">ベーシックプラン</div>
+      <p class="plan-type-sub">1つのアプローチを、深く。</p>
+      <div class="plan-type-options">
+        <div class="plan-type-opt">
+          <div class="plan-type-opt-name">Training</div>
+          <div class="plan-type-opt-tag">しっかり動く</div>
+          <p>筋力と代謝。気づいたら身体が変わっていた、を叶えるパーソナルトレーニング。あなたのペースで、確実に積み上げます。</p>
+        </div>
+        <div class="plan-type-opt">
+          <div class="plan-type-opt-name">Stretch · Pilates</div>
+          <div class="plan-type-opt-tag">呼吸から、ほどく</div>
+          <p>インナーマッスルを深部から刺激し、姿勢と柔軟性を根本から変えていくピラティス。日常の疲れも、身体の緊張も、呼吸から解いていきます。</p>
+        </div>
+        <div class="plan-type-opt">
+          <div class="plan-type-opt-name">Coaching</div>
+          <div class="plan-type-opt-tag">頭を、整理する</div>
+          <p>続かない本当の理由は、意志の弱さではありません。行動と思考の癖を紐解き、習慣を変えていきます。</p>
+        </div>
       </div>
-      <div class="plan-card">
-        <div class="plan-card-tag">Basic 02</div>
-        <h3>ストレッチ・<br>ピラティス</h3>
-        <div class="sub">（詳細は後日記入）</div>
-        <p class="plan-card-desc">（内容は後日記入）</p>
-        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
-      </div>
-      <div class="plan-card">
-        <div class="plan-card-tag">Basic 03</div>
-        <h3>コーチング</h3>
-        <div class="sub">（詳細は後日記入）</div>
-        <p class="plan-card-desc">（内容は後日記入）</p>
-        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
-      </div>
+      <a href="https://lin.ee/X7WmsSR" class="plan-card-cta" style="margin-top:32px">詳しくはLINEで相談する</a>
     </div>
-  </div>
 
-  <!-- パフォーマンス設計 Flagship -->
-  <div class="plan-tier-label plan-flagship-label" data-anim>パフォーマンス設計プログラム · フルサポート</div>
-  <div class="plan-featured" data-anim>
-    <div class="plan-featured-tag">Plan 01 · Flagship</div>
-    <h3>パフォーマンス設計プログラム</h3>
-    <div class="sub">期間契約（1〜12ヶ月） · ALIGNの最高峰フルサポートパッケージ</div>
-    <div class="plan-featured-grid">
-      <p class="plan-featured-desc">最短で理想の自分を作り上げる、ALIGNが最も力を入れるプログラム。ピラティス・トレーニング・コーチングを統合し、身体と思考の両方を確実に変えます。</p>
-      <ul class="plan-featured-items">
+    <div class="plan-type-eq">
+      <span class="plan-eq-sym">＝</span>
+      <span class="plan-eq-txt">料金は<br>同じ</span>
+    </div>
+
+    <div class="plan-type-card plan-type-exec">
+      <div class="plan-type-eyebrow" style="color:var(--gold)">Executive</div>
+      <div class="plan-type-badge" style="color:#f0ede6">エグゼクティブ</div>
+      <p class="plan-type-sub" style="color:rgba(240,237,230,.4)">3つのアプローチを、一つに。</p>
+      <p class="plan-exec-desc">トレーニング・ピラティス・コーチングを統合した、ALIGNの最高峰パッケージ。身体と思考の両方を、確実に変えます。</p>
+      <ul class="plan-exec-items">
         <li>ピラティス ／ トレーニング（週1〜複数回）</li>
         <li>コーチング（月2回）</li>
         <li>月次パフォーマンスレビュー</li>
       </ul>
+      <a href="https://lin.ee/X7WmsSR" class="plan-card-cta plan-card-cta-light">詳しくはLINEで相談する</a>
     </div>
-    <button class="plan-toggle" id="journey-toggle" onclick="toggleJourney()">
-      詳しく見る <span class="plan-toggle-icon" id="journey-icon">＋</span>
-    </button>
-    <div class="plan-journey" id="plan-journey">
-      <div class="plan-journey-inner">
-        <div class="journey-label">6ヶ月ジャーニー · Program Timeline</div>
-        <div class="journey-blocks">
-          <div class="journey-block">
-            <div class="journey-period">1〜2ヶ月目</div>
-            <h4 class="journey-block-title">（見出しは後日記入）</h4>
-            <p class="journey-block-body">（内容は後日記入）</p>
-            <div class="journey-block-img">Photo</div>
-          </div>
-          <div class="journey-block">
-            <div class="journey-period">3〜4ヶ月目</div>
-            <h4 class="journey-block-title">（見出しは後日記入）</h4>
-            <p class="journey-block-body">（内容は後日記入）</p>
-            <div class="journey-block-img">Photo</div>
-          </div>
-          <div class="journey-block">
-            <div class="journey-period">5〜6ヶ月目</div>
-            <h4 class="journey-block-title">（見出しは後日記入）</h4>
-            <p class="journey-block-body">（内容は後日記入）</p>
-            <div class="journey-block-img">Photo</div>
-          </div>
-        </div>
+  </div>
+
+  <!-- 期間選択 -->
+  <div class="plan-duration-wrap" data-anim>
+    <div class="plan-sec-label">期間を選ぶ</div>
+    <div class="plan-duration-grid">
+      <div class="plan-dur-card">
+        <div class="plan-dur-period">1ヶ月</div>
+        <div class="plan-dur-name">Trial Tune</div>
+        <p>まず試してみたい方へ。初月集中型のトライアルプログラム。</p>
+      </div>
+      <div class="plan-dur-card">
+        <div class="plan-dur-period">3ヶ月</div>
+        <div class="plan-dur-name">Base Align</div>
+        <p>習慣の土台を作る。身体の変化を実感しはじめる期間。</p>
+      </div>
+      <div class="plan-dur-card plan-dur-featured">
+        <div class="plan-dur-recommend">★ Most Popular</div>
+        <div class="plan-dur-period">6ヶ月</div>
+        <div class="plan-dur-name">Deep Elevate</div>
+        <p>習慣が定着し、見た目にも変化が出始める黄金期間。</p>
+      </div>
+      <div class="plan-dur-card">
+        <div class="plan-dur-period">12ヶ月</div>
+        <div class="plan-dur-name">Executive Mastery</div>
+        <p>身体も思考も、完全に変わりきる本気の1年間。</p>
       </div>
     </div>
-    <div class="plan-featured-cta">
-      <a href="https://lin.ee/X7WmsSR">
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="white"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
-        詳細・料金をLINEで聞く
-      </a>
-      <span>料金はカウンセリング後にご案内します</span>
+    <p class="plan-duration-note">料金はカウンセリング後、目標とライフスタイルに合わせてご提案します。</p>
+  </div>
+
+  <!-- 6ヶ月ジャーニー -->
+  <div class="plan-journey-section" data-anim>
+    <div class="plan-sec-label">エグゼクティブを選ぶと6ヶ月でここまで</div>
+    <div class="journey-blocks">
+      <div class="journey-block">
+        <div class="journey-period">1〜2ヶ月目</div>
+        <h4 class="journey-block-title">自己理解を深める</h4>
+        <p class="journey-block-body">自分の身体の癖、動きの偏り、思考のパターンに気づく時間。「なぜ続かないのか」の答えが、ここで見えてきます。</p>
+      </div>
+      <div class="journey-block">
+        <div class="journey-period">3〜4ヶ月目</div>
+        <h4 class="journey-block-title">強みと弱みを知り、ベクトルを整える</h4>
+        <p class="journey-block-body">身体の使い方を最適化し、行動のクセに介入。結果が、見た目に出始める時期です。</p>
+      </div>
+      <div class="journey-block">
+        <div class="journey-period">5〜6ヶ月目</div>
+        <h4 class="journey-block-title">自分で、自走できるように</h4>
+        <p class="journey-block-body">習慣が定着し、意識せずとも動ける状態へ。ALIGNを卒業しても、変化が止まらない自分を手に入れます。</p>
+      </div>
     </div>
   </div>
 
-  <div class="plan-grid" style="margin-top:2px;margin-bottom:2px">
-    <div class="plan-card" data-anim data-delay="1">
-      <div class="plan-card-tag">Plan 02 · サブスクリプション</div>
-      <h3>コンディショニング<br>サブスクリプション</h3>
-      <div class="sub">月額制（月4〜通い放題）</div>
-      <p class="plan-card-desc">日常のメンテナンスとして通い続けるトレーニング・ピラティス特化の月額プラン。</p>
-      <ul class="plan-card-items">
-        <li>ライト（月4回）</li>
-        <li>スタンダード（月6回）</li>
-        <li>エグゼクティブ（通い放題）</li>
-      </ul>
-      <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
-    </div>
-    <div class="plan-card" data-anim data-delay="2">
-      <div class="plan-card-tag">Plan 03 · 回数券</div>
-      <h3>セレクト回数券</h3>
-      <div class="sub">10〜30回（プレミアム枠あり）</div>
-      <p class="plan-card-desc">質の高いセッションを、自分のペースで利用したい方向けのチケット制プラン。</p>
-      <ul class="plan-card-items">
-        <li>10回券</li>
-        <li>20回券</li>
-        <li>30回券 / プレミアム枠（50・100回）</li>
-        <li>ペアトレーニング（2名同時受講）</li>
-      </ul>
-      <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
-    </div>
-    <div class="plan-card" data-anim data-delay="3">
-      <div class="plan-card-tag">単発利用 · Visitor</div>
-      <h3>ビジタープラン</h3>
-      <div class="sub">1回から</div>
-      <p class="plan-card-desc">まず1回試してみたい方、旅行中の方。パーソナルトレーニング・ピラティス・コーチング各種。</p>
-      <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳細を聞く</a>
-    </div>
-  </div>
-
-  <div class="plan-grid-2">
-    <div class="plan-card coming-soon" data-anim data-delay="1">
-      <div class="coming-soon-badge">Coming Soon</div>
-      <div class="plan-card-tag">Plan 04 · ライフスタイル</div>
-      <h3>Morning Express 30</h3>
-      <div class="sub">平日朝活サブスク（06:00〜10:00限定）</div>
-      <p class="plan-card-desc">出勤前や1日の始まりに。平日朝の30分で心身をクリアに整える限定プラン。2026年秋より開始予定。</p>
-    </div>
-    <div class="plan-card coming-soon" data-anim data-delay="2">
-      <div class="coming-soon-badge">Coming Soon</div>
-      <div class="plan-card-tag">Plan 05 · 学生・U24</div>
-      <h3>U24 Exclusive</h3>
-      <div class="sub">24歳以下・学生応援プログラム</div>
-      <p class="plan-card-desc">これからの美しさを磨く皆様へ、平日の日中を有効活用する特別プラン。2026年秋より開始予定。</p>
+  <!-- 他の通い方 -->
+  <div class="plan-sub-wrap" data-anim>
+    <div class="plan-sec-label">他の通い方</div>
+    <p class="plan-sub-note">＊ 以下のプランにはコーチングは含まれません</p>
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="plan-card-tag">サブスクリプション</div>
+        <h3>コンディショニング<br>サブスクリプション</h3>
+        <div class="sub">月額制（月4回〜通い放題）</div>
+        <p class="plan-card-desc">日常のメンテナンスとして通い続けるトレーニング・ピラティス特化の月額プラン。</p>
+        <ul class="plan-card-items">
+          <li>ライト（月4回）</li>
+          <li>スタンダード（月6回）</li>
+          <li>エグゼクティブ（通い放題）</li>
+        </ul>
+        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳しくはLINEで相談する</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-card-tag">回数券</div>
+        <h3>セレクト回数券</h3>
+        <div class="sub">10〜30回（プレミアム枠あり）</div>
+        <p class="plan-card-desc">質の高いセッションを、自分のペースで利用したい方向けのチケット制プラン。</p>
+        <ul class="plan-card-items">
+          <li>10回券</li>
+          <li>20回券</li>
+          <li>30回券 / プレミアム枠（50・100回）</li>
+          <li>ペアトレーニング（2名同時受講）</li>
+        </ul>
+        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳しくはLINEで相談する</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-card-tag">単発 · Visitor</div>
+        <h3>ビジタープラン</h3>
+        <div class="sub">1回から</div>
+        <p class="plan-card-desc">まず1回試してみたい方、旅行中の方。パーソナルトレーニング・ピラティス・コーチング各種。</p>
+        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳しくはLINEで相談する</a>
+      </div>
     </div>
   </div>
 
-  <div class="plan-notice" style="margin-top:40px" data-anim>
+  <!-- 比較表 -->
+  <div class="plan-compare-wrap" data-anim>
+    <div class="plan-sec-label">プラン比較</div>
+    <div class="plan-compare-scroll">
+      <table class="plan-compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>ベーシック</th>
+            <th class="col-exec">エグゼクティブ</th>
+            <th>サブスク</th>
+            <th>回数券</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>トレーニング / ピラティス</td>
+            <td class="chk">○</td>
+            <td class="chk">○</td>
+            <td class="chk">○</td>
+            <td class="chk">○</td>
+          </tr>
+          <tr>
+            <td>コーチング</td>
+            <td class="chk">○</td>
+            <td class="chk">○</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+          </tr>
+          <tr>
+            <td>月次パフォーマンスレビュー</td>
+            <td class="dash">—</td>
+            <td class="chk">○</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+          </tr>
+          <tr>
+            <td>期間契約</td>
+            <td class="chk">○</td>
+            <td class="chk">○</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+          </tr>
+          <tr>
+            <td>月額 / チケット制</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td class="chk">○</td>
+            <td class="chk">○</td>
+          </tr>
+          <tr>
+            <td>ペアトレーニング</td>
+            <td class="chk">○</td>
+            <td class="chk">○</td>
+            <td class="dash">—</td>
+            <td class="chk">○</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="plan-notice" style="margin-top:2px" data-anim>
     <strong>どのプランが自分に合うか迷われている方へ</strong><br>
     ご自身で決める必要はありません。初回カウンセリングでは、プロの視点からあなたに最も費用対効果の高い通い方をご提案します。まずはお気軽にご相談ください。<br><br>
     ※ ペア割あり。詳しくはお問い合わせください。
