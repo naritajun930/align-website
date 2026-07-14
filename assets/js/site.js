@@ -34,3 +34,16 @@
     }, 5000);
   }
 })();
+
+// LINE CTA クリック計測（GA4）
+(function () {
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a[href*="lin.ee"]');
+    if (!a || typeof gtag !== 'function') return;
+    gtag('event', 'line_click', {
+      link_url: a.href,
+      link_text: (a.textContent || '').trim().slice(0, 80),
+      page_path: location.pathname
+    });
+  }, true);
+})();
