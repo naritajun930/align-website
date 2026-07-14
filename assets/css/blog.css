@@ -36,6 +36,10 @@ img{max-width:100%;display:block}
   font-size:22px;font-weight:400;
   letter-spacing:.35em;text-transform:uppercase;
 }
+.nav-links{margin-left:auto;display:flex;gap:20px;flex-wrap:wrap}
+.nav-links a{font-size:12px;letter-spacing:.08em;color:var(--mid);transition:color .2s}
+.nav-links a:hover{color:var(--dark)}
+@media(max-width:700px){.nav-links{gap:12px}.nav-links a{font-size:11px}}
 
 /* ── BLOG LIST ── */
 .blog-list-page{

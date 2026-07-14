@@ -2,3 +2,8 @@
 .env
 .env.local
 node_modules/
+photo/
+new/
+公開前チェックリスト.md
+align_hp_kaishu_*.html
+align_plans_v*.html

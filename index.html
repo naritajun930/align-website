@@ -3,398 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALIGN Personal Gym | 栄</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500&family=Noto+Sans+JP:wght@200;300;400;500&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+<title>ALIGN Personal Gym｜体重より、見た目から変わる。矢場町・栄のパーソナルジム</title>
+<meta name="description" content="同じ体重でも、姿勢がちがえば見た目は変わる。矢場町・栄のパーソナルジムALIGNは、姿勢と習慣から「見た目」を変えるジム。SSA2024全国3位トレーナーによるスタイル診断体験¥3,300。栄7A出口徒歩30秒。">
+<link rel="canonical" href="https://align-well.jp/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://align-well.jp/">
+<meta property="og:title" content="ALIGN Personal Gym｜体重より、見た目から変わる。矢場町・栄のパーソナルジム">
+<meta property="og:description" content="同じ体重でも、姿勢がちがえば見た目は変わる。姿勢と習慣から「見た目」を変える矢場町・栄のパーソナルジム。スタイル診断体験¥3,300。栄7A出口徒歩30秒。">
+<meta property="og:image" content="https://align-well.jp/assets/images/hero-1553.webp">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px}
-body{background:#fafaf8;color:#1c1a17;font-family:'Noto Sans JP',sans-serif;font-weight:300;line-height:1.85;-webkit-font-smoothing:antialiased;}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-
-:root{
-  --white:#fafaf8;--off:#f3f1ec;--pale:#eceae3;
-  --dark:#1c1a17;--mid:#5c5850;--muted:#9a9288;
-  --line:#e0dcd5;--gold:#a08848;
-}
-
-/* ── SCROLL ANIMATIONS ── */
-[data-anim]{
-  opacity:0;transform:translateY(28px);
-  transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1);
-}
-[data-anim].is-visible{opacity:1;transform:none}
-[data-anim][data-delay="1"]{transition-delay:.1s}
-[data-anim][data-delay="2"]{transition-delay:.2s}
-[data-anim][data-delay="3"]{transition-delay:.3s}
-[data-anim][data-delay="4"]{transition-delay:.4s}
-[data-anim][data-delay="5"]{transition-delay:.5s}
-[data-anim][data-delay="6"]{transition-delay:.6s}
-
-/* ── HERO LOAD ANIMATIONS ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-.hero-eyebrow{animation:fadeUp .9s .1s both}
-.hero-title   {animation:fadeUp .9s .25s both}
-.hero-copy    {animation:fadeUp .9s .4s both}
-.cta-group    {animation:fadeUp .9s .55s both}
-.hero-scroll  {animation:fadeUp .9s .7s both}
-.hero-video-wrap{animation:fadeUp 1s .3s both}
-
-/* ── NAV ── */
-.nav{position:fixed;top:32px;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 56px;}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:.35em;text-transform:uppercase;color:#1c1a17;}
-.nav-links{list-style:none;display:flex;gap:36px}
-.nav-links a{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);transition:color .3s;}
-.nav-links a:hover{color:var(--dark)}
-.nav-btn{font-size:11px;letter-spacing:.12em;background:#1c1a17;color:#fafaf8;padding:10px 24px;transition:background .3s;}
-.nav-btn:hover{background:#3a3228}
-
 /* ── HERO ── */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:var(--white);}
-.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:120px 56px 80px;position:relative;}
-.hero-right{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.hero-bg-a,.hero-bg-b{
-  position:absolute;inset:0;
-  background-size:cover;background-position:center;
-  transform:scale(1.03);
-  transition:opacity 1.5s ease,transform 8s ease;
+.hero{padding:72px 0 84px;position:relative;overflow:hidden}
+.hero .ghost{position:absolute;left:-40px;bottom:-90px;font-family:'Cormorant Garamond',serif;font-size:clamp(280px,38vw,480px);color:rgba(160,136,72,.05);line-height:1;pointer-events:none;user-select:none;z-index:0}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:1}
+.hero .eyebrow{margin-bottom:26px}
+.hero h1{font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(34px,5.8vw,56px);line-height:1.45;letter-spacing:.02em;margin-bottom:22px}
+.hero .sub{font-size:15.5px;color:var(--mid);line-height:2.15;margin-bottom:28px}
+.hero .sub strong{color:var(--ink);font-weight:500}
+.creds{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:34px}
+.cred{font-size:12px;letter-spacing:.03em;color:var(--mid);background:#fff;border:1px solid var(--line);border-radius:40px;padding:8px 16px;display:inline-flex;align-items:center;gap:7px}
+.cred b{color:var(--ink);font-weight:600}
+.cred.star{border-color:rgba(224,82,28,.35);background:#fff7f3}
+.cred.star::before{content:'★';color:var(--orange);font-size:11px}
+.hero .cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.hero .cta-note{font-size:12px;color:var(--muted);letter-spacing:.03em}
+.hero .cta-note b{color:var(--orange);font-weight:600}
+.hero-slides{position:relative;aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:var(--pale);box-shadow:24px 24px 0 -1px var(--pale)}
+.hero-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s ease}
+.hero-slides img.active{opacity:1}
+.hero-slides .cap{position:absolute;left:18px;bottom:14px;z-index:2;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.28em;color:#fff;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+@media(max-width:860px){
+  .hero{padding:52px 0 60px}
+  .hero .grid{grid-template-columns:1fr;gap:40px}
+  .hero-slides{aspect-ratio:4/3;box-shadow:none}
 }
-.hero-bg-b{opacity:0;}
-.hero-right:hover .hero-bg-a,.hero-right:hover .hero-bg-b{transform:scale(1.06)}
-.hero-video-wrap{position:relative;z-index:1;width:min(340px,75%);display:flex;flex-direction:column;align-items:center;gap:16px;}
-.hero-video-box{width:100%;aspect-ratio:9/16;background:rgba(30,28,22,.25);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.15);}
-.hero-video-box::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(30,28,22,.1) 0%,rgba(30,28,22,.3) 100%);}
-.play-ring{width:60px;height:60px;border:1.5px solid rgba(255,255,255,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .35s;position:relative;z-index:1;}
-.play-ring:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.9);transform:scale(1.08)}
-.play-ring svg{fill:#fff;margin-left:3px}
-.hero-video-caption{font-size:11px;letter-spacing:.18em;color:rgba(255,255,255,.6);text-transform:uppercase;text-align:center;}
-.hero-eyebrow{font-size:11px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:14px;}
-.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,6vw,88px);font-weight:300;line-height:1.05;letter-spacing:-.01em;margin-bottom:28px;color:var(--dark);}
-.hero-title em{font-style:italic;color:var(--gold)}
-.hero-copy{font-size:14px;color:var(--mid);line-height:2;max-width:380px;margin-bottom:52px;}
-.cta-group{display:flex;flex-direction:column;gap:16px;width:fit-content}
-.btn-line-hero{display:inline-flex;align-items:center;gap:12px;background:#06C755;color:#fff;font-size:13px;letter-spacing:.06em;padding:17px 36px;font-family:'Noto Sans JP',sans-serif;font-weight:300;transition:opacity .3s,transform .3s;}
-.btn-line-hero:hover{opacity:.88;transform:translateY(-1px)}
-.btn-text{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:12px;transition:color .3s;cursor:pointer;}
-.btn-text::after{content:'';width:24px;height:1px;background:currentColor;transition:width .3s}
-.btn-text:hover{color:var(--dark)}
-.btn-text:hover::after{width:40px}
-.hero-scroll{position:absolute;bottom:36px;left:56px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:12px;}
-.hero-scroll::after{content:'';width:48px;height:1px;background:var(--line)}
 
-/* ── SECTION LABEL ── */
-.sec-label{display:flex;align-items:baseline;gap:16px;margin-bottom:12px;}
-.sec-en{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.5vw,48px);font-weight:300;color:var(--dark);line-height:1;}
-.sec-jp{font-size:12px;letter-spacing:.15em;color:var(--muted)}
-.sec-rule{width:100%;height:1px;background:var(--line);margin-bottom:56px}
-
-/* ── CONCEPT ── */
-.concept{padding:140px 56px;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;border-bottom:1px solid var(--line);}
-.concept-img{aspect-ratio:4/5;background:var(--off);position:relative;overflow:hidden;}
-.concept-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.92) saturate(.9);transition:transform .8s cubic-bezier(.4,0,.2,1);}
-.concept-img:hover img{transform:scale(1.04)}
-.concept-img-lbl{position:absolute;bottom:20px;left:20px;right:20px;font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.6);text-transform:uppercase;border-top:1px solid rgba(255,255,255,.25);padding-top:10px;z-index:1;}
-.concept-text .quote{font-family:'Noto Serif JP',serif;font-size:clamp(18px,2vw,24px);font-weight:200;line-height:1.7;color:var(--dark);margin-bottom:24px;padding-left:20px;border-left:2px solid var(--gold);}
-.concept-worldview{font-size:11px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:28px;padding:10px 20px;border:1px solid rgba(160,136,72,.3);display:inline-block;}
-.concept-text p{font-size:13.5px;line-height:2.1;color:var(--mid);margin-bottom:18px;}
-
-/* ── APPROACH ── */
-.approach{background:var(--off);padding:140px 56px;border-bottom:1px solid var(--line);}
-.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
-.appr-card{background:var(--white);padding:52px 40px;position:relative;overflow:hidden;transition:background .4s;}
-.appr-card:hover{background:#f6f4ef}
-.appr-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--dark);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.4,0,.2,1);}
-.appr-card:hover::before{transform:scaleX(1)}
-.appr-num{font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;color:var(--pale);line-height:1;margin-bottom:20px;transition:color .4s;}
-.appr-card:hover .appr-num{color:var(--line)}
-.appr-en{font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
-.appr-title{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:300;line-height:1.6;margin-bottom:18px;color:var(--dark);}
-.appr-desc{font-size:13px;color:var(--mid);line-height:1.95}
+/* ── NAYAMI ── */
+.nayami{background:var(--pale)}
+.nayami .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+.nayami .photo{aspect-ratio:4/5;border-radius:10px;overflow:hidden}
+.nayami .checks{grid-template-columns:1fr;max-width:none}
+.nayami .turn{margin-top:34px}
+.nayami .turn .t1{font-size:14px;color:var(--mid);margin-bottom:8px}
+.nayami .turn .t2{font-family:'Noto Serif JP',serif;font-size:clamp(21px,3.4vw,27px);line-height:1.75}
+.nayami .turn .t2 b{color:var(--orange);font-weight:400}
+@media(max-width:860px){.nayami .grid{grid-template-columns:1fr;gap:32px}.nayami .photo{aspect-ratio:3/2}}
 
 /* ── METHOD ── */
-.method{padding:120px 56px;border-bottom:1px solid var(--line);background:var(--dark);}
-.method-inner{max-width:960px;margin:0 auto;text-align:center;}
-.method-eyebrow{font-size:10px;letter-spacing:.35em;color:rgba(160,136,72,.7);text-transform:uppercase;margin-bottom:32px;}
-.method-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.5vw,52px);font-weight:300;color:#f0ede6;line-height:1.2;margin-bottom:64px;}
-.method-cards{display:grid;grid-template-columns:1fr 1px 1fr;gap:0;margin-bottom:56px;border:1px solid rgba(255,255,255,.07);}
-.method-card{padding:52px 48px;text-align:left;}
-.method-card-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:rgba(160,136,72,.25);line-height:1;margin-bottom:24px;}
-.method-card p{font-family:'Noto Serif JP',serif;font-size:clamp(15px,1.4vw,18px);font-weight:200;line-height:1.85;color:rgba(240,237,230,.8);}
-.method-divider{background:rgba(255,255,255,.07);}
-.method-conclusion{padding:40px 48px;border:1px solid rgba(255,255,255,.07);border-top:none;font-size:14px;line-height:2.1;color:rgba(240,237,230,.55);font-family:'Noto Serif JP',serif;font-weight:200;text-align:left;}
-.method-conclusion strong{color:rgba(240,237,230,.85);font-weight:300;}
-@media(max-width:960px){
-  .method{padding:64px 20px;}
-  .method-title{font-size:24px;margin-bottom:36px;line-height:1.5;}
-  .method-cards{grid-template-columns:1fr;border:none;margin-bottom:0;}
-  .method-divider{display:none;}
-  .method-card{
-    padding:24px 20px;
-    border-left:2px solid rgba(160,136,72,.6);
-    margin-bottom:12px;
-    background:rgba(255,255,255,.03);
-    text-align:left;
-  }
-  .method-card-num{font-size:32px;margin-bottom:10px;color:rgba(160,136,72,.6);}
-  .method-card p{font-size:14px;line-height:1.95;}
-  .method-conclusion{
-    padding:20px;
-    margin-top:12px;
-    border:1px solid rgba(255,255,255,.08);
-    border-top:2px solid rgba(160,136,72,.3);
-    font-size:13px;
-    line-height:2;
-  }
-}
+.method-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:44px}
+.mcard{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s;display:flex;flex-direction:column}
+.mcard:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 18px 44px rgba(28,26,23,.07)}
+.mcard .ph{aspect-ratio:3/2;overflow:hidden}
+.mcard .body{padding:28px 26px 30px;flex:1}
+.mcard .mn{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.mcard h3{font-family:'Noto Serif JP',serif;font-weight:400;font-size:20px;line-height:1.6;margin-bottom:12px}
+.mcard h3 b{color:var(--orange);font-weight:400}
+.mcard p{font-size:13.5px;color:var(--mid);line-height:2}
+.method-cta{text-align:center}
+@media(max-width:860px){.method-cards{grid-template-columns:1fr}.mcard .ph{aspect-ratio:5/2}}
 
-/* ── PROFILE ── */
-.profile{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);}
-.profile-img{background:var(--off);position:relative;min-height:560px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.profile-img .slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;filter:brightness(.88) saturate(.85);opacity:0;transition:opacity 1.4s ease;}
-.profile-img .slide.active{opacity:1;}
-.profile-img-lbl{position:absolute;bottom:24px;left:24px;right:24px;font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.55);text-transform:uppercase;border-top:1px solid rgba(255,255,255,.2);padding-top:12px;z-index:1;}
-.profile-content{padding:100px 72px 80px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--line);}
-.profile-en{font-size:11px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:12px;}
-.profile-en::before{content:'';width:28px;height:1px;background:var(--gold)}
-.profile-name{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,4.5vw,68px);font-weight:300;line-height:1.05;margin-bottom:6px;}
-.profile-name-jp{font-size:13px;color:var(--muted);letter-spacing:.1em;margin-bottom:36px}
-.profile-bio{font-size:13.5px;line-height:2.1;color:var(--mid);margin-bottom:36px;padding-left:18px;border-left:1px solid var(--line);}
-.profile-creds{border-top:1px solid var(--line);padding-top:28px;display:flex;flex-direction:column;gap:10px}
-.profile-cred{font-size:12px;color:var(--muted);padding-left:18px;position:relative;line-height:1.7;}
-.profile-cred::before{content:'';position:absolute;left:0;top:9px;width:8px;height:1px;background:var(--gold);}
+/* ── TRAINER digest ── */
+.trainer .grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
+.trainer .photo{aspect-ratio:4/5;border-radius:10px;position:relative;overflow:hidden}
+.trainer .photo img{object-position:42% center}
+.trainer .photo .badge{position:absolute;top:20px;left:20px;background:var(--orange);color:#fff;font-size:11.5px;letter-spacing:.08em;padding:7px 16px;border-radius:30px;font-weight:500;z-index:2}
+.trainer .eyebrow{margin-bottom:16px}
+.trainer h2{font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(25px,4.2vw,34px);line-height:1.55;margin-bottom:8px}
+.trainer .name{font-size:14px;color:var(--muted);letter-spacing:.1em;margin-bottom:22px}
+.trainer .name b{color:var(--ink);font-size:17px;font-weight:500;letter-spacing:.14em;margin-right:10px}
+.trainer p{font-size:14px;color:var(--mid);line-height:2.1;margin-bottom:14px}
+.awards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0 30px}
+.award{background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px 16px;font-size:12.5px;color:var(--mid);line-height:1.7}
+.award b{display:block;color:var(--ink);font-weight:600;font-size:13.5px}
+.award.top{border-color:rgba(224,82,28,.35);background:#fff7f3}
+.award.top b{color:var(--orange)}
+@media(max-width:860px){.trainer .grid{grid-template-columns:1fr;gap:34px}}
+@media(max-width:680px){.awards{grid-template-columns:1fr}}
 
-/* ── PLAN ── */
-.plan{padding:140px 56px;background:var(--white);border-bottom:1px solid var(--line);}
-.plan-intro{max-width:620px;margin-bottom:72px;font-size:13.5px;color:var(--mid);line-height:2;}
-.plan-featured{background:var(--dark);padding:56px;margin-bottom:2px;position:relative;overflow:hidden;}
-.plan-featured::before{content:'Flagship';position:absolute;right:48px;top:48px;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.3em;color:rgba(160,136,72,.5);text-transform:uppercase;}
-.plan-featured-tag{font-size:10px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;}
-.plan-featured h3{font-family:'Noto Serif JP',serif;font-size:clamp(22px,2.5vw,32px);font-weight:300;color:#f0ede6;margin-bottom:12px;line-height:1.4;}
-.plan-featured .sub{font-size:12px;color:rgba(240,237,230,.4);letter-spacing:.04em;margin-bottom:32px;}
-.plan-featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
-.plan-featured-desc{font-size:13.5px;color:rgba(240,237,230,.65);line-height:2;}
-.plan-featured-items{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.plan-featured-items li{font-size:13px;color:rgba(240,237,230,.6);padding-left:20px;position:relative;line-height:1.7;}
-.plan-featured-items li::before{content:'';position:absolute;left:0;top:9px;width:8px;height:1px;background:var(--gold);}
-.plan-featured-cta{margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:16px;}
-.plan-featured-cta a{display:inline-flex;align-items:center;gap:12px;background:#06C755;color:#fff;font-size:12px;letter-spacing:.1em;padding:14px 32px;font-family:'Noto Sans JP',sans-serif;font-weight:300;transition:opacity .3s,transform .3s;}
-.plan-featured-cta a:hover{opacity:.85;transform:translateY(-1px)}
-.plan-featured-cta span{font-size:11px;color:rgba(240,237,230,.3);letter-spacing:.05em;}
-.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:2px;}
-.plan-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-bottom:40px;}
-.plan-card{background:var(--off);padding:44px 36px;position:relative;transition:background .3s,transform .3s;border-top:2px solid transparent;}
-.plan-card:hover{background:var(--pale);border-top-color:var(--dark);transform:translateY(-2px)}
-.plan-card-tag{font-size:10px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;}
-.plan-card h3{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:300;line-height:1.5;margin-bottom:10px;color:var(--dark);}
-.plan-card .sub{font-size:12px;color:var(--muted);letter-spacing:.04em;margin-bottom:16px;}
-.plan-card-desc{font-size:12.5px;color:var(--mid);line-height:1.9;margin-bottom:20px}
-.plan-card-items{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:24px;}
-.plan-card-items li{font-size:12px;color:var(--mid);padding-left:16px;position:relative;line-height:1.7;}
-.plan-card-items li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:1px;background:var(--gold);}
-.plan-card-cta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px;}
-.plan-card-cta::after{content:'→';font-size:13px}
-.plan-card.coming-soon{opacity:.65;}
-.coming-soon-badge{display:inline-block;font-size:10px;letter-spacing:.2em;color:var(--muted);border:1px solid var(--line);padding:4px 12px;text-transform:uppercase;margin-bottom:12px;}
-.plan-notice{background:var(--off);border:1px solid var(--line);padding:32px 40px;font-size:13px;color:var(--mid);line-height:1.9;}
-.plan-notice strong{color:var(--dark);font-weight:400}
+/* ── TRIAL digest ── */
+.trial{background:var(--dark);color:var(--cream);position:relative;overflow:hidden}
+.trial::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--orange)}
+.trial .ghost{position:absolute;right:-40px;bottom:-120px;font-family:'Cormorant Garamond',serif;font-size:360px;color:rgba(200,168,122,.05);line-height:1;pointer-events:none}
+.trial .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:54px;align-items:center;position:relative;z-index:1}
+.trial .eyebrow{color:var(--gold-l)}.trial .eyebrow::before{background:var(--gold-l)}
+.trial h2{font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(27px,4.6vw,40px);line-height:1.5;letter-spacing:.02em;margin:18px 0 16px}
+.trial .lead{font-size:14.5px;color:rgba(250,250,248,.75);line-height:2.1;margin-bottom:26px}
+.trial .price-line{display:flex;align-items:baseline;gap:16px;margin-bottom:28px}
+.trial .yen{font-family:var(--num);font-size:52px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.trial .yen .cur{font-size:30px;font-weight:700}
+.trial .yen .tax{font-size:13px;font-weight:400;color:var(--muted);margin-left:6px}
+.trial .min{font-family:var(--num);font-size:15px;color:var(--gold-l);font-weight:600;letter-spacing:.05em}
+.trial .btns{display:flex;gap:12px;flex-wrap:wrap}
+.trial .trial-photo{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:8px;margin-bottom:24px}
+.trial .flow{list-style:none;border-left:1px solid rgba(255,255,255,.15);margin-left:7px}
+.trial .flow li{position:relative;padding:0 0 20px 26px;font-size:13.5px;color:rgba(250,250,248,.82);line-height:1.8}
+.trial .flow li:last-child{padding-bottom:0}
+.trial .flow li::before{content:'';position:absolute;left:-7.5px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--dark);border:2px solid var(--gold-l)}
+.trial .flow li b{display:block;color:var(--cream);font-weight:500;font-size:14.5px}
+.trial .flow li.hl::before{background:var(--orange);border-color:var(--orange)}
+.trial .flow li.hl b{color:#ffb08e}
+@media(max-width:860px){.trial .grid{grid-template-columns:1fr;gap:38px}}
 
-/* ── PLAN TIERS & ACCORDION ── */
-.plan-tier-label{font-size:11px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-bottom:14px;padding:12px 0;border-top:1px solid var(--line);}
-.plan-flagship-label{color:rgba(160,136,72,.7);border-top:none;border-bottom:1px solid var(--line);margin-top:4px;margin-bottom:0;}
-.plan-basic-wrap{margin-bottom:2px;}
-.plan-toggle{background:none;border:1px solid rgba(255,255,255,.2);color:rgba(240,237,230,.65);font-size:12px;letter-spacing:.12em;padding:13px 28px;cursor:pointer;margin-top:28px;transition:all .3s;display:inline-flex;align-items:center;gap:10px;font-family:'Noto Sans JP',sans-serif;}
-.plan-toggle:hover{border-color:rgba(255,255,255,.5);color:#f0ede6;}
-.plan-toggle-icon{font-size:16px;display:inline-block;transition:transform .35s cubic-bezier(.4,0,.2,1);}
-.plan-toggle.open .plan-toggle-icon{transform:rotate(45deg);}
-.plan-journey{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.4,0,.2,1),margin-top .4s;}
-.plan-journey.open{grid-template-rows:1fr;margin-top:32px;}
-.plan-journey-inner{overflow:hidden;}
-.journey-label{font-size:10px;letter-spacing:.3em;color:rgba(160,136,72,.8);text-transform:uppercase;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.07);}
-.journey-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
-.journey-block{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:36px 28px;}
-.journey-period{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin-bottom:12px;}
-.journey-block-title{font-family:'Noto Serif JP',serif;font-size:15px;font-weight:300;color:#f0ede6;margin-bottom:10px;line-height:1.5;}
-.journey-block-body{font-size:12.5px;color:rgba(240,237,230,.45);line-height:1.9;margin-bottom:16px;}
-.journey-block-img{aspect-ratio:4/3;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:.15em;color:rgba(240,237,230,.2);text-transform:uppercase;}
-@media(max-width:960px){.journey-blocks{grid-template-columns:1fr;}}
-
-/* ── PLAN REDESIGN ── */
-.num{font-family:'Inter',sans-serif;}
-.plan-type-row{display:grid;grid-template-columns:1fr 80px 1fr;gap:2px;margin-bottom:2px;}
-.plan-type-card{background:var(--off);padding:48px 40px;position:relative;}
-.plan-type-exec{background:var(--dark);}
-.plan-type-eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
-.plan-type-badge{font-family:'Noto Serif JP',serif;font-size:clamp(20px,2vw,26px);font-weight:300;color:var(--dark);margin-bottom:8px;line-height:1.3;}
-.plan-type-sub{font-size:12px;letter-spacing:.05em;color:var(--muted);margin-bottom:28px;}
-.plan-type-options{display:flex;flex-direction:column;gap:20px;}
-.plan-type-opt{border-top:1px solid var(--line);padding-top:18px;}
-.plan-type-opt-name{font-size:10px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
-.plan-type-opt-tag{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:300;color:var(--dark);margin-bottom:8px;line-height:1.4;}
-.plan-type-opt p{font-size:12.5px;color:var(--mid);line-height:1.85;}
-.plan-type-eq{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--pale);padding:24px 12px;text-align:center;}
-.plan-eq-sym{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);display:block;line-height:1;}
-.plan-eq-txt{font-size:10px;letter-spacing:.1em;color:var(--muted);margin-top:6px;line-height:1.6;}
-.plan-exec-desc{font-size:13px;color:rgba(240,237,230,.65);line-height:2;margin-bottom:24px;}
-.plan-exec-items{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
-.plan-exec-items li{font-size:12.5px;color:rgba(240,237,230,.5);padding-left:20px;position:relative;line-height:1.7;}
-.plan-exec-items li::before{content:'';position:absolute;left:0;top:9px;width:8px;height:1px;background:var(--gold);}
-.plan-card-cta-light{color:rgba(240,237,230,.5);}
-.plan-card-cta-light::after{content:'→'}
-.plan-duration-wrap{background:var(--off);padding:48px 40px;margin-bottom:2px;}
-.plan-sec-label{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:300;letter-spacing:.1em;color:var(--gold);margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--line);}
-.plan-duration-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:16px;}
-.plan-dur-card{background:var(--white);padding:32px 24px;border-top:2px solid transparent;}
-.plan-dur-card.plan-dur-featured{border-top-color:var(--gold);}
-.plan-dur-recommend{font-size:10px;letter-spacing:.2em;color:var(--gold);margin-bottom:10px;text-transform:uppercase;}
-.plan-dur-period{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.25em;color:var(--muted);margin-bottom:8px;text-transform:uppercase;}
-.plan-dur-name{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:300;color:var(--dark);margin-bottom:12px;line-height:1.4;}
-.plan-dur-card p{font-size:12px;color:var(--mid);line-height:1.85;}
-.plan-duration-note{font-size:11.5px;color:var(--muted);letter-spacing:.04em;}
-.plan-journey-section{background:var(--dark);padding:56px 40px;margin-bottom:2px;}
-.plan-journey-section .plan-sec-label{color:rgba(160,136,72,.85);border-bottom-color:rgba(255,255,255,.07);}
-.plan-sub-wrap{background:var(--off);padding:48px 40px;margin-bottom:2px;}
-.plan-sub-note{font-size:12px;color:var(--muted);letter-spacing:.04em;margin-bottom:20px;margin-top:-8px;}
-.plan-compare-wrap{background:var(--pale);padding:48px 40px;margin-bottom:2px;}
-.plan-compare-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
-.plan-compare-table{width:100%;border-collapse:collapse;min-width:480px;}
-.plan-compare-table th{font-size:11px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;padding:12px 16px;text-align:center;border-bottom:2px solid var(--line);font-weight:400;}
-.plan-compare-table th:first-child{text-align:left;}
-.plan-compare-table th.col-exec{color:var(--gold);}
-.plan-compare-table td{font-size:12.5px;color:var(--mid);padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:middle;text-align:center;}
-.plan-compare-table td:first-child{text-align:left;color:var(--dark);}
-.plan-compare-table tr:last-child td{border-bottom:none;}
-.plan-compare-table .chk{color:var(--gold);font-size:15px;}
-.plan-compare-table .dash{color:var(--line);font-size:14px;}
-
-/* ── FLOW ── */
-.flow{background:var(--dark);padding:140px 56px;border-bottom:1px solid rgba(255,255,255,.06);}
-.flow .sec-en,.flow .sec-jp{color:#f0ede6}
-.flow .sec-jp{color:rgba(240,237,230,.45)}
-.flow .sec-rule{background:rgba(255,255,255,.08)}
-.flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
-.flow-card{background:rgba(255,255,255,.03);padding:44px 36px;border:1px solid rgba(255,255,255,.05);transition:background .3s,transform .3s;}
-.flow-card:hover{background:rgba(255,255,255,.07);transform:translateY(-2px)}
-.flow-step{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.3em;color:rgba(160,136,72,.8);text-transform:uppercase;margin-bottom:16px;}
-.flow-title{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:300;color:#f0ede6;margin-bottom:14px;line-height:1.5;}
-.flow-desc{font-size:12.5px;color:rgba(240,237,230,.5);line-height:1.95}
-.flow-after{margin-top:2px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);padding:48px 56px;}
-.flow-after-label{font-size:10px;letter-spacing:.3em;color:rgba(160,136,72,.7);text-transform:uppercase;margin-bottom:20px;}
-.flow-after-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:300;color:#f0ede6;margin-bottom:16px;}
-.flow-after-text{font-size:13px;color:rgba(240,237,230,.5);line-height:2;}
+/* ── PLANS digest ── */
+.plans-sum{background:var(--pale)}
+.fork-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:920px;margin:0 auto 30px}
+.fork-card{position:relative;display:block;background:#fff;border:1px solid var(--line);border-radius:10px;padding:38px 34px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.fork-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(28,26,23,.09);border-color:var(--gold)}
+.fork-card.life{background:var(--dark);border-color:var(--dark)}
+.fork-card.life:hover{border-color:var(--gold)}
+.fork-tag{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.fork-card h3{font-family:'Noto Serif JP',serif;font-weight:400;font-size:clamp(20px,2.8vw,24px);letter-spacing:.03em;line-height:1.6;margin-bottom:12px}
+.fork-card.life h3{color:var(--cream)}
+.fork-card p{font-size:13.5px;color:var(--mid);line-height:2;margin-bottom:20px}
+.fork-card.life p{color:rgba(250,250,248,.72)}
+.fork-from{font-size:12px;color:var(--muted);letter-spacing:.06em;margin-bottom:16px}
+.fork-from .num{font-size:21px;font-weight:700;color:var(--ink)}
+.fork-card.life .fork-from .num{color:var(--cream)}
+.fork-go{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;letter-spacing:.08em;color:var(--orange)}
+.fork-go span{transition:transform .25s}
+.fork-card:hover .fork-go span{transform:translateX(5px)}
+.plans-sum .pnote{text-align:center;font-size:13px;color:var(--mid);margin-bottom:30px;line-height:2}
+.plans-sum .pnote b{color:var(--orange);font-weight:500}
+.plans-sum .cta-center{display:flex;flex-direction:column;align-items:center;gap:12px}
+@media(max-width:720px){.fork-grid{grid-template-columns:1fr}}
 
 /* ── VOICE ── */
-.voice{padding:140px 56px;background:var(--off);border-bottom:1px solid var(--line);}
-.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px;}
-.voice-card-ph{background:var(--white);border:1px dashed rgba(160,136,72,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px;padding:48px 36px;text-align:center;transition:background .3s;}
-.voice-card-ph:hover{background:#faf9f5}
-.voice-card-ph p{font-size:11px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;line-height:2;}
-.voice-ph-note{margin-top:40px;font-size:13px;color:var(--muted);line-height:2;text-align:center;max-width:480px;margin-left:auto;margin-right:auto;}
-
-/* ── FAQ ── */
-.faq{padding:140px 56px;background:var(--white);border-bottom:1px solid var(--line);}
-.faq-list{display:flex;flex-direction:column;gap:0}
-.faq-item{border-bottom:1px solid var(--line)}
-.faq-q{padding:28px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--dark);letter-spacing:.02em;transition:color .3s;user-select:none;}
-.faq-q:hover{color:var(--gold)}
-.faq-icon{width:20px;height:20px;flex-shrink:0;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);transition:all .3s;}
-.faq-item.open .faq-icon{background:var(--dark);color:var(--white);border-color:var(--dark);}
-.faq-a{
-  display:grid;grid-template-rows:0fr;
-  transition:grid-template-rows .4s cubic-bezier(.4,0,.2,1);
-}
-.faq-a-inner{
-  overflow:hidden;
-  font-size:13.5px;color:var(--mid);line-height:2;
-  padding-left:20px;border-left:1px solid var(--line);
-}
-.faq-item.open .faq-a{grid-template-rows:1fr}
-.faq-item.open .faq-a-inner{padding-bottom:28px}
-
-/* ── LINE CTA ── */
-.line-cta{padding:160px 56px;text-align:center;background:var(--off);border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
-.line-cta::before{content:'ALIGN';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-size:clamp(100px,16vw,220px);font-weight:300;color:rgba(30,28,22,.04);letter-spacing:.25em;white-space:nowrap;pointer-events:none;user-select:none;}
-.line-cta .eyebrow{font-size:11px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:24px;}
-.line-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,68px);font-weight:300;line-height:1.2;margin-bottom:24px;position:relative;z-index:1;}
-.line-cta p{font-size:14px;color:var(--mid);max-width:440px;margin:0 auto 48px;line-height:2;position:relative;z-index:1;}
-.btn-line-main{display:inline-flex;align-items:center;gap:14px;background:#06C755;color:#fff;font-size:13px;letter-spacing:.06em;padding:19px 52px;font-family:'Noto Sans JP',sans-serif;font-weight:300;transition:opacity .3s,transform .3s;position:relative;z-index:1;}
-.btn-line-main:hover{opacity:.85;transform:translateY(-1px)}
-.line-note{margin-top:16px;font-size:12px;color:var(--muted);position:relative;z-index:1;}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.voice{background:#fff;border:1px solid var(--line);border-radius:8px;padding:30px 24px;text-align:center}
+.voice .soon{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.24em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
+.voice p{font-size:12.5px;color:var(--muted);line-height:1.9}
+@media(max-width:860px){.voices{grid-template-columns:1fr}}
 
 /* ── ACCESS ── */
-.access{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);}
-.access-info{padding:100px 56px;border-right:1px solid var(--line);}
-.access-rows{display:flex;flex-direction:column;margin-top:8px}
-.access-row{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line);transition:background .2s;}
-.access-row label{font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;padding-top:2px;}
-.access-row span{font-size:13px;color:var(--mid);line-height:1.8}
-.access-map{background:var(--off);min-height:400px;overflow:hidden;}
-.access-map iframe{width:100%;height:100%;min-height:400px;display:block;border:0;filter:grayscale(.2);}
-
-/* ── FOOTER ── */
-footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);background:var(--white);}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:.35em;text-transform:uppercase;color:var(--dark);}
-.footer-nav{list-style:none;display:flex;gap:28px}
-.footer-nav a{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);transition:color .3s;}
-.footer-nav a:hover{color:var(--dark)}
-.footer-copy{font-size:11px;color:var(--muted)}
-
-/* ── MOBILE FIXED LINE BUTTON ── */
-.mobile-line-fixed{
-  display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;
-  background:#06C755;color:#fff;padding:16px 24px;
-  text-align:center;font-size:14px;letter-spacing:.06em;
-  font-family:'Noto Sans JP',sans-serif;font-weight:300;
-  align-items:center;justify-content:center;gap:10px;
-}
-
-/* ── RESPONSIVE ── */
-@media(max-width:960px){
-  .nav{padding:0 24px}
-  .nav-links{display:none}
-  .nav-btn{display:none}
-  .hero{grid-template-columns:1fr}
-  .hero-left{padding:100px 24px 64px}
-  .hero-right{min-height:75vw}
-  .concept{grid-template-columns:1fr;padding:80px 24px;gap:48px}
-  .concept-img{min-height:60vw}
-  .approach{padding:80px 24px}
-  .approach-grid{grid-template-columns:1fr}
-  .method{padding:64px 24px}
-  .profile{grid-template-columns:1fr}
-  .profile-img{min-height:55vw}
-  .profile-content{padding:56px 24px;border-left:none;border-top:1px solid var(--line)}
-  .plan{padding:80px 24px}
-  .plan-featured{padding:40px 24px}
-  .plan-featured-grid{grid-template-columns:1fr;gap:24px}
-  .plan-grid,.plan-grid-2{grid-template-columns:1fr}
-  .flow{padding:80px 24px}
-  .flow-grid{grid-template-columns:1fr}
-  .flow-after{padding:36px 24px}
-  .voice{padding:80px 24px}
-  .voice-grid{grid-template-columns:1fr}
-  .faq{padding:80px 24px}
-  .line-cta{padding:72px 20px}
-  .line-cta::before{font-size:72px;}
-  .line-cta h2{font-size:26px;line-height:1.4;margin-bottom:20px;}
-  .line-cta p{font-size:13px;margin-bottom:36px;}
-  .btn-line-main{width:100%;justify-content:center;padding:17px 24px;font-size:13px;}
-  .line-note{font-size:11px;}
-  .access{grid-template-columns:1fr}
-  .access-info{border-right:none;padding:60px 24px}
-  .access-map{min-height:50vw}
-  footer{flex-direction:column;gap:24px;padding:40px 24px 100px;text-align:center}
-  .footer-nav{flex-wrap:wrap;justify-content:center}
-  .mobile-line-fixed{display:flex}
-  .plan-type-row{grid-template-columns:1fr}
-  .plan-type-card{padding:36px 24px}
-  .plan-type-exec{border-top:2px solid var(--gold)}
-  .plan-type-eq{flex-direction:row;gap:12px;padding:16px 24px}
-  .plan-eq-txt{margin-top:0}
-  .plan-duration-grid{grid-template-columns:repeat(2,1fr)}
-  .plan-journey-section{padding:40px 24px}
-  .plan-sub-wrap,.plan-compare-wrap,.plan-duration-wrap{padding:40px 24px}
-}
+.access{background:var(--pale)}
+.access .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:start}
+.access h3{font-family:'Cormorant Garamond',serif;font-size:21px;letter-spacing:.06em;margin-bottom:12px}
+.access .block{margin-bottom:26px}
+.access p{font-size:13.5px;color:var(--mid);line-height:2.1}
+.access .big{font-family:var(--num);font-weight:600;font-size:17px;color:var(--ink)}
+.access .walk{display:inline-block;margin-top:10px;font-size:12.5px;color:var(--orange);border:1px solid rgba(224,82,28,.3);border-radius:30px;padding:6px 15px;background:#fff7f3}
+.access .map{border-radius:10px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:#fff}
+.access .map iframe{width:100%;height:100%;border:0;display:block}
+@media(max-width:860px){.access .grid{grid-template-columns:1fr;gap:30px}}
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGZKV2KX43"></script>
@@ -407,649 +159,349 @@ footer{padding:52px 56px;display:flex;justify-content:space-between;align-items:
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-logo">Align</div>
-  <ul class="nav-links">
-    <li><a href="#concept">About</a></li>
-    <li><a href="#approach">Approach</a></li>
-    <li><a href="#profile">Trainer</a></li>
-    <li><a href="#plan">Plan</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#access">Access</a></li>
-    <li><a href="/blog/">Blog</a></li>
-  </ul>
-  <a href="#line" class="nav-btn">無料カウンセリング</a>
+<nav class="gnav">
+  <div class="wrap">
+    <a href="index.html" class="logo">Align</a>
+    <div class="gnav-links">
+      <a href="concept.html">コンセプト</a>
+      <a href="trainer.html">トレーナー</a>
+      <a href="plans.html">料金プラン</a>
+      <a href="trial.html">体験・流れ</a>
+      <a href="blog/">ブログ</a>
+      <a href="#access">アクセス</a>
+      <a class="cta" href="trial.html">体験 <span class="p">¥3,300</span></a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span></span><span></span></button>
+  </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a class="mlink" href="index.html"><span class="men">Top</span>ホーム</a>
+  <a class="mlink" href="concept.html"><span class="men">Concept</span>コンセプト</a>
+  <a class="mlink" href="trainer.html"><span class="men">Trainer</span>トレーナー</a>
+  <a class="mlink" href="plans.html"><span class="men">Plans</span>料金プラン</a>
+  <a class="mlink" href="trial.html"><span class="men">Trial</span>体験・流れ</a>
+  <a class="mlink" href="blog/"><span class="men">Blog</span>ブログ</a>
+  <div class="m-cta">
+    <a class="btn btn-orange" href="trial.html">スタイル診断体験 <span class="p">¥3,300</span></a>
+    <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで相談する</a>
+  </div>
+</div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Personal Gym · 栄</div>
-    <h1 class="hero-title">本来の<em>私</em>へ<br>還る場所。</h1>
-    <p class="hero-copy">日常のノイズを脱ぎ捨て、心身をチューニングする。<br>身体と思考を整え直す、新しい習慣を。</p>
-    <div class="cta-group">
-      <a href="https://lin.ee/X7WmsSR" class="btn-line-hero">
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="white"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
-        LINEで無料カウンセリングを予約する
-      </a>
-      <a href="#concept" class="btn-text">詳しく見る</a>
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="ghost">A</div>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="eyebrow">Personal Gym · 矢場町 / 栄</span>
+        <h1>体重より、<br><span class="accent">見た目</span>から変わる。</h1>
+        <p class="sub">同じ体重でも、姿勢がちがえば <strong>「−5歳」</strong>。<br>ALIGNは、姿勢と習慣から「見た目」を変える<br>矢場町・栄のパーソナルジム。<br>がんばって痩せるより先に、<strong>細く・若く見える身体の使い方</strong>から始めます。</p>
+        <div class="creds">
+          <span class="cred star"><b>SSA 2024 全国3位</b>トレーナー</span>
+          <span class="cred">指導実績<b>1,000名以上</b></span>
+          <span class="cred">行動心理カウンセラー</span>
+          <span class="cred">栄 7A出口 <b>徒歩30秒</b></span>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-orange" href="trial.html">スタイル診断体験を見る&nbsp;<span class="p">¥3,300</span></a>
+          <span class="cta-note"><b>90分</b>・ビフォーアフター写真つき</span>
+        </div>
+      </div>
+      <div class="hero-slides reveal" id="heroSlides">
+        <img src="assets/images/hero-1553.webp" alt="ALIGN Personal Gym 矢場町・栄 店内" class="active" fetchpriority="high">
+        <img src="assets/images/hero-1556.webp" alt="自然光の入るトレーニングスペース" loading="lazy">
+        <img src="assets/images/hero-1550.webp" alt="ALIGNロゴとジム内観" loading="lazy">
+        <img src="assets/images/hero-1606.webp" alt="トレーニングマシンエリア" loading="lazy">
+        <span class="cap">Align Personal Gym — Sakae, Nagoya</span>
+      </div>
     </div>
-    <div class="hero-scroll">Scroll</div>
   </div>
-  <div class="hero-right">
-    <div class="hero-bg-a" id="heroBgA"></div>
-    <div class="hero-bg-b" id="heroBgB"></div>
-  </div>
-</section>
+</header>
 
-<!-- CONCEPT -->
-<section class="concept" id="concept">
-  <div class="concept-img" data-anim>
-    <img
-      src="/assets/images/concept.jpg"
-      alt="ALIGN スタジオ空間"
-      loading="lazy"
-    >
-    <div class="concept-img-lbl">ALIGN Studio · 栄</div>
-  </div>
-  <div class="concept-text" data-anim data-delay="2">
-    <div class="sec-label">
-      <span class="sec-en">Concept</span>
-      <span class="sec-jp">コンセプト</span>
-    </div>
-    <div class="sec-rule"></div>
-    <p class="quote">「痩せる」ためだけの場所では<br>ありません。</p>
-    <div class="concept-worldview">身体・思考・習慣の、統合チューニング</div>
-    <p>現代を生きる私たちは、日々の忙しさやプレッシャー、溢れる情報といった多くの「ノイズ」に囲まれています。身体の疲れは判断を鈍らせ、心の余裕のなさは姿勢や表情に表れてしまいます。</p>
-    <p>ALIGNは、都会の喧騒から切り離された洗練されたプライベート空間で、身体と思考のノイズをクリアにし、本来の整った状態へ「チューニング（調律）」するための、日常の中の特別な習慣です。</p>
-  </div>
-</section>
-
-<!-- APPROACH -->
-<section class="approach" id="approach">
-  <div class="sec-label" data-anim>
-    <span class="sec-en">Approach</span>
-    <span class="sec-jp">ALIGNが提供する3つのアプローチ</span>
-  </div>
-  <div class="sec-rule"></div>
-  <div class="approach-grid">
-    <div class="appr-card" data-anim data-delay="1">
-      <div class="appr-num">01</div>
-      <div class="appr-en">Pilates · 整える</div>
-      <div class="appr-title">骨格を、<br>正しい位置へ還す。</div>
-      <p class="appr-desc">ピラティスの緻密な動きで、骨格や自律神経を本来の正しい位置（ニュートラル）へとリセット。すべての変化の起点になります。</p>
-    </div>
-    <div class="appr-card" data-anim data-delay="2">
-      <div class="appr-num">02</div>
-      <div class="appr-en">Training · 鍛える</div>
-      <div class="appr-title">整った身体に、<br>しなやかな力を。</div>
-      <p class="appr-desc">整った骨格の上にしなやかな筋肉を作ることで、疲れにくく、どんな服も着こなせる凛としたシルエットへ。</p>
-    </div>
-    <div class="appr-card" data-anim data-delay="3">
-      <div class="appr-num">03</div>
-      <div class="appr-en">Coaching · 思考をクリアに</div>
-      <div class="appr-title">思考のノイズを、<br>手放すために。</div>
-      <p class="appr-desc">行動心理学やポジティブ心理学を用いた対話により、ストレスや決断疲労を解放。意志に頼らない「良い習慣」を構築します。</p>
+<!-- ============ NAYAMI ============ -->
+<section class="nayami">
+  <div class="wrap">
+    <div class="grid">
+      <div class="photo reveal"><img class="img-cover" src="assets/images/posture.webp" alt="姿勢チェックの様子" loading="lazy"></div>
+      <div>
+        <div class="reveal" style="margin-bottom:28px">
+          <span class="eyebrow">Check</span>
+          <h2 class="serif" style="font-size:clamp(24px,4.2vw,32px);line-height:1.6;margin-top:16px">こんな「見た目」の悩み、<br>ありませんか。</h2>
+        </div>
+        <div class="checks reveal">
+          <div class="check">体重は変わらないのに、太って見られる</div>
+          <div class="check">写真に写った自分の姿勢に、ぎょっとする</div>
+          <div class="check">ダイエットしても、なぜか垢抜けない</div>
+          <div class="check">デスクワークで、肩と首がずっと重い</div>
+          <div class="check">ジムに通っても、いつも続かない</div>
+          <div class="check">最近、後ろ姿が「老けた」気がする</div>
+        </div>
+        <div class="turn reveal">
+          <div class="t1">その原因、体重ではなく——</div>
+          <div class="t2 serif"><b>姿勢</b>と<b>習慣</b>かもしれません。</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- METHOD -->
-<section class="method">
-  <div class="method-inner" data-anim>
-    <div class="method-eyebrow">Why We Integrate</div>
-    <h2 class="method-title">なぜ、3つを統合するのか。</h2>
+<!-- ============ METHOD ============ -->
+<section id="method">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow center">Align Method</span>
+      <h2>痩せるより先に、<span class="accent">整える</span>。</h2>
+      <p>ALIGN（アライン）＝整える・揃える。名前のとおり、骨格と習慣を整えることから始めるのが、見た目が最短で変わる順番です。だからALIGNのセッションは、3つでひとつ。</p>
+    </div>
     <div class="method-cards">
-      <div class="method-card">
-        <div class="method-card-num">01</div>
-        <p>身体だけを鍛えても、<br>習慣が変わらなければ戻ってしまう。</p>
+      <div class="mcard reveal">
+        <div class="ph"><img class="img-cover" src="assets/images/session-machine.webp" alt="ピラティス・コンディショニングのセッション風景" loading="lazy"></div>
+        <div class="body">
+          <div class="mn">01 · Align — 整える</div>
+          <h3>骨格から、<b>1回で立ち姿が変わる。</b></h3>
+          <p>ピラティス×コンディショニングで、骨格を本来の位置へ。同じ体重でも、細く・若く見える理由はここにあります。体験のその日に、鏡でわかります。</p>
+        </div>
       </div>
-      <div class="method-divider"></div>
-      <div class="method-card">
-        <div class="method-card-num">02</div>
-        <p>思考だけを整えても、<br>身体が動かなければ続かない。</p>
+      <div class="mcard reveal">
+        <div class="ph"><img class="img-cover" src="assets/images/session-cable.webp" alt="パーソナルトレーニングの様子" loading="lazy"></div>
+        <div class="body">
+          <div class="mn">02 · Build — 鍛える</div>
+          <h3>整った骨格に、<b>しなやかな筋肉を。</b></h3>
+          <p>土台が整ってから鍛えるから、効く。疲れにくく、どんな服も着こなせるシルエットへ。あなたの骨格に合わせた最短ルートを設計します。</p>
+        </div>
+      </div>
+      <div class="mcard reveal">
+        <div class="ph"><img class="img-cover" src="assets/images/counseling.webp" alt="行動心理コーチングのカウンセリング風景" loading="lazy"></div>
+        <div class="body">
+          <div class="mn">03 · Last — 続ける</div>
+          <h3>続かない理由を、<b>初回で特定する。</b></h3>
+          <p>三日坊主は意志の弱さではなく、設計の問題。行動心理カウンセラーの資格を持つトレーナーが、続く仕組みそのものをつくります。</p>
+        </div>
       </div>
     </div>
-    <p class="method-conclusion">ALIGNが3つのアプローチを一つのプロセスとして設計しているのは、変化を<strong>「一時的な結果」ではなく「持続する状態」</strong>にするためです。</p>
-  </div>
-</section>
-
-<!-- PROFILE -->
-<section class="profile" id="profile">
-  <div class="profile-img" data-anim>
-    <img class="slide active" id="slideA" src="/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_1.jpg" alt="赤澤 優 トレーナー">
-    <img class="slide" id="slideB" src="/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_16.jpg" alt="赤澤 優 トレーナー">
-    <div class="profile-img-lbl">赤澤 優 ／ Personal Trainer</div>
-  </div>
-  <div class="profile-content" data-anim data-delay="2">
-    <div class="profile-en">Trainer Profile</div>
-    <div class="profile-name">Masaru<br>Akazawa</div>
-    <div class="profile-name-jp">赤澤 優 ／ パーソナルトレーナー</div>
-    <p class="profile-bio">
-      保健体育教師を5年間勤めてました。生徒たちの姿勢、息遣い、心の状態を毎日見続ける中で気づいたのは、身体と心はいつも一緒に変わるということでした。<br><br>
-      その経験を土台に、大手パーソナルジムでトレーナーとして3年間、1,000名以上のお客様と向き合い、ピラティスと行動心理学を学び直しました。<br><br>
-      ALIGNは、その全てを一つにした場所です。
-    </p>
-    <div class="profile-creds">
-      <div class="profile-cred">行動心理カウンセラー、ピラティス資格、スポーツ医学</div>
-      <div class="profile-cred">中学・高等学校教諭一種免許状</div>
-      <div class="profile-cred">元高等学校体育教師 歴5年</div>
-      <div class="profile-cred">大手パーソナルジム トレーナー歴約3年（優秀トレーナー賞受賞）</div>
-      <div class="profile-cred">Summer Style Award 2024年 3位</div>
+    <div class="method-cta reveal">
+      <a class="more-link" href="concept.html">ALIGNのコンセプトを詳しく<span>→</span></a>
     </div>
   </div>
 </section>
 
-<!-- PLAN -->
-<section class="plan" id="plan">
-  <div class="sec-label" data-anim>
-    <span class="sec-en">Plan &amp; Price</span>
-    <span class="sec-jp">コースと料金</span>
-  </div>
-  <div class="sec-rule"></div>
-
-  <p class="plan-intro" data-anim>あなたに合う、整え方を。まずはベーシックかエグゼクティブか——その選択から始まります。カウンセリング後、ライフスタイルや目標に合わせた最適なプランをご提案します。</p>
-
-  <div style="margin-bottom:2px">
-    <h3 style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:300;color:var(--gold);letter-spacing:.15em;margin-bottom:16px;text-transform:uppercase">First Step · まずは体験から</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:48px">
-      <div class="plan-card" data-anim data-delay="1">
-        <div class="plan-card-tag">Step 01</div>
-        <h3>初回カウンセリング</h3>
-        <div class="sub">60分 · 無料</div>
-        <p class="plan-card-desc">目標設定・思考の整理・施設見学。あなたの現在地とライフスタイルを丁寧にヒアリングします。</p>
-        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">LINEで予約する</a>
-      </div>
-      <div class="plan-card" data-anim data-delay="2">
-        <div class="plan-card-tag">Step 02</div>
-        <h3>パーソナル体験セッション</h3>
-        <div class="sub"><span class="num">¥3,300</span>（税込）/ <span class="num">90</span>分</div>
-        <p class="plan-card-desc">カウンセリング＋姿勢分析＋ピラティス・トレーニング体験。体験当日ご入会の方への特典もご用意しています。</p>
-        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">体験を予約する</a>
-      </div>
+<!-- ============ STATS ============ -->
+<section class="stats" style="padding:46px 0">
+  <div class="wrap">
+    <div class="row">
+      <div class="stat reveal"><div class="v">Proof</div><div class="n"><b>SSA 2024</b> 全国 <b class="num">3</b>位</div></div>
+      <div class="stat reveal"><div class="v">Career</div><div class="n">指導実績 <b class="num">1,000</b>名以上</div></div>
+      <div class="stat reveal"><div class="v">Award</div><div class="n">大手ジム <b>優秀トレーナー賞</b></div></div>
+      <div class="stat reveal"><div class="v">Access</div><div class="n">栄 7A出口 <b>徒歩<span class="num">30</span>秒</b></div></div>
     </div>
   </div>
+</section>
 
-  <h3 style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:300;color:var(--gold);letter-spacing:.15em;margin-bottom:24px;text-transform:uppercase">Plans · ご入会プラン</h3>
-
-  <!-- ベーシック / エグゼクティブ -->
-  <div class="plan-type-row" data-anim>
-    <div class="plan-type-card">
-      <div class="plan-type-eyebrow">Basic</div>
-      <div class="plan-type-badge">ベーシックプラン</div>
-      <p class="plan-type-sub">1つのアプローチを、深く。</p>
-      <div class="plan-type-options">
-        <div class="plan-type-opt">
-          <div class="plan-type-opt-name">Training</div>
-          <div class="plan-type-opt-tag">しっかり動く</div>
-          <p>筋力と代謝。気づいたら身体が変わっていた、を叶えるパーソナルトレーニング。あなたのペースで、確実に積み上げます。</p>
+<!-- ============ TRAINER ============ -->
+<section class="trainer" id="trainer">
+  <div class="wrap">
+    <div class="grid">
+      <div class="photo reveal">
+        <img class="img-cover" src="assets/images/trainer.webp" alt="ALIGN Personal Gym トレーナー 赤澤優" loading="lazy">
+        <span class="badge">SSA 2024 全国3位</span>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Trainer</span>
+        <h2>「魅せる身体」の全国3位が、<br>あなたの専属につく。</h2>
+        <div class="name"><b>赤澤 優</b>Masaru Akazawa</div>
+        <p>元・高校体育教師。大手パーソナルジムで1,000名以上を指導し、優秀トレーナー賞を受賞。「かっこいい身体・きれいな身体」を競うSSAでは2024年、全国3位に。</p>
+        <p><strong style="font-weight:500;color:var(--ink)">結果の出る身体づくり</strong>と、<strong style="font-weight:500;color:var(--ink)">続けられる心のつくり方</strong>。その両方を、マンツーマンでお渡しします。</p>
+        <div class="awards">
+          <div class="award top"><b>SSA 2024 全国 3位</b>Summer Style Award</div>
+          <div class="award"><b>優秀トレーナー賞</b>大手パーソナルジム（3年）</div>
+          <div class="award"><b>行動心理カウンセラー</b>「続く」を設計する</div>
+          <div class="award"><b>元・高校体育教師</b>5年間・教えるプロ</div>
         </div>
-        <div class="plan-type-opt">
-          <div class="plan-type-opt-name">Stretch · Pilates</div>
-          <div class="plan-type-opt-tag">呼吸から、ほどく</div>
-          <p>インナーマッスルを深部から刺激し、姿勢と柔軟性を根本から変えていくピラティス。日常の疲れも、身体の緊張も、呼吸から解いていきます。</p>
+        <a class="more-link" href="trainer.html">トレーナー紹介を読む<span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRIAL ============ -->
+<section class="trial" id="trial">
+  <div class="ghost en">A</div>
+  <div class="wrap">
+    <div class="grid">
+      <div class="reveal">
+        <span class="eyebrow">First Step</span>
+        <h2>90分で、<span class="accent">立ち姿</span>が変わる。<br>スタイル診断体験。</h2>
+        <p class="lead">カウンセリング・姿勢分析・体験トレーニングまで、ALIGNをまるごと。最後にビフォーアフターを写真で見比べます。変わるかどうか、その場で確かめてください。</p>
+        <div class="price-line">
+          <span class="yen num"><span class="cur">¥</span>3,300<span class="tax">税込</span></span>
+          <span class="min">90 min</span>
         </div>
-        <div class="plan-type-opt">
-          <div class="plan-type-opt-name">Coaching</div>
-          <div class="plan-type-opt-tag">頭を、整理する</div>
-          <p>続かない本当の理由は、意志の弱さではありません。行動と思考の癖を紐解き、習慣を変えていきます。</p>
+        <div class="btns">
+          <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験を予約する</a>
+          <a class="btn btn-ghost on-dark" href="trial.html">体験の流れを見る</a>
         </div>
       </div>
-      <a href="https://lin.ee/X7WmsSR" class="plan-card-cta" style="margin-top:32px">詳しくはLINEで相談する</a>
-    </div>
-
-    <div class="plan-type-eq">
-      <span class="plan-eq-sym">＝</span>
-      <span class="plan-eq-txt">料金は<br>同じ</span>
-    </div>
-
-    <div class="plan-type-card plan-type-exec">
-      <div class="plan-type-eyebrow" style="color:var(--gold)">Executive</div>
-      <div class="plan-type-badge" style="color:#f0ede6">エグゼクティブ</div>
-      <p class="plan-type-sub" style="color:rgba(240,237,230,.4)">3つのアプローチを、一つに。</p>
-      <p class="plan-exec-desc">トレーニング・ピラティス・コーチングを統合した、ALIGNの最高峰パッケージ。身体と思考の両方を、確実に変えます。</p>
-      <ul class="plan-exec-items">
-        <li>ピラティス ／ トレーニング（週1〜複数回）</li>
-        <li>コーチング（月2回）</li>
-        <li>月次パフォーマンスレビュー</li>
-      </ul>
-      <a href="https://lin.ee/X7WmsSR" class="plan-card-cta plan-card-cta-light">詳しくはLINEで相談する</a>
-    </div>
-  </div>
-
-  <!-- 期間選択 -->
-  <div class="plan-duration-wrap" data-anim>
-    <div class="plan-sec-label">期間を選ぶ</div>
-    <div class="plan-duration-grid">
-      <div class="plan-dur-card">
-        <div class="plan-dur-period">1ヶ月</div>
-        <div class="plan-dur-name">Trial Tune</div>
-        <p>まず試してみたい方へ。初月集中型のトライアルプログラム。</p>
-      </div>
-      <div class="plan-dur-card">
-        <div class="plan-dur-period">3ヶ月</div>
-        <div class="plan-dur-name">Base Align</div>
-        <p>習慣の土台を作る。身体の変化を実感しはじめる期間。</p>
-      </div>
-      <div class="plan-dur-card plan-dur-featured">
-        <div class="plan-dur-recommend">★ Most Popular</div>
-        <div class="plan-dur-period">6ヶ月</div>
-        <div class="plan-dur-name">Deep Elevate</div>
-        <p>習慣が定着し、見た目にも変化が出始める黄金期間。</p>
-      </div>
-      <div class="plan-dur-card">
-        <div class="plan-dur-period">12ヶ月</div>
-        <div class="plan-dur-name">Executive Mastery</div>
-        <p>身体も思考も、完全に変わりきる本気の1年間。</p>
-      </div>
-    </div>
-    <p class="plan-duration-note">料金はカウンセリング後、目標とライフスタイルに合わせてご提案します。</p>
-  </div>
-
-  <!-- 6ヶ月ジャーニー -->
-  <div class="plan-journey-section" data-anim>
-    <div class="plan-sec-label">エグゼクティブを選ぶと6ヶ月でここまで</div>
-    <div class="journey-blocks">
-      <div class="journey-block">
-        <div class="journey-period">1〜2ヶ月目</div>
-        <h4 class="journey-block-title">自己理解を深める</h4>
-        <p class="journey-block-body">自分の身体の癖、動きの偏り、思考のパターンに気づく時間。「なぜ続かないのか」の答えが、ここで見えてきます。</p>
-      </div>
-      <div class="journey-block">
-        <div class="journey-period">3〜4ヶ月目</div>
-        <h4 class="journey-block-title">強みと弱みを知り、ベクトルを整える</h4>
-        <p class="journey-block-body">身体の使い方を最適化し、行動のクセに介入。結果が、見た目に出始める時期です。</p>
-      </div>
-      <div class="journey-block">
-        <div class="journey-period">5〜6ヶ月目</div>
-        <h4 class="journey-block-title">自分で、自走できるように</h4>
-        <p class="journey-block-body">習慣が定着し、意識せずとも動ける状態へ。ALIGNを卒業しても、変化が止まらない自分を手に入れます。</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 他の通い方 -->
-  <div class="plan-sub-wrap" data-anim>
-    <div class="plan-sec-label">他の通い方</div>
-    <p class="plan-sub-note">＊ 以下のプランにはコーチングは含まれません</p>
-    <div class="plan-grid">
-      <div class="plan-card">
-        <div class="plan-card-tag">サブスクリプション</div>
-        <h3>コンディショニング<br>サブスクリプション</h3>
-        <div class="sub">月額制（月4回〜通い放題）</div>
-        <p class="plan-card-desc">日常のメンテナンスとして通い続けるトレーニング・ピラティス特化の月額プラン。</p>
-        <ul class="plan-card-items">
-          <li>ライト（月4回）</li>
-          <li>スタンダード（月6回）</li>
-          <li>エグゼクティブ（通い放題）</li>
+      <div class="reveal">
+        <img class="trial-photo" src="assets/images/trial.webp" alt="マンツーマンでフォームを確認する体験トレーニングの様子" loading="lazy">
+        <ul class="flow">
+          <li><b>カウンセリング</b>いまの悩みと、なりたい見た目を整理</li>
+          <li><b>姿勢分析</b>太って見える・老けて見える原因を特定</li>
+          <li><b>体験トレーニング</b>ピラティス×トレーニングを実際に</li>
+          <li class="hl"><b>ビフォーアフター撮影</b>90分前の自分と、見比べる</li>
         </ul>
-        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳しくはLINEで相談する</a>
-      </div>
-      <div class="plan-card">
-        <div class="plan-card-tag">回数券</div>
-        <h3>セレクト回数券</h3>
-        <div class="sub">10〜30回（プレミアム枠あり）</div>
-        <p class="plan-card-desc">質の高いセッションを、自分のペースで利用したい方向けのチケット制プラン。</p>
-        <ul class="plan-card-items">
-          <li>10回券</li>
-          <li>20回券</li>
-          <li>30回券 / プレミアム枠（50・100回）</li>
-          <li>ペアトレーニング（2名同時受講）</li>
-        </ul>
-        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳しくはLINEで相談する</a>
-      </div>
-      <div class="plan-card">
-        <div class="plan-card-tag">単発 · Visitor</div>
-        <h3>ビジタープラン</h3>
-        <div class="sub">1回から</div>
-        <p class="plan-card-desc">まず1回試してみたい方、旅行中の方。パーソナルトレーニング・ピラティス・コーチング各種。</p>
-        <a href="https://lin.ee/X7WmsSR" class="plan-card-cta">詳しくはLINEで相談する</a>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- 比較表 -->
-  <div class="plan-compare-wrap" data-anim>
-    <div class="plan-sec-label">プラン比較</div>
-    <div class="plan-compare-scroll">
-      <table class="plan-compare-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>ベーシック</th>
-            <th class="col-exec">エグゼクティブ</th>
-            <th>サブスク</th>
-            <th>回数券</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>トレーニング / ピラティス</td>
-            <td class="chk">○</td>
-            <td class="chk">○</td>
-            <td class="chk">○</td>
-            <td class="chk">○</td>
-          </tr>
-          <tr>
-            <td>コーチング</td>
-            <td class="chk">○</td>
-            <td class="chk">○</td>
-            <td class="dash">—</td>
-            <td class="dash">—</td>
-          </tr>
-          <tr>
-            <td>月次パフォーマンスレビュー</td>
-            <td class="dash">—</td>
-            <td class="chk">○</td>
-            <td class="dash">—</td>
-            <td class="dash">—</td>
-          </tr>
-          <tr>
-            <td>期間契約</td>
-            <td class="chk">○</td>
-            <td class="chk">○</td>
-            <td class="dash">—</td>
-            <td class="dash">—</td>
-          </tr>
-          <tr>
-            <td>月額 / チケット制</td>
-            <td class="dash">—</td>
-            <td class="dash">—</td>
-            <td class="chk">○</td>
-            <td class="chk">○</td>
-          </tr>
-          <tr>
-            <td>ペアトレーニング</td>
-            <td class="chk">○</td>
-            <td class="chk">○</td>
-            <td class="dash">—</td>
-            <td class="chk">○</td>
-          </tr>
-        </tbody>
-      </table>
+<!-- ============ PLANS ============ -->
+<section class="plans-sum" id="plan">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow center">Plans &amp; Pricing</span>
+      <h2>入口は、シンプルに2つ。</h2>
+      <p>料金は、すべてHPに明記しています。あなたの目的はどちらですか？　それだけ決まれば、合うプランはすぐ見つかります。</p>
     </div>
-  </div>
-
-  <div class="plan-notice" style="margin-top:2px" data-anim>
-    <strong>どのプランが自分に合うか迷われている方へ</strong><br>
-    ご自身で決める必要はありません。初回カウンセリングでは、プロの視点からあなたに最も費用対効果の高い通い方をご提案します。まずはお気軽にご相談ください。<br><br>
-    ※ ペア割あり。詳しくはお問い合わせください。
+    <div class="fork-grid reveal">
+      <a class="fork-card" href="plans.html#body">
+        <div class="fork-tag">Course 01 ─ ボディメイク</div>
+        <h3>見た目と身体を、<br>変えたい。</h3>
+        <p>トレーニング×ピラティス×ストレッチに、お食事サポート。月額制・回数券・短期集中コースから、始めやすい通い方を。</p>
+        <div class="fork-from">月額 <span class="num"><span style="font-size:13px">¥</span>19,000</span> から（税込）</div>
+        <div class="fork-go">このコースのプランを見る <span>→</span></div>
+      </a>
+      <a class="fork-card life" href="plans.html#life">
+        <div class="fork-tag">Course 02 ─ エグゼクティブ</div>
+        <h3>身体も、「続かない自分」も、<br>変えたい。</h3>
+        <p>何度もジムに挫折してきた方へ。トレーニングに行動心理コーチングを重ねた、ALIGNがいちばん自信を持っているプログラム。</p>
+        <div class="fork-from">月あたり <span class="num"><span style="font-size:13px">¥</span>120,000</span> から（税込）</div>
+        <div class="fork-go">エグゼクティブを見る <span>→</span></div>
+      </a>
+    </div>
+    <p class="pnote reveal">表示はすべて税込。<b>あとから増えることはありません。</b></p>
+    <div class="cta-center reveal">
+      <a class="btn btn-dark" href="plans.html">料金・プランをすべて見る →</a>
+      <span style="font-size:12px;color:var(--muted)">その場で決めなくて、大丈夫です。</span>
+    </div>
   </div>
 </section>
 
-<!-- FLOW -->
-<section class="flow" id="flow">
-  <div class="sec-label" data-anim>
-    <span class="sec-en" style="color:#f0ede6">Flow</span>
-    <span class="sec-jp" style="color:rgba(240,237,230,.4)">ご利用までの流れ</span>
-  </div>
-  <div class="sec-rule" style="background:rgba(255,255,255,.08)"></div>
-  <div class="flow-grid">
-    <div class="flow-card" data-anim data-delay="1">
-      <div class="flow-step">Step 01</div>
-      <div class="flow-title">お申し込み</div>
-      <p class="flow-desc">LINEからお問い合わせいただき、日程を調整します。</p>
+<!-- ============ VOICE ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow center">Voice</span>
+      <h2>変わった人の、声。</h2>
+      <p>ビフォーアフターとあわせて、順次公開していきます。</p>
     </div>
-    <div class="flow-card" data-anim data-delay="2">
-      <div class="flow-step">Step 02</div>
-      <div class="flow-title">ご来店</div>
-      <p class="flow-desc">ウェア・タオルは無料でお貸し出しします。手ぶらでOKです。</p>
+    <div class="voices reveal">
+      <div class="voice"><div class="soon">Coming Soon</div><p>お客様の声を準備中です。<br>姿勢・見た目の変化を、写真とともに。</p></div>
+      <div class="voice"><div class="soon">Coming Soon</div><p>お客様の声を準備中です。</p></div>
+      <div class="voice"><div class="soon">Coming Soon</div><p>お客様の声を準備中です。</p></div>
     </div>
-    <div class="flow-card" data-anim data-delay="3">
-      <div class="flow-step">Step 03</div>
-      <div class="flow-title">カウンセリング<br>（現状の整理）</div>
-      <p class="flow-desc">ライフスタイルやお悩み、理想とする状態を丁寧にヒアリング。「何をすればいいかわからない」状態でも大丈夫です。</p>
-    </div>
-    <div class="flow-card" data-anim data-delay="1">
-      <div class="flow-step">Step 04</div>
-      <div class="flow-title">体験セッション<br>（現在地の把握）</div>
-      <p class="flow-desc">実際にピラティスやトレーニングを体験。姿勢の癖や筋力のバランスを正確に評価・分析します。</p>
-    </div>
-    <div class="flow-card" data-anim data-delay="2">
-      <div class="flow-step">Step 05</div>
-      <div class="flow-title">パフォーマンス設計<br>（ロードマップ作成）</div>
-      <p class="flow-desc">あなただけの最適なプログラムをご提案します。無理な勧誘はしません。ご納得いただけた場合のみ次へ。</p>
-    </div>
-    <div class="flow-card" data-anim data-delay="3">
-      <div class="flow-step">Step 06</div>
-      <div class="flow-title">プログラム開始<br>（変革のスタート）</div>
-      <p class="flow-desc">設計したロードマップに沿って専属セッションがスタート。月2回のコーチングで、確実な変化を生み出します。</p>
-    </div>
-  </div>
-  <div class="flow-after" data-anim>
-    <div class="flow-after-label">After Program Start · プログラム開始後の体験</div>
-    <div class="flow-after-title">週1のセッション、月2回のコーチング、LINEでの日次サポート。</div>
-    <p class="flow-after-text">3週間で姿勢の変化を実感し、6週間で習慣が変わり始め、12週間で「整った状態」の獲得を一つの目安としています。変化のスピードは人によって異なりますが、プロセスのすべてに伴走します。</p>
   </div>
 </section>
 
-<!-- VOICE -->
-<section class="voice" id="voice">
-  <div class="sec-label" data-anim>
-    <span class="sec-en">Voice</span>
-    <span class="sec-jp">体験された方々の声</span>
-  </div>
-  <div class="sec-rule"></div>
-  <div class="voice-grid">
-    <div class="voice-card-ph" data-anim data-delay="1"><p>体験者の声<br>近日公開</p></div>
-    <div class="voice-card-ph" data-anim data-delay="2"><p>体験者の声<br>近日公開</p></div>
-    <div class="voice-card-ph" data-anim data-delay="3"><p>体験者の声<br>近日公開</p></div>
-  </div>
-  <p class="voice-ph-note" data-anim>2026年夏より、体験された方々の声を順次掲載予定です。<br>「数字より先に、何が変わったか」をお伝えしていきます。</p>
-</section>
-
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="sec-label" data-anim>
-    <span class="sec-en">FAQ</span>
-    <span class="sec-jp">よくあるご質問</span>
-  </div>
-  <div class="sec-rule"></div>
-  <div class="faq-list">
-
-    <div class="faq-item open" data-anim>
-      <div class="faq-q">運動経験がほとんどないのですが、大丈夫ですか？<div class="faq-icon">−</div></div>
-      <div class="faq-a"><div class="faq-a-inner">全く問題ありません。ALIGNでは、いきなりハードなウエイトトレーニングを行うことはありません。まずはピラティスで姿勢や骨格を「整える」ことから始め、お客様の筋力や当日のコンディションに合わせた安全なメニューを設計します。</div></div>
+<!-- ============ FAQ ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow center">FAQ</span>
+      <h2>よくあるご質問。</h2>
     </div>
-
-    <div class="faq-item open" data-anim>
-      <div class="faq-q">料金はどのくらいですか？<div class="faq-icon">−</div></div>
-      <div class="faq-a"><div class="faq-a-inner">プログラム内容や期間により異なります。LINEご登録後に、プラン詳細と料金をPDFでお伝えしています。まずはお気軽にご登録ください。</div></div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="q">運動がずっと苦手です。きついトレーニングをさせられませんか？</div>
+        <div class="a">追い込むことが目的のジムではありません。まず姿勢と呼吸から、その人の今の状態に合わせて無理なく始めます。体育教師を5年つとめた「教えるプロ」なので、初心者の方ほど安心してください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">何度もジムに挫折しています。今度こそ続くか不安です。</div>
+        <div class="a">続かないのは意志の問題ではなく、設計の問題です。行動心理の資格を持つトレーナーが「あなたが続かなかった理由」を初回で一緒に特定し、続く仕組みに変えます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">体験に行ったら、勧誘されますか？</div>
+        <div class="a">体験の目的は、90分で「変わる実感」を持ち帰ってもらうことです。合うかどうかはあなたが決めることなので、その場でご入会いただく必要はありません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">ダイエットもできますか？</div>
+        <div class="a">もちろんです。姿勢と習慣が整うと、身体は変わりやすい状態になります。「整えた結果、痩せて見た目が変わる」——それがALIGNの順番です。お食事サポートもプランに含まれます。</div>
+      </div>
     </div>
-
-    <div class="faq-item" data-anim>
-      <div class="faq-q">他のジムと何が違いますか？<div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner">ピラティス・トレーニング・コーチングの3つを統合し、身体と思考の両方を扱う点が大きな違いです。「痩せる」だけでなく、習慣・姿勢・思考のノイズをまとめて整えることで、変化が持続する状態をつくります。</div></div>
-    </div>
-
-    <div class="faq-item" data-anim>
-      <div class="faq-q">持ち物は何が必要ですか？<div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner">室内用シューズ・動きやすい服装・タオル・飲み物をご持参ください。ウェア・タオルは無料でお貸し出ししますので、手ぶらでお越しいただくことも可能です。</div></div>
-    </div>
-
-    <div class="faq-item" data-anim>
-      <div class="faq-q">ピラティスとトレーニングは、どのように使い分けるのでしょうか？<div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner">セッション当日のヒアリングと身体の評価に基づき、最適なアプローチをご提案します。インナーマッスルや柔軟性が必要な日はピラティスを重点的に、特定の部位を引き締めたい日はトレーニングを、といったハイブリッドな進行が可能です。</div></div>
-    </div>
-
-    <div class="faq-item" data-anim>
-      <div class="faq-q">「コーチング」とは具体的に何をする時間ですか？<div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner">行動心理やポジティブ心理のアプローチを取り入れ、お客様の「思考の整理」を行う時間です。意志の力に頼らずに「良い習慣」を定着させるためのマインドセットを構築します。</div></div>
-    </div>
-
-    <div class="faq-item" data-anim>
-      <div class="faq-q">食事サポートは、厳しい制限がありますか？<div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner">厳しい制限ではなく、「ライフスタイルへの最適化」を目的としています。外食が多い方でも、AIのデータ分析とプロの視点を掛け合わせ、ストレスなく続けられる選択肢をご提示します。</div></div>
-    </div>
-
-    <div class="faq-item" data-anim>
-      <div class="faq-q">支払い方法と、体験枠の予約方法を教えてください。<div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner">現金・クレジットカード・電子マネー・QRコード決済・お振込・口座振替に対応しております。体験枠はお一人様ずつのセッション品質を保つため毎月10名様限定です。LINEでお問い合わせいただいた方に優先的にご案内しています。</div></div>
-    </div>
-
   </div>
 </section>
 
-<!-- LINE CTA -->
-<section class="line-cta" id="line">
-  <div class="eyebrow" data-anim>First Step</div>
-  <h2 data-anim data-delay="1">「変わりたい」その一歩を、<br>一緒に。</h2>
-  <p data-anim data-delay="2">何から始めればいいか分からなくて、当然です。<br><br>いまのからだのこと、もやもやしていること。<br><br>まずはLINEで、聞かせてください。<br>そこから、一緒に考えていきましょう。</p>
-  <a href="https://lin.ee/X7WmsSR" class="btn-line-main" data-anim data-delay="3">
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
-    LINEで無料カウンセリングを予約する
-  </a>
-  <div class="line-note" data-anim data-delay="4">毎月10名様限定 · 初回カウンセリング60分 無料</div>
-</section>
-
-<!-- ACCESS -->
+<!-- ============ ACCESS ============ -->
 <section class="access" id="access">
-  <div class="access-info" data-anim>
-    <div class="sec-label">
-      <span class="sec-en">Access</span>
-      <span class="sec-jp">アクセス</span>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow center">Access</span>
+      <h2>栄 7A出口から、徒歩30秒。</h2>
     </div>
-    <div class="access-rows">
-      <div class="access-row"><label>Gym</label><span>ALIGN Personal Gym</span></div>
-      <div class="access-row"><label>Address</label><span>〒461-0005 愛知県名古屋市東区<br>東桜１丁目１０－２９ Park Side Build 栄</span></div>
-      <div class="access-row"><label>Station</label><span>栄 7A出口より徒歩30秒<br>（オアシス21すぐ）</span></div>
-      <div class="access-row"><label>Hours</label><span>6:00 — 22:00 / 年中無休</span></div>
-      <div class="access-row"><label>Instagram</label><span>@align_personalgym</span></div>
-      <div class="access-row"><label>LINE</label><span>@617qjkqf</span></div>
-      <div class="access-row"><label>Payment</label><span>現金 · クレジットカード · 電子マネー<br>QRコード決済 · お振込 · 口座振替</span></div>
+    <div class="grid reveal">
+      <div>
+        <div class="block">
+          <h3>ALIGN Personal Gym</h3>
+          <p>〒461-0005<br>愛知県名古屋市東区東桜1丁目10-29<br>パークサイドビル栄 2階北<br><span class="walk">栄駅 7A出口 徒歩30秒 ／ 矢場町駅からも徒歩圏</span></p>
+        </div>
+        <div class="block">
+          <h3>Hours</h3>
+          <p><span class="big num">AM 6:00 – PM 10:00</span>　年中無休<br>お仕事の前にも、帰りにも。あなたのリズムに合わせて。</p>
+        </div>
+        <div class="block">
+          <h3>Contact</h3>
+          <p>ご予約・ご相談は <a href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener" style="color:var(--gold)">公式LINE</a> へ<br>Instagram <a href="https://www.instagram.com/align_personalgym" target="_blank" rel="noopener" style="color:var(--gold)">@align_personalgym</a></p>
+        </div>
+      </div>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%9D%B1%E5%8C%BA%E6%9D%B1%E6%A1%9C1%E4%B8%81%E7%9B%AE10-29+Park+Side+Build+%E6%A0%84&amp;output=embed&amp;hl=ja&amp;z=17" title="ALIGN Personal Gym 地図" loading="lazy"></iframe>
+      </div>
     </div>
-  </div>
-  <div class="access-map" data-anim data-delay="2">
-    <iframe
-      src="https://maps.google.com/maps?q=愛知県名古屋市東区東桜1丁目10-29+Park+Side+Build+栄&output=embed&hl=ja&z=17"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Align</div>
-  <ul class="footer-nav">
-    <li><a href="#concept">About</a></li>
-    <li><a href="#approach">Approach</a></li>
-    <li><a href="#profile">Trainer</a></li>
-    <li><a href="#plan">Plan</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#access">Access</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="#">Privacy</a></li>
-  </ul>
-  <div class="footer-copy">© 2026 ALIGN Personal Gym</div>
+<!-- ============ CLOSING ============ -->
+<section class="cta-band">
+  <div class="ghost">A</div>
+  <div class="wrap inner reveal">
+    <span class="eyebrow center">First Step</span>
+    <h2>鏡の中の自分を、<br><span class="accent">好き</span>になりにいく。</h2>
+    <p>変わりたい気持ちが、少しでもあるなら。<br>まずは90分、いまの自分の「立ち姿」を見にきてください。<br>その場で決めなくて、大丈夫です。</p>
+    <div class="btns">
+      <a class="btn btn-orange" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">スタイル診断体験を予約する&nbsp;<span class="p">¥3,300</span></a>
+      <a class="btn btn-ghost on-dark" href="trial.html">体験の流れを見る</a>
+    </div>
+    <div class="limit">毎月<b>10名様</b>限定 · 90分 · ビフォーアフター写真つき</div>
+  </div>
+</section>
+
+<footer class="gfoot">
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <div class="logo">Align</div>
+        <p class="tag">体重より、見た目から変わる。<br>姿勢と習慣から「見た目」を変える<br>矢場町・栄のパーソナルジム</p>
+      </div>
+      <div class="f-nav">
+        <a href="index.html">ホーム</a>
+        <a href="concept.html">コンセプト</a>
+        <a href="trainer.html">トレーナー</a>
+        <a href="plans.html">料金プラン</a>
+        <a href="trial.html">体験・流れ</a>
+        <a href="blog/">ブログ</a>
+      </div>
+      <div class="f-info">
+        <b>ALIGN Personal Gym</b><br>
+        〒461-0005 愛知県名古屋市東区東桜1-10-29<br>
+        パークサイドビル栄 2F北<br>
+        栄駅 7A出口 徒歩30秒／矢場町駅 徒歩圏<br>
+        6:00–22:00・年中無休<br>
+        Instagram <a href="https://www.instagram.com/align_personalgym" target="_blank" rel="noopener" style="color:var(--gold)">@align_personalgym</a>
+      </div>
+    </div>
+    <div class="f-btm"><span>© 2026 ALIGN Personal Gym</span><span class="en" style="letter-spacing:.2em">ALIGN — SAKAE / YABACHO, NAGOYA</span></div>
+  </div>
 </footer>
 
-<!-- MOBILE FIXED LINE BUTTON -->
-<a href="https://lin.ee/X7WmsSR" class="mobile-line-fixed">
-  <svg width="18" height="18" viewBox="0 0 20 20" fill="white"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
-  LINEで無料カウンセリングを予約する
-</a>
-
-<script>
-// Hero background slideshow
-(function () {
-  const slides = [
-    '/assets/images/hero-1.jpg',
-    '/assets/images/hero-2.jpg',
-    '/assets/images/hero-3.jpg',
-    '/assets/images/hero-4.jpg',
-    '/assets/images/hero-5.jpg',
-  ];
-  const bgA = document.getElementById('heroBgA');
-  const bgB = document.getElementById('heroBgB');
-  let current = 0;
-  let useA = true;
-
-  bgA.style.backgroundImage = `url('${slides[0]}')`;
-  slides.forEach(src => { new Image().src = src; });
-
-  setInterval(() => {
-    current = (current + 1) % slides.length;
-    if (useA) {
-      bgB.style.backgroundImage = `url('${slides[current]}')`;
-      bgB.style.opacity = '1';
-      bgA.style.opacity = '0';
-    } else {
-      bgA.style.backgroundImage = `url('${slides[current]}')`;
-      bgA.style.opacity = '1';
-      bgB.style.opacity = '0';
-    }
-    useA = !useA;
-  }, 2500);
-})();
-
-// Portrait slideshow
-(function () {
-  const portraits = [
-    '/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_1.jpg',
-    '/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_16.jpg',
-    '/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_20.jpg',
-    '/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_27.jpg',
-    '/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_39.jpg',
-    '/assets/images/portraits/LINE_ALBUM_2026 優 ポートレート写真_260601_44.jpg',
-  ];
-
-  const slideA = document.getElementById('slideA');
-  const slideB = document.getElementById('slideB');
-  let current = 0;
-  let useA = true;
-
-  // 全画像をプリロード
-  portraits.forEach(src => { new Image().src = src; });
-
-  setInterval(() => {
-    current = (current + 1) % portraits.length;
-    if (useA) {
-      slideB.src = portraits[current];
-      slideB.classList.add('active');
-      slideA.classList.remove('active');
-    } else {
-      slideA.src = portraits[current];
-      slideA.classList.add('active');
-      slideB.classList.remove('active');
-    }
-    useA = !useA;
-  }, 2500);
-})();
-
-// Plan journey accordion
-function toggleJourney() {
-  const journey = document.getElementById('plan-journey');
-  const toggle = document.getElementById('journey-toggle');
-  journey.classList.toggle('open');
-  toggle.classList.toggle('open');
-}
-
-// FAQ accordion
-document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', () => {
-    const item = q.parentElement;
-    const isOpen = item.classList.contains('open');
-    item.classList.toggle('open');
-    q.querySelector('.faq-icon').textContent = isOpen ? '+' : '−';
-  });
-});
-document.querySelectorAll('.faq-item.open .faq-icon').forEach(i => i.textContent = '−');
-
-// Scroll animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('[data-anim]').forEach(el => observer.observe(el));
-</script>
-
+<script src="assets/js/site.js"></script>
 </body>
 </html>
