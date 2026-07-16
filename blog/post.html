@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ブログ｜ALIGN Personal Gym 矢場町・栄のパーソナルジム</title>
 <meta name="description" content="矢場町・栄のパーソナルジムALIGNのブログ記事。姿勢・習慣・ボディメイクなど、見た目が変わる身体づくりの情報をお届けします。">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="../assets/css/blog.css">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGZKV2KX43"></script>
@@ -41,6 +43,12 @@ async function renderPost() {
     const post = await fetchPost(slug);
 
     document.title = `${post.title} | ALIGN Personal Gym`;
+
+    // canonical を /blog/{slug} 形式で動的設定（?slug= 付きURLの重複インデックス防止）
+    const canon = document.createElement('link');
+    canon.rel = 'canonical';
+    canon.href = `https://align-well.jp/blog/${encodeURIComponent(slug)}`;
+    document.head.appendChild(canon);
 
     document.getElementById('post-content').innerHTML = `
       <article class="post-article">
