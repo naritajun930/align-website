@@ -226,12 +226,39 @@
 .plans-sum .cta-center{display:flex;flex-direction:column;align-items:center;gap:12px}
 @media(max-width:720px){.fork-grid{grid-template-columns:1fr}}
 
+/* ── OFFER BAND ── */
+.offer-band{display:flex;align-items:center;justify-content:center;gap:9px 18px;flex-wrap:wrap;background:#fff7f3;border-top:1px solid rgba(224,82,28,.18);border-bottom:1px solid rgba(224,82,28,.18);padding:14px 24px;text-align:center;text-decoration:none}
+.offer-band:hover .ob-go{text-decoration:underline}
+.ob-tag{font-size:11px;letter-spacing:.1em;background:var(--orange);color:#fff;padding:4px 12px;border-radius:20px;font-weight:600}
+.ob-main{font-size:14px;color:var(--ink);letter-spacing:.02em}
+.ob-main b{color:var(--orange);font-weight:800;font-size:16.5px;margin:0 3px;font-family:var(--num)}
+.ob-sub{font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+.ob-go{font-size:12px;color:var(--orange);font-weight:600;letter-spacing:.04em}
+@media(max-width:600px){.offer-band{gap:7px 12px;padding:13px 18px}.ob-main{font-size:13px;width:100%}.ob-sub{display:none}}
+
 /* ── VOICE ── */
-.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.voice{background:#fff;border:1px solid var(--line);border-radius:8px;padding:30px 24px;text-align:center}
-.voice .soon{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.24em;color:var(--muted);text-transform:uppercase;margin-bottom:10px}
-.voice p{font-size:12.5px;color:var(--muted);line-height:1.9}
-@media(max-width:860px){.voices{grid-template-columns:1fr}}
+.rating-band{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 34px;max-width:600px;margin:0 auto 34px}
+.rb-score{display:flex;align-items:center;gap:13px}
+.rb-num{font-family:var(--num);font-size:44px;font-weight:800;line-height:1;color:var(--ink)}
+.rb-stars{color:var(--orange);font-size:18px;letter-spacing:2px;line-height:1}
+.rb-meta{font-size:13px;color:var(--mid);line-height:1.7;border-left:1px solid var(--line);padding-left:24px}
+.rb-meta b{display:block;color:var(--ink);font-weight:600;font-size:14px;margin-bottom:2px}
+.rb-meta a{color:var(--orange);font-weight:500}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rv{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px 24px 22px;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s}
+.rv:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(28,26,23,.06);border-color:var(--gold)}
+.rv-stars{color:var(--orange);font-size:12.5px;letter-spacing:1.5px;margin-bottom:14px}
+.rv blockquote{font-family:'Noto Serif JP',serif;font-weight:300;font-size:14px;color:var(--ink);line-height:1.95;margin:0 0 20px;flex:1}
+.rv figcaption{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:14px}
+.rv-name{font-size:12.5px;color:var(--mid);font-weight:500}
+.rv-name span{color:var(--muted);font-weight:400;font-size:11px;margin-left:5px}
+.rv-chip{font-size:10.5px;color:var(--gold);letter-spacing:.03em;background:var(--pale);border-radius:20px;padding:4px 11px;white-space:nowrap}
+.voice-cta{text-align:center;margin-top:32px}
+@media(max-width:860px){.reviews{grid-template-columns:1fr}.rating-band{gap:16px;padding:20px 24px}.rb-meta{border-left:0;padding-left:0;text-align:center}}
+
+/* ── LINE hint ── */
+.line-hint{font-size:12.5px;color:rgba(250,250,248,.72);letter-spacing:.02em;margin-top:16px;line-height:1.75}
+.line-hint b{color:#ffb08e;font-weight:600}
 
 /* ── ACCESS ── */
 .access{background:var(--pale)}
@@ -316,6 +343,14 @@
     </div>
   </div>
 </header>
+
+<!-- ============ OFFER BAND ============ -->
+<a class="offer-band" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">
+  <span class="ob-tag">本日入会特典</span>
+  <span class="ob-main">体験当日のご入会で、入会金＋体験料が <b>¥25,300→¥0</b></span>
+  <span class="ob-sub">毎月10名様限定</span>
+  <span class="ob-go">LINEで予約 →</span>
+</a>
 
 <!-- ============ NAYAMI ============ -->
 <section class="nayami">
@@ -439,6 +474,7 @@
           <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験を予約する</a>
           <a class="btn btn-ghost on-dark" href="trial.html">体験の流れを見る</a>
         </div>
+        <p class="line-hint">はじめてでも、かんたん。LINEで <b>「体験希望」</b> とだけ送ってください。24時間受付中です。</p>
       </div>
       <div class="reveal">
         <img class="trial-photo" src="assets/images/trial.webp" alt="マンツーマンでフォームを確認する体験トレーニングの様子" loading="lazy">
@@ -486,17 +522,72 @@
 </section>
 
 <!-- ============ VOICE ============ -->
-<section>
+<section class="voice-sec" id="voice">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow center">Voice</span>
       <h2>変わった人の、声。</h2>
-      <p>ビフォーアフターとあわせて、順次公開していきます。</p>
+      <p>ALIGNに通ってくださっている方から届いた、Googleクチコミより。</p>
     </div>
-    <div class="voices reveal">
-      <div class="voice"><div class="soon">Coming Soon</div><p>お客様の声を準備中です。<br>姿勢・見た目の変化を、写真とともに。</p></div>
-      <div class="voice"><div class="soon">Coming Soon</div><p>お客様の声を準備中です。</p></div>
-      <div class="voice"><div class="soon">Coming Soon</div><p>お客様の声を準備中です。</p></div>
+    <div class="rating-band reveal">
+      <div class="rb-score">
+        <span class="rb-num">5.0</span>
+        <span class="rb-stars" aria-label="5つ星評価">★★★★★</span>
+      </div>
+      <div class="rb-meta">
+        <b>Google クチコミ 27件</b>
+        いただいた評価は、すべて星5つ。<a href="https://maps.app.goo.gl/xPC9yH77nb2XYk2o9" target="_blank" rel="noopener">Googleで見る →</a>
+      </div>
+    </div>
+    <div class="reviews reveal">
+      <figure class="rv">
+        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <blockquote>産後すぐの体で、どこが歪んでいるのかを的確に指摘してくださり、自分の体と向き合う良いきっかけになりました。</blockquote>
+        <figcaption><span class="rv-name">Y.N<span>さん</span></span><span class="rv-chip">姿勢・産後</span></figcaption>
+      </figure>
+      <figure class="rv">
+        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <blockquote>フォームを一つひとつ丁寧に確認しながら教えてくれるので、初心者でも安心して取り組めました。</blockquote>
+        <figcaption><span class="rv-name">とき<span>さん</span></span><span class="rv-chip">初心者</span></figcaption>
+      </figure>
+      <figure class="rv">
+        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <blockquote>ただ身体を動かすだけではなく、コーチングで自分の目標や思考を整理してくれるところが唯一無二です。</blockquote>
+        <figcaption><span class="rv-name">けんちゃん<span>さん</span></span><span class="rv-chip">コーチング</span></figcaption>
+      </figure>
+      <figure class="rv">
+        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <blockquote>今までなかなか続かなかったジムが、ここでなら楽しく継続できそうです！</blockquote>
+        <figcaption><span class="rv-name">H<span>さん</span></span><span class="rv-chip">続けられる</span></figcaption>
+      </figure>
+      <figure class="rv">
+        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <blockquote>トレーニング中に肩の痛みがあったのですが、ストレッチとコンディションを教えてくれて、痛みがなくなりました！</blockquote>
+        <figcaption><span class="rv-name">しょうだい<span>さん</span></span><span class="rv-chip">痛み改善</span></figcaption>
+      </figure>
+      <figure class="rv">
+        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <blockquote>「今まで見たことのない自分に出会いたい」という思いで通い始めました。丁寧に向き合ってくれます。</blockquote>
+        <figcaption><span class="rv-name">Y.Y<span>さん</span></span><span class="rv-chip">ボディメイク</span></figcaption>
+      </figure>
+      <figure class="rv">
+        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <blockquote>褒めるだけではなく、改善点も的確に。友人へぜひおすすめしたいと思えるジムです。</blockquote>
+        <figcaption><span class="rv-name">T.N<span>さん</span></span><span class="rv-chip">丁寧な指導</span></figcaption>
+      </figure>
+      <figure class="rv">
+        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <blockquote>我流で3年半やってきましたが、プロに教えてもらうと上達のスピードが全然違うと感じました！</blockquote>
+        <figcaption><span class="rv-name">ムーンランド<span>さん</span></span><span class="rv-chip">上達実感</span></figcaption>
+      </figure>
+      <figure class="rv">
+        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <blockquote>説明が丁寧で分かりやすく、運動が苦手な私にとって通いやすいなと思いました。</blockquote>
+        <figcaption><span class="rv-name">あやか<span>さん</span></span><span class="rv-chip">運動が苦手でも</span></figcaption>
+      </figure>
+    </div>
+    <div class="voice-cta reveal">
+      <a class="more-link" href="https://maps.app.goo.gl/xPC9yH77nb2XYk2o9" target="_blank" rel="noopener">27件のクチコミをすべて読む<span>→</span></a>
     </div>
   </div>
 </section>
@@ -569,6 +660,7 @@
       <a class="btn btn-orange" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">スタイル診断体験を予約する&nbsp;<span class="p">¥3,300</span></a>
       <a class="btn btn-ghost on-dark" href="trial.html">体験の流れを見る</a>
     </div>
+    <p class="line-hint">LINEで <b>「体験希望」</b> と送るだけ。その場で決めなくて、大丈夫です。</p>
     <div class="limit">毎月<b>10名様</b>限定 · 90分 · ビフォーアフター写真つき</div>
   </div>
 </section>
