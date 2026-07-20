@@ -246,8 +246,12 @@
 .rb-meta b{display:block;color:var(--ink);font-weight:600;font-size:14px;margin-bottom:2px}
 .rb-meta a{color:var(--orange);font-weight:500}
 .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.rv{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px 24px 22px;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s}
+.rv{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s}
 .rv:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(28,26,23,.06);border-color:var(--gold)}
+.rv-photo{aspect-ratio:4/3;overflow:hidden}
+.rv-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.rv-body{padding:22px 24px 22px;display:flex;flex-direction:column;flex:1}
+.rv.no-photo .rv-body{padding-top:26px}
 .rv-stars{color:var(--orange);font-size:12.5px;letter-spacing:1.5px;margin-bottom:14px}
 .rv blockquote{font-family:'Noto Serif JP',serif;font-weight:300;font-size:14px;color:var(--ink);line-height:1.95;margin:0 0 20px;flex:1}
 .rv figcaption{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:14px}
@@ -468,49 +472,84 @@
     </div>
     <div class="reviews reveal">
       <figure class="rv">
-        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <div class="rv-photo"><img src="assets/images/reviews/r002-1.jpg" alt="産後の姿勢を確認する様子" loading="lazy"></div>
+        <div class="rv-body">
+                <div class="rv-stars" aria-label="星5つ">★★★★★</div>
         <blockquote>産後すぐの体で、どこが歪んでいるのかを的確に指摘してくださり、自分の体と向き合う良いきっかけになりました。</blockquote>
         <figcaption><span class="rv-name">Y.N<span>さん</span></span><span class="rv-chip">姿勢・産後</span></figcaption>
+      
+        </div>
       </figure>
       <figure class="rv">
-        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <div class="rv-photo"><img src="assets/images/reviews/r009-1.jpg" alt="フォームを丁寧に確認する様子" loading="lazy"></div>
+        <div class="rv-body">
+                <div class="rv-stars" aria-label="星5つ">★★★★★</div>
         <blockquote>フォームを一つひとつ丁寧に確認しながら教えてくれるので、初心者でも安心して取り組めました。</blockquote>
         <figcaption><span class="rv-name">とき<span>さん</span></span><span class="rv-chip">初心者</span></figcaption>
+      
+        </div>
       </figure>
       <figure class="rv">
-        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <div class="rv-photo"><img src="assets/images/reviews/r012-1.jpg" alt="トレーナーと打ち解けた様子" loading="lazy"></div>
+        <div class="rv-body">
+                <div class="rv-stars" aria-label="星5つ">★★★★★</div>
         <blockquote>ただ身体を動かすだけではなく、コーチングで自分の目標や思考を整理してくれるところが唯一無二です。</blockquote>
         <figcaption><span class="rv-name">けんちゃん<span>さん</span></span><span class="rv-chip">コーチング</span></figcaption>
+      
+        </div>
       </figure>
-      <figure class="rv">
-        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+      <figure class="rv no-photo">
+        <div class="rv-body">
+                <div class="rv-stars" aria-label="星5つ">★★★★★</div>
         <blockquote>今までなかなか続かなかったジムが、ここでなら楽しく継続できそうです！</blockquote>
         <figcaption><span class="rv-name">H<span>さん</span></span><span class="rv-chip">続けられる</span></figcaption>
+      
+        </div>
       </figure>
       <figure class="rv">
-        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <div class="rv-photo"><img src="assets/images/reviews/r021-1.jpg" alt="肩のコンディショニングの様子" loading="lazy"></div>
+        <div class="rv-body">
+                <div class="rv-stars" aria-label="星5つ">★★★★★</div>
         <blockquote>トレーニング中に肩の痛みがあったのですが、ストレッチとコンディションを教えてくれて、痛みがなくなりました！</blockquote>
         <figcaption><span class="rv-name">しょうだい<span>さん</span></span><span class="rv-chip">痛み改善</span></figcaption>
+      
+        </div>
       </figure>
       <figure class="rv">
-        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <div class="rv-photo"><img src="assets/images/reviews/r010-1.jpg" alt="マンツーマンでのトレーニングの様子" loading="lazy"></div>
+        <div class="rv-body">
+                <div class="rv-stars" aria-label="星5つ">★★★★★</div>
         <blockquote>「今まで見たことのない自分に出会いたい」という思いで通い始めました。丁寧に向き合ってくれます。</blockquote>
         <figcaption><span class="rv-name">Y.Y<span>さん</span></span><span class="rv-chip">ボディメイク</span></figcaption>
+      
+        </div>
       </figure>
       <figure class="rv">
-        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <div class="rv-photo"><img src="assets/images/reviews/r001-1.jpg" alt="ベンチプレスを見守る様子" loading="lazy"></div>
+        <div class="rv-body">
+                <div class="rv-stars" aria-label="星5つ">★★★★★</div>
         <blockquote>褒めるだけではなく、改善点も的確に。友人へぜひおすすめしたいと思えるジムです。</blockquote>
         <figcaption><span class="rv-name">T.N<span>さん</span></span><span class="rv-chip">丁寧な指導</span></figcaption>
+      
+        </div>
       </figure>
       <figure class="rv">
-        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <div class="rv-photo"><img src="assets/images/reviews/r008-1.jpg" alt="トレーニング後の一枚" loading="lazy"></div>
+        <div class="rv-body">
+                <div class="rv-stars" aria-label="星5つ">★★★★★</div>
         <blockquote>我流で3年半やってきましたが、プロに教えてもらうと上達のスピードが全然違うと感じました！</blockquote>
         <figcaption><span class="rv-name">ムーンランド<span>さん</span></span><span class="rv-chip">上達実感</span></figcaption>
+      
+        </div>
       </figure>
       <figure class="rv">
-        <div class="rv-stars" aria-label="星5つ">★★★★★</div>
+        <div class="rv-photo"><img src="assets/images/reviews/r017-1.jpg" alt="ALIGN gymでの一枚" loading="lazy"></div>
+        <div class="rv-body">
+                <div class="rv-stars" aria-label="星5つ">★★★★★</div>
         <blockquote>説明が丁寧で分かりやすく、運動が苦手な私にとって通いやすいなと思いました。</blockquote>
         <figcaption><span class="rv-name">あやか<span>さん</span></span><span class="rv-chip">運動が苦手でも</span></figcaption>
+      
+        </div>
       </figure>
     </div>
     <div class="voice-cta reveal">
