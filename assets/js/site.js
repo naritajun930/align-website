@@ -33,6 +33,17 @@
       slides[cur].classList.add('active');
     }, 5000);
   }
+
+  // 追従CTA：最初の画面を見終えるまでは出さない
+  const floatCta = document.querySelector('.float-cta');
+  if (floatCta) {
+    const revealAt = Math.min(window.innerHeight * 0.8, 560);
+    const onScroll = () => {
+      floatCta.classList.toggle('show', window.scrollY > revealAt);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
 })();
 
 // LINE CTA クリック計測（GA4）

@@ -133,9 +133,17 @@
 .hero-slides img.active{opacity:1}
 .hero-slides .cap{position:absolute;left:18px;bottom:14px;z-index:2;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.28em;color:#fff;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.4)}
 @media(max-width:860px){
-  .hero{padding:52px 0 60px}
-  .hero .grid{grid-template-columns:1fr;gap:40px}
-  .hero-slides{aspect-ratio:4/3;box-shadow:none}
+  .hero{padding:32px 0 40px}
+  .hero .grid{grid-template-columns:1fr;gap:22px}
+  .hero-slides{aspect-ratio:4/3;box-shadow:none;order:-1;margin:0 -28px;border-radius:0;width:calc(100% + 56px)}
+  .hero .eyebrow{margin-bottom:16px}
+  .hero h1{font-size:clamp(28px,8vw,36px);margin-bottom:14px}
+  .hero .hero-lead{margin:-2px 0 14px;font-size:14.5px}
+  .hero .sub{font-size:14px;line-height:1.9;margin-bottom:20px}
+  .hero .creds{gap:7px;margin-bottom:22px}
+  .hero .cred{font-size:11px;padding:7px 13px}
+  .hero .cta-row{gap:14px}
+  .hero .cta-note{font-size:11px;line-height:1.7}
 }
 
 /* ── NAYAMI ── */
@@ -349,7 +357,7 @@
   <div class="ghost">A</div>
   <div class="wrap">
     <div class="grid">
-      <div>
+      <div class="hero-copy">
         <span class="eyebrow">Personal Gym · 矢場町 / 栄</span>
         <h1>体重より、<br><span class="accent">見た目</span>から変わる。</h1>
         <p class="hero-lead">運動が苦手な人にこそ、いちばん優しく。</p>
@@ -457,8 +465,8 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow center">Voice</span>
-      <h2>変わった人の、声。</h2>
-      <p>ALIGNに通ってくださっている方から届いた、Googleクチコミより。</p>
+      <h2>「本来の自分」に、<span class="accent">還っていく</span>人の声。</h2>
+      <p>見た目だけでなく、心まで軽くなった。ALIGNに通う皆さんから届いた、生の声です。</p>
     </div>
     <div class="rating-band reveal">
       <div class="rb-score">
