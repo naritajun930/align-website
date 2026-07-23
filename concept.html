@@ -118,9 +118,10 @@
       <a href="trainer.html">トレーナー</a>
       <a href="plans.html">料金プラン</a>
       <a href="trial.html">体験・流れ</a>
+      <a href="shindan.html">診断</a>
       <a href="blog/align-story.html">ブログ</a>
       <a href="index.html#access">アクセス</a>
-      <a class="cta" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験予約 <span class="p">¥3,300</span></a>
+      <a class="cta" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験予約 <span class="p js-trial-price">¥3,300</span></a>
     </div>
     <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span></span><span></span></button>
   </div>
@@ -131,9 +132,10 @@
   <a class="mlink" href="trainer.html"><span class="men">Trainer</span>トレーナー</a>
   <a class="mlink" href="plans.html"><span class="men">Plans</span>料金プラン</a>
   <a class="mlink" href="trial.html"><span class="men">Trial</span>体験・流れ</a>
+  <a class="mlink" href="shindan.html"><span class="men">Check</span>ALIGN診断</a>
   <a class="mlink" href="blog/align-story.html"><span class="men">Blog</span>ブログ</a>
   <div class="m-cta">
-    <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験を予約 <span class="p">¥3,300</span></a>
+    <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験を予約 <span class="p js-trial-price">¥3,300</span></a>
     <a class="btn btn-orange" href="trial.html">体験の流れを見る</a>
   </div>
 </div>
@@ -227,6 +229,7 @@
         <h3>思考のノイズを、<b>手放すために。</b></h3>
         <p>何度も挫折したのは、意志が弱いからではありません。行動心理学に基づく対話で「続かなかった本当の理由」を特定し、意志の力に頼らない仕組みへ。身体だけでなく、習慣ごと変わるから、戻らない。</p>
         <p class="kw">習慣化 ／ 三日坊主 ／ リバウンドしない仕組みづくり</p>
+        <a class="more-link" href="shindan.html" style="margin-top:14px">あなたが続かなかった理由、60秒で診断できます<span>→</span></a>
       </div>
     </div>
   </div>
@@ -291,23 +294,25 @@
       <div class="ov-row"><div class="k">営業時間</div><div class="v"><b>6:00 – 22:00</b>　年中無休・完全予約制</div></div>
       <div class="ov-row"><div class="k">サービス</div><div class="v">パーソナルトレーニング ／ ピラティス ／ コンディショニング（ストレッチ）／ 行動心理コーチング ／ お食事サポート</div></div>
       <div class="ov-row"><div class="k">支払い方法</div><div class="v">現金・クレジットカード・電子マネー・QRコード決済・お振込・口座振替（分割のご相談OK）</div></div>
-      <div class="ov-row"><div class="k">ご予約</div><div class="v"><a href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener" style="color:var(--gold)">公式LINE</a> にて受付（毎月10名様限定）</div></div>
+      <div class="ov-row"><div class="k">ご予約</div><div class="v"><a href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener" style="color:var(--gold)">公式LINE</a> ／ <a href="reserve.html" style="color:var(--gold)">予約フォーム</a><span data-tel-only hidden> ／ <a class="js-tel-link" href="#" style="color:var(--gold)">お電話</a></span> にて受付。マンツーマン運営のため、体験は月10名までとしています。</div></div>
     </div>
   </div>
 </section>
 
 <!-- ============ CTA ============ -->
-<section class="cta-band">
+<section class="cta-band" data-cta-location="closing">
   <div class="ghost">A</div>
   <div class="wrap inner reveal">
     <span class="eyebrow center">First Step</span>
     <h2>「整える」を、<br>まず90分だけ体験してみる。</h2>
-    <p>スタイル診断体験 ¥3,300（税込）・ビフォーアフター写真つき。<br>その場で決めなくて、大丈夫です。</p>
+    <p>姿勢チェック体験 ¥3,300（税込）・ビフォーアフター写真つき。<br>その場で決めなくて、大丈夫です。</p>
     <div class="btns">
-      <a class="btn btn-orange" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験を予約する&nbsp;<span class="p">¥3,300</span></a>
+      <a class="btn btn-orange" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験を予約する&nbsp;<span class="p js-trial-price">¥3,300</span></a>
+      <a class="btn btn-form" href="reserve.html">フォームで申し込む</a>
+      <a class="btn btn-tel on-dark js-tel-btn" hidden href="#">📞 電話する</a>
       <a class="btn btn-ghost on-dark" href="trial.html">体験の流れを見る</a>
     </div>
-    <div class="limit">毎月<b>10名様</b>限定 · 90分</div>
+    <div class="limit">マンツーマン運営のため、体験枠は月10名まで · 90分</div>
   </div>
 </section>
 
@@ -339,10 +344,11 @@
   </div>
 </footer>
 
+<script src="assets/js/config.js" defer></script>
 <script src="assets/js/site.js" defer></script>
 <!-- 追従CTA -->
 <div class="float-cta">
-  <a class="f-trial" href="/trial.html">スタイル診断体験 <b>&yen;3,300</b></a>
+  <a class="f-trial" href="/trial.html">姿勢チェック体験 <b class="js-trial-price">&yen;3,300</b></a>
   <a class="f-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">
     <svg width="16" height="16" viewBox="0 0 20 20" fill="white" aria-hidden="true"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
     LINEで相談する

@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ALIGN Personal Gym｜体重より、見た目から変わる。矢場町・栄のパーソナルジム</title>
-<meta name="description" content="同じ体重でも、姿勢がちがえば見た目は変わる。矢場町・栄のパーソナルジムALIGNは、姿勢と習慣から「見た目」を変えるジム。元・体育教師で1,000名以上を指導したトレーナーによるスタイル診断体験¥3,300。栄7A出口徒歩30秒。">
+<meta name="description" content="同じ体重でも、姿勢がちがえば見た目は変わる。矢場町・栄のパーソナルジムALIGNは、姿勢と習慣から「見た目」を変えるジム。元・体育教師で1,000名以上を指導したトレーナーによる姿勢チェック体験¥3,300。栄7A出口徒歩30秒。">
 <link rel="canonical" href="https://align-well.jp/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://align-well.jp/">
 <meta property="og:title" content="ALIGN Personal Gym｜体重より、見た目から変わる。矢場町・栄のパーソナルジム">
-<meta property="og:description" content="同じ体重でも、姿勢がちがえば見た目は変わる。姿勢と習慣から「見た目」を変える矢場町・栄のパーソナルジム。スタイル診断体験¥3,300。栄7A出口徒歩30秒。">
+<meta property="og:description" content="同じ体重でも、姿勢がちがえば見た目は変わる。姿勢と習慣から「見た目」を変える矢場町・栄のパーソナルジム。姿勢チェック体験¥3,300。栄7A出口徒歩30秒。">
 <meta property="og:image" content="https://align-well.jp/assets/images/og-home.jpg">
 <meta property="og:site_name" content="ALIGN Personal Gym">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ALIGN Personal Gym｜体重より、見た目から変わる。矢場町・栄のパーソナルジム">
-<meta name="twitter:description" content="姿勢と習慣から「見た目」を変える矢場町・栄のパーソナルジム。スタイル診断体験¥3,300。栄7A出口徒歩30秒。">
+<meta name="twitter:description" content="姿勢と習慣から「見た目」を変える矢場町・栄のパーソナルジム。姿勢チェック体験¥3,300。栄7A出口徒歩30秒。">
 <meta name="twitter:image" content="https://align-well.jp/assets/images/og-home.jpg">
 <script type="application/ld+json">
 {
@@ -57,7 +57,7 @@
   ],
   "makesOffer": {
     "@type": "Offer",
-    "name": "スタイル診断体験",
+    "name": "姿勢チェック体験",
     "price": "3300",
     "priceCurrency": "JPY",
     "description": "カウンセリング・姿勢分析・体験トレーニング・ビフォーアフター撮影を含む90分の体験セッション。"
@@ -243,7 +243,31 @@
 .ob-main b{color:var(--orange);font-weight:800;font-size:16.5px;margin:0 3px;font-family:var(--num)}
 .ob-sub{font-size:11.5px;color:var(--muted);letter-spacing:.04em}
 .ob-go{font-size:12px;color:var(--orange);font-weight:600;letter-spacing:.04em}
-@media(max-width:600px){.offer-band{gap:7px 12px;padding:13px 18px}.ob-main{font-size:13px;width:100%}.ob-sub{display:none}}
+@media(max-width:600px){.offer-band{gap:6px 12px;padding:13px 18px}.ob-main{font-size:13px;width:100%}.ob-sub{font-size:11px;width:100%}}
+
+/* ── SHINDAN banner ── */
+.shindan-banner{display:flex;align-items:center;gap:16px;justify-content:center;flex-wrap:wrap;max-width:var(--maxw);margin:18px auto 0;padding:15px 24px;background:var(--dark);color:var(--cream);border-radius:12px;text-decoration:none;transition:transform .25s}
+.shindan-banner:hover{transform:translateY(-2px)}
+.shindan-banner .sb-icon{font-size:19px;color:var(--gold-l)}
+.shindan-banner .sb-txt{font-size:13.5px;line-height:1.55}
+.shindan-banner .sb-txt b{color:#fff;font-weight:600;font-family:'Noto Serif JP',serif}
+.shindan-banner .sb-go{font-size:12.5px;color:var(--gold-l);white-space:nowrap;font-weight:600}
+@media(max-width:640px){.shindan-banner{margin:14px 20px 0;padding:14px 18px;text-align:center;gap:8px}.shindan-banner .sb-go{width:100%}}
+
+/* ── REFERRAL ── */
+.referral{background:var(--pale)}
+.rf-card{max-width:900px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:40px 44px;display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center}
+.rf-lead .eyebrow{margin-bottom:14px}
+.rf-lead h2{font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(21px,3.4vw,27px);line-height:1.6;margin:0 0 14px}
+.rf-lead h2 b{color:var(--orange);font-weight:400}
+.rf-lead p{font-size:14px;color:var(--mid);line-height:2.05;margin-bottom:16px}
+.rf-lead .more-link{margin-top:2px}
+.rf-benefits{background:var(--pale);border-radius:10px;padding:10px 24px}
+.rf-b{padding:16px 0;border-bottom:1px solid var(--line)}
+.rf-b:last-child{border-bottom:none}
+.rf-b .rf-who{font-size:12px;color:var(--gold);letter-spacing:.06em;margin-bottom:5px}
+.rf-b .rf-what{font-size:15px;color:var(--ink);font-weight:600;line-height:1.6}
+@media(max-width:760px){.rf-card{grid-template-columns:1fr;gap:24px;padding:32px 26px}}
 
 /* ── VOICE ── */
 .rating-band{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 34px;max-width:600px;margin:0 auto 34px}
@@ -332,9 +356,10 @@
       <a href="trainer.html">トレーナー</a>
       <a href="plans.html">料金プラン</a>
       <a href="trial.html">体験・流れ</a>
+      <a href="shindan.html">診断</a>
       <a href="blog/align-story.html">ブログ</a>
       <a href="#access">アクセス</a>
-      <a class="cta" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験予約 <span class="p">¥3,300</span></a>
+      <a class="cta" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験予約 <span class="p js-trial-price">¥3,300</span></a>
     </div>
     <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span></span><span></span></button>
   </div>
@@ -345,9 +370,10 @@
   <a class="mlink" href="trainer.html"><span class="men">Trainer</span>トレーナー</a>
   <a class="mlink" href="plans.html"><span class="men">Plans</span>料金プラン</a>
   <a class="mlink" href="trial.html"><span class="men">Trial</span>体験・流れ</a>
+  <a class="mlink" href="shindan.html"><span class="men">Check</span>ALIGN診断</a>
   <a class="mlink" href="blog/align-story.html"><span class="men">Blog</span>ブログ</a>
   <div class="m-cta">
-    <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験を予約 <span class="p">¥3,300</span></a>
+    <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験を予約 <span class="p js-trial-price">¥3,300</span></a>
     <a class="btn btn-orange" href="trial.html">体験の流れを見る</a>
   </div>
 </div>
@@ -370,7 +396,7 @@
           <span class="cred">栄 7A出口 <b>徒歩30秒</b></span>
         </div>
         <div class="cta-row">
-          <a class="btn btn-orange" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験を予約&nbsp;<span class="p">¥3,300</span></a>
+          <a class="btn btn-orange" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験を予約&nbsp;<span class="p js-trial-price">¥3,300</span></a>
           <a class="more-link" href="trial.html">体験の流れを見る<span>→</span></a>
         </div>
         <span class="cta-note" style="display:block;margin-top:14px"><b>90分</b>・ビフォーアフター写真つき ／ LINEで「体験希望」と送るだけ</span>
@@ -386,12 +412,22 @@
 </header>
 
 <!-- ============ OFFER BAND ============ -->
-<a class="offer-band" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">
-  <span class="ob-tag">本日入会特典</span>
-  <span class="ob-main">体験当日のご入会で、入会金＋体験料が <b>¥25,300→¥0</b></span>
-  <span class="ob-sub">毎月10名様限定</span>
-  <span class="ob-go">LINEで予約 →</span>
+<a class="offer-band" href="reserve.html" data-cta-location="offer-band">
+  <span class="ob-tag">先着10名様</span>
+  <span class="ob-main" data-when="campaign">姿勢チェック体験90分が <span class="js-trial-strike"></span> <b>¥0</b>。当日入会で入会金¥22,000も¥0（計¥25,300おトク）</span>
+  <span class="ob-main" data-when="normal" hidden>体験当日のご入会で、入会金＋体験料が <b>¥25,300→¥0</b></span>
+  <span class="ob-sub">体験当日ご入会の方限定</span>
+  <span class="ob-go">予約する →</span>
 </a>
+
+<!-- ============ SHINDAN BANNER ============ -->
+<div class="wrap">
+  <a class="shindan-banner" href="shindan.html" data-cta-location="shindan-banner">
+    <span class="sb-icon">◎</span>
+    <span class="sb-txt"><b>60秒でわかる、ALIGN診断。</b>あなたが変われなかった理由と、いちばん合う始め方が見つかります。</span>
+    <span class="sb-go">無料で診断する →</span>
+  </a>
+</div>
 
 <!-- ============ NAYAMI ============ -->
 <section class="nayami">
@@ -410,6 +446,7 @@
           <div class="check">デスクワークで、肩と首がずっと重い</div>
           <div class="check">ジムに通っても、いつも続かない</div>
           <div class="check">最近、後ろ姿が「老けた」気がする</div>
+          <div class="check">健康診断のたびに、運動しなきゃと思っている</div>
         </div>
         <div class="turn reveal">
           <div class="t1">その原因、体重ではなく——</div>
@@ -652,7 +689,8 @@
     <div class="grid">
       <div class="reveal">
         <span class="eyebrow">First Step</span>
-        <h2>90分で、<span class="accent">立ち姿</span>が変わる。<br>スタイル診断体験。</h2>
+        <h2>90分で、<span class="accent">立ち姿</span>が変わる。<br>姿勢チェック体験。</h2>
+        <p class="hook" style="font-size:14px;color:var(--gold-l);margin:-2px 0 18px;line-height:1.85">太って見えるのも、肩こりも、原因は同じ「姿勢」かもしれません。</p>
         <p class="lead">カウンセリング・姿勢分析・体験トレーニングまで、ALIGNをまるごと。最後にビフォーアフターを写真で見比べます。変わるかどうか、その場で確かめてください。</p>
         <div class="price-line">
           <span class="yen num"><span class="cur">¥</span>3,300<span class="tax">税込</span></span>
@@ -660,7 +698,9 @@
         </div>
         <div class="btns">
           <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験を予約する</a>
-          <a class="btn btn-ghost on-dark" href="trial.html">体験の流れを見る</a>
+          <a class="btn btn-form" href="reserve.html">フォームで申し込む</a>
+      <a class="btn btn-tel on-dark js-tel-btn" hidden href="#">📞 電話する</a>
+      <a class="btn btn-ghost on-dark" href="trial.html">体験の流れを見る</a>
         </div>
         <p class="line-hint">はじめてでも、かんたん。LINEで <b>「体験希望」</b> とだけ送ってください。24時間受付中です。</p>
       </div>
@@ -690,7 +730,7 @@
         <div class="fork-tag">Course 01 ─ ボディメイク</div>
         <h3>見た目と身体を、<br>変えたい。</h3>
         <p>トレーニング×ピラティス×ストレッチに、お食事サポート。月額制・回数券・短期集中コースから、始めやすい通い方を。</p>
-        <div class="fork-from">月額 <span class="num"><span style="font-size:13px">¥</span>19,000</span> から（税込）</div>
+        <div class="fork-from">月額 <span class="num"><span style="font-size:13px">¥</span>19,000</span> から（税込）<span style="display:block;font-size:12px;color:var(--muted);margin-top:4px">1回あたり ¥9,500〜</span></div>
         <div class="fork-go">このコースのプランを見る <span>→</span></div>
       </a>
       <a class="fork-card life" href="plans.html#life">
@@ -701,10 +741,34 @@
         <div class="fork-go">エグゼクティブを見る <span>→</span></div>
       </a>
     </div>
-    <p class="pnote reveal">表示はすべて税込。<b>あとから増えることはありません。</b></p>
+    <p class="pnote reveal">表示はすべて税込。<b>あとから増えることはありません。</b><br>一般的なパーソナルジムの相場は1回 ¥13,000〜16,000。ALIGNは<b>1回 ¥9,500〜</b>です。</p>
     <div class="cta-center reveal">
       <a class="btn btn-dark" href="plans.html">料金・プランをすべて見る →</a>
       <span style="font-size:12px;color:var(--muted)">その場で決めなくて、大丈夫です。</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REFERRAL ============ -->
+<section class="referral">
+  <div class="wrap">
+    <div class="rf-card reveal">
+      <div class="rf-lead">
+        <span class="eyebrow">Referral</span>
+        <h2>ALIGNは、<b>ご紹介</b>で<br>広がっているジムです。</h2>
+        <p>いちばん多い入会のきっかけは、通ってくださっている方からのご紹介。ご紹介いただいた方・された方、どちらにも特典をご用意しています。</p>
+        <a class="more-link" href="referral.html">紹介について詳しく<span>→</span></a>
+      </div>
+      <div class="rf-benefits">
+        <div class="rf-b">
+          <div class="rf-who">ご紹介された方（お友達）</div>
+          <div class="rf-what js-referral-friend">入会金¥0 ＋ プラン10%OFF</div>
+        </div>
+        <div class="rf-b">
+          <div class="rf-who">ご紹介くださった方（会員さま）</div>
+          <div class="rf-what js-referral-member">サプリメント20%OFF</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -767,18 +831,20 @@
 </section>
 
 <!-- ============ CLOSING ============ -->
-<section class="cta-band">
+<section class="cta-band" data-cta-location="closing">
   <div class="ghost">A</div>
   <div class="wrap inner reveal">
     <span class="eyebrow center">First Step</span>
     <h2>鏡の中の自分を、<br><span class="accent">好き</span>になりにいく。</h2>
     <p>「運動が苦手」でも、「続いたことがない」でも大丈夫。<br>まずは90分、いまの自分の「立ち姿」を見にきてください。<br>追い込みません。その場で決めなくて、いいんです。</p>
     <div class="btns">
-      <a class="btn btn-orange" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">スタイル診断体験を予約する&nbsp;<span class="p">¥3,300</span></a>
+      <a class="btn btn-orange" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">姿勢チェック体験を予約する&nbsp;<span class="p js-trial-price">¥3,300</span></a>
+      <a class="btn btn-form" href="reserve.html">フォームで申し込む</a>
+      <a class="btn btn-tel on-dark js-tel-btn" hidden href="#">📞 電話する</a>
       <a class="btn btn-ghost on-dark" href="trial.html">体験の流れを見る</a>
     </div>
     <p class="line-hint">LINEで <b>「体験希望」</b> と送るだけ。その場で決めなくて、大丈夫です。</p>
-    <div class="limit">毎月<b>10名様</b>限定 · 90分 · ビフォーアフター写真つき</div>
+    <div class="limit">マンツーマン運営のため、体験枠は月10名まで · 90分 · ビフォーアフター写真つき</div>
   </div>
 </section>
 
@@ -810,10 +876,11 @@
   </div>
 </footer>
 
+<script src="assets/js/config.js" defer></script>
 <script src="assets/js/site.js" defer></script>
 <!-- 追従CTA -->
 <div class="float-cta">
-  <a class="f-trial" href="/trial.html">スタイル診断体験 <b>&yen;3,300</b></a>
+  <a class="f-trial" href="/trial.html">姿勢チェック体験 <b class="js-trial-price">&yen;3,300</b></a>
   <a class="f-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">
     <svg width="16" height="16" viewBox="0 0 20 20" fill="white" aria-hidden="true"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
     LINEで相談する

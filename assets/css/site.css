@@ -39,6 +39,29 @@ a{color:inherit;text-decoration:none}
 .btn-ghost.on-dark{border-color:rgba(250,250,248,.3);color:rgba(250,250,248,.88)}
 .btn-ghost.on-dark:hover{border-color:var(--gold-l)}
 .btn.wfull{width:100%}
+.btn-form{background:var(--ink);color:var(--cream)}
+.btn-form:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
+.btn-tel{background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:500}
+.btn-tel:hover{border-color:var(--gold);color:var(--orange)}
+.btn-tel.on-dark{background:transparent;border-color:rgba(250,250,248,.3);color:rgba(250,250,248,.9)}
+.btn .fast{font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:11px;opacity:.85;letter-spacing:.02em;margin-left:2px}
+
+/* 3択CTA（LINE / フォーム / 電話） */
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.cta-actions.center{justify-content:center}
+.cta-actions .btn{flex:1 1 auto;min-width:180px}
+@media(max-width:560px){.cta-actions{flex-direction:column}.cta-actions .btn{width:100%;min-width:0}}
+
+/* 残枠カウンター */
+.slot-counter{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--mid);letter-spacing:.03em;line-height:1.6}
+.slot-counter::before{content:'●';font-size:8px;color:var(--orange);transform:translateY(-1px)}
+.slot-counter .sc-num{color:var(--ink);font-weight:600;font-family:var(--num)}
+.slot-counter.is-low .sc-num{color:var(--orange)}
+.slot-counter.is-full{color:var(--orange)}
+.slot-counter.is-full::before{color:var(--muted)}
+.slot-counter.on-dark{color:rgba(250,250,248,.72)}
+.slot-counter.on-dark .sc-num{color:var(--gold-l)}
+.slot-counter.on-dark.is-low .sc-num{color:#ffb08e}
 
 /* ── sections ── */
 section{padding:84px 0}

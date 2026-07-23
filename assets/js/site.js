@@ -46,15 +46,81 @@
   }
 })();
 
-// LINE CTA クリック計測（GA4）
+// ================================================================
+//  設定（config.js）連動：価格・残枠・電話・UTM・計測
+// ================================================================
 (function () {
+  const cfg = window.ALIGN_CONFIG || {};
+  const yen = (n) => '¥' + Number(n || 0).toLocaleString('ja-JP');
+  const ga = (name, params) => { if (typeof gtag === 'function') gtag('event', name, params || {}); };
+
+  // ── キャンペーン価格の切替（.js-trial-price / .js-trial-strike / [data-when]）
+  const campaign = cfg.campaignActive !== false;
+  document.querySelectorAll('.js-trial-price').forEach((el) => {
+    el.textContent = campaign ? '¥0' : yen(cfg.trialPriceNormal || 3300);
+  });
+  document.querySelectorAll('.js-trial-strike').forEach((el) => {
+    if (campaign) { el.hidden = false; el.innerHTML = '<s>' + yen(cfg.trialPriceNormal || 3300) + '</s>'; }
+    else { el.hidden = true; }
+  });
+  document.querySelectorAll('[data-when="campaign"]').forEach((el) => { el.hidden = !campaign; });
+  document.querySelectorAll('[data-when="normal"]').forEach((el) => { el.hidden = campaign; });
+
+  // ── 残枠カウンター（.slot-counter）実数連動・N≤3強調・N=0で来月受付に自動切替
+  const remaining = Number(cfg.trialSlotsRemaining);
+  document.querySelectorAll('.slot-counter').forEach((el) => {
+    if (!campaign || isNaN(remaining)) { el.hidden = true; return; }
+    if (remaining <= 0) {
+      el.classList.add('is-full');
+      el.innerHTML = '<span class="sc-full">今月分は満枠です。来月分のご予約を受付中。</span>';
+    } else {
+      const low = remaining <= 3;
+      el.classList.toggle('is-low', low);
+      el.innerHTML = '今月の姿勢チェック体験枠 <b class="sc-num">残り' + remaining + '名</b>';
+    }
+  });
+
+  // ── 電話UI：config.phoneNumber が空なら非表示。番号が入れば全ページで有効化
+  const rawTel = (cfg.phoneNumber || '').trim();
+  const telDigits = rawTel.replace(/[^0-9+]/g, '');
+  document.querySelectorAll('.js-tel-btn, .js-tel-link').forEach((el) => {
+    if (telDigits) { el.hidden = false; el.setAttribute('href', 'tel:' + telDigits); }
+    else { el.hidden = true; }
+  });
+  document.querySelectorAll('.js-phone-text').forEach((el) => {
+    if (telDigits) { el.textContent = rawTel; el.hidden = false; }
+    else { el.hidden = true; }
+  });
+  document.querySelectorAll('[data-tel-only]').forEach((el) => { el.hidden = !telDigits; });
+
+  // ── 紹介特典（.js-referral-friend / .js-referral-member）
+  const rb = cfg.referralBenefit || {};
+  document.querySelectorAll('.js-referral-friend').forEach((el) => { if (rb.friend) el.textContent = rb.friend; });
+  document.querySelectorAll('.js-referral-member').forEach((el) => { if (rb.member) el.textContent = rb.member; });
+
+  // ── UTM・診断タイプをフォーム hidden に転記
+  const params = new URLSearchParams(location.search);
+  const utmBits = ['utm_source', 'utm_medium', 'utm_campaign'].map((k) => params.get(k)).filter(Boolean);
+  const utmVal = utmBits.length ? utmBits.join(' / ') : (document.referrer ? '参照元: ' + document.referrer : '直接/不明');
+  document.querySelectorAll('#utm-source, [name="流入元"]').forEach((el) => { el.value = utmVal; });
+  const shindanType = params.get('type');
+  if (shindanType) document.querySelectorAll('#shindan-type, [name="診断タイプ"]').forEach((el) => { el.value = shindanType; });
+
+  // ── 計測：LINE / 電話 / フォーム
   document.addEventListener('click', function (e) {
-    const a = e.target.closest('a[href*="lin.ee"]');
-    if (!a || typeof gtag !== 'function') return;
-    gtag('event', 'line_click', {
-      link_url: a.href,
-      link_text: (a.textContent || '').trim().slice(0, 80),
-      page_path: location.pathname
-    });
+    const line = e.target.closest('a[href*="lin.ee"]');
+    if (line) {
+      const sec = line.closest('[data-cta-location]');
+      ga('cta_line_click', {
+        location: sec ? sec.getAttribute('data-cta-location') : 'other',
+        link_text: (line.textContent || '').trim().slice(0, 80),
+        page_path: location.pathname
+      });
+    }
+    const tel = e.target.closest('a[href^="tel:"]');
+    if (tel) ga('cta_tel_click', { page_path: location.pathname });
   }, true);
+  document.querySelectorAll('form[data-cta-form]').forEach((f) => {
+    f.addEventListener('submit', () => ga('cta_form_submit', { form: f.getAttribute('data-cta-form') || 'reserve', page_path: location.pathname }));
+  });
 })();

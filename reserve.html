@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>姿勢チェック体験を予約する｜ALIGN Personal Gym 矢場町・栄</title>
+<meta name="description" content="矢場町・栄のパーソナルジムALIGNの姿勢チェック体験を、フォームから予約。お名前・ご連絡先・ご希望日時を入れるだけ。送信後24時間以内に赤澤よりご連絡します。無理な勧誘はしません。">
+<link rel="canonical" href="https://align-well.jp/reserve.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://align-well.jp/reserve.html">
+<meta property="og:title" content="姿勢チェック体験を予約する｜ALIGN Personal Gym">
+<meta property="og:description" content="お名前・ご連絡先・ご希望日時を入れるだけ。送信後24時間以内に赤澤よりご連絡します。">
+<meta property="og:image" content="https://align-well.jp/assets/images/og-home.jpg">
+<meta property="og:site_name" content="ALIGN Personal Gym">
+<meta property="og:locale" content="ja_JP">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+.rsv{padding:56px 0 40px}
+.rsv .head{text-align:center;max-width:640px;margin:0 auto 18px}
+.rsv .head h1{font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(26px,4.6vw,38px);line-height:1.5;margin:14px 0 12px}
+.rsv .head .lead{font-size:14px;color:var(--mid);line-height:2}
+.rsv .offerbox{max-width:560px;margin:0 auto 30px;background:#fff7f3;border:1px solid rgba(224,82,28,.2);border-radius:12px;padding:20px 24px;text-align:center}
+.rsv .offerbox .ob-tag{display:inline-block;font-size:11px;letter-spacing:.1em;background:var(--orange);color:#fff;padding:4px 12px;border-radius:20px;font-weight:600;margin-bottom:10px}
+.rsv .offerbox .ob-main{font-size:15px;color:var(--ink);line-height:1.8}
+.rsv .offerbox .ob-main b{color:var(--orange);font-family:var(--num);font-size:19px;margin:0 3px}
+.rsv .offerbox .ob-cond{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.7}
+.rsv .offerbox .slot-counter{margin-top:12px;justify-content:center}
+/* form */
+.rsvform{max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 30px 34px;box-shadow:0 20px 60px rgba(28,26,23,.06)}
+.prog{display:flex;gap:6px;padding:24px 0 8px}
+.prog .pstep{flex:1;text-align:center;font-size:11px;letter-spacing:.04em;color:var(--muted)}
+.prog .pstep .bar{height:4px;border-radius:3px;background:var(--line);margin-bottom:8px}
+.prog .pstep.on .bar{background:var(--orange)}
+.prog .pstep.on{color:var(--orange);font-weight:600}
+.fset{padding:22px 0 4px;border-top:1px solid var(--line)}
+.fset:first-of-type{border-top:none}
+.fset .stitle{font-size:12px;letter-spacing:.14em;color:var(--gold);font-family:'Cormorant Garamond',serif;text-transform:uppercase;margin-bottom:16px}
+.field{margin-bottom:18px}
+.field > label{display:block;font-size:13.5px;font-weight:500;color:var(--ink);margin-bottom:8px}
+.field .req{color:var(--orange);font-size:11px;margin-left:6px}
+.field .opt{color:var(--muted);font-size:11px;margin-left:6px}
+.field input[type=text],.field input[type=email],.field input[type=tel],.field input[type=date],.field select,.field textarea{
+  width:100%;font-family:'Noto Sans JP',sans-serif;font-size:15px;color:var(--ink);background:var(--cream);
+  border:1px solid var(--line);border-radius:8px;padding:14px 14px;transition:border-color .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange)}
+.field .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.radiorow{display:flex;gap:10px;flex-wrap:wrap}
+.radiorow label{flex:1;min-width:120px;display:flex;align-items:center;gap:8px;font-size:14px;background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:12px 14px;cursor:pointer;transition:border-color .2s,background .2s}
+.radiorow label:has(input:checked){border-color:var(--orange);background:#fff7f3}
+.radiorow input{accent-color:var(--orange)}
+.hp{position:absolute;left:-9999px;opacity:0;height:0}
+.submit-row{margin-top:26px}
+.submit-row .btn{width:100%;font-size:15.5px;padding:18px}
+.form-note{font-size:12.5px;color:var(--mid);text-align:center;line-height:1.9;margin-top:16px}
+.form-note b{color:var(--ink);font-weight:500}
+.alt-cta{max-width:560px;margin:28px auto 0;text-align:center}
+.alt-cta .or{font-size:12px;color:var(--muted);letter-spacing:.1em;margin-bottom:14px}
+@media(max-width:560px){.rsvform{padding:4px 20px 28px;border-radius:12px}.field .row2{grid-template-columns:1fr}}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGZKV2KX43"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZGZKV2KX43');
+</script>
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="wrap">
+    <a href="index.html" class="logo">Align</a>
+    <div class="gnav-links">
+      <a href="concept.html">コンセプト</a>
+      <a href="trainer.html">トレーナー</a>
+      <a href="plans.html">料金プラン</a>
+      <a href="trial.html">体験・流れ</a>
+      <a href="shindan.html">診断</a>
+      <a href="blog/align-story.html">ブログ</a>
+      <a class="cta" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで予約</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a class="mlink" href="index.html"><span class="men">Top</span>ホーム</a>
+  <a class="mlink" href="concept.html"><span class="men">Concept</span>コンセプト</a>
+  <a class="mlink" href="trainer.html"><span class="men">Trainer</span>トレーナー</a>
+  <a class="mlink" href="plans.html"><span class="men">Plans</span>料金プラン</a>
+  <a class="mlink" href="trial.html"><span class="men">Trial</span>体験・流れ</a>
+  <a class="mlink" href="shindan.html"><span class="men">Check</span>ALIGN診断</a>
+  <a class="mlink" href="blog/align-story.html"><span class="men">Blog</span>ブログ</a>
+  <div class="m-cta">
+    <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで予約する</a>
+  </div>
+</div>
+
+<section class="rsv">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow center">Reservation</span>
+      <h1>姿勢チェック体験を、予約する。</h1>
+      <p class="lead">下のフォームに入れるだけ。日程はこちらから調整のご連絡をします。<br>その場で入会を決める必要はありません。</p>
+    </div>
+
+    <div class="offerbox">
+      <span class="ob-tag">先着10名様</span>
+      <div class="ob-main" data-when="campaign">姿勢チェック体験 90分 <span class="js-trial-strike"></span> <b class="js-trial-price">¥0</b></div>
+      <div class="ob-main" data-when="normal" hidden>姿勢チェック体験 90分 <b class="js-trial-price">¥3,300</b>（税込）</div>
+      <div class="ob-cond">ビフォーアフター写真つき／体験当日のご入会で入会金¥22,000も¥0（合計¥25,300おトク）。<br>¥0は「体験当日ご入会の方」限定の特典です。</div>
+      <div class="slot-counter"></div>
+    </div>
+
+    <form class="rsvform" action="https://formsubmit.co/align.personalgym@gmail.com" method="POST" data-cta-form="reserve">
+      <!-- FormSubmit 設定 -->
+      <input type="hidden" name="_subject" value="【ALIGN】姿勢チェック体験 予約フォーム">
+      <input type="hidden" name="_next" value="https://align-well.jp/thanks.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="診断タイプ" id="shindan-type" value="">
+      <input type="hidden" name="流入元" id="utm-source" value="">
+
+      <div class="prog">
+        <div class="pstep on"><div class="bar"></div>あなたのこと</div>
+        <div class="pstep on"><div class="bar"></div>ご希望</div>
+        <div class="pstep on"><div class="bar"></div>きっかけ</div>
+      </div>
+
+      <div class="fset">
+        <div class="stitle">Step 1 — あなたのこと</div>
+        <div class="field">
+          <label for="f-name">お名前<span class="req">必須</span></label>
+          <input type="text" id="f-name" name="お名前" required autocomplete="name" placeholder="例）赤澤 優">
+        </div>
+        <div class="field">
+          <label>ご希望の連絡方法<span class="req">必須</span></label>
+          <div class="radiorow">
+            <label><input type="radio" name="連絡方法" value="メール" checked> メール</label>
+            <label><input type="radio" name="連絡方法" value="電話"> 電話</label>
+            <label><input type="radio" name="連絡方法" value="LINE"> LINE</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-contact">ご連絡先（メールアドレス／電話番号）<span class="req">必須</span></label>
+          <input type="text" id="f-contact" name="連絡先" required placeholder="例）align@example.com ／ 090-xxxx-xxxx">
+        </div>
+      </div>
+
+      <div class="fset">
+        <div class="stitle">Step 2 — ご希望日時</div>
+        <div class="field">
+          <label>第1希望<span class="req">必須</span></label>
+          <div class="row2">
+            <input type="date" name="第1希望日" required aria-label="第1希望日">
+            <select name="第1希望の時間帯" required aria-label="第1希望の時間帯">
+              <option value="">時間帯を選ぶ</option>
+              <option>午前（6:00–12:00）</option>
+              <option>午後（12:00–17:00）</option>
+              <option>夕方以降（17:00–22:00）</option>
+              <option>時間はおまかせ</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>第2希望<span class="opt">任意</span></label>
+          <div class="row2">
+            <input type="date" name="第2希望日" aria-label="第2希望日">
+            <select name="第2希望の時間帯" aria-label="第2希望の時間帯">
+              <option value="">時間帯を選ぶ</option>
+              <option>午前（6:00–12:00）</option>
+              <option>午後（12:00–17:00）</option>
+              <option>夕方以降（17:00–22:00）</option>
+              <option>時間はおまかせ</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="fset">
+        <div class="stitle">Step 3 — あなたのこと（あと少し）</div>
+        <div class="field">
+          <label for="f-nayami">いちばん近いお悩み<span class="req">必須</span></label>
+          <select id="f-nayami" name="お悩み" required>
+            <option value="">選んでください</option>
+            <option>見た目・体型を変えたい</option>
+            <option>姿勢・肩こり・腰の不調</option>
+            <option>何度もジムが続かなかった</option>
+            <option>結婚式・イベントまでに変わりたい</option>
+            <option>健康診断の数値が気になる</option>
+            <option>まずは話だけ聞きたい</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-source">ALIGNを知ったきっかけ<span class="opt">任意</span></label>
+          <select id="f-source" name="きっかけ">
+            <option value="">選んでください</option>
+            <option>Instagram</option>
+            <option>Google検索</option>
+            <option>Googleマップ</option>
+            <option>ご紹介</option>
+            <option>広告</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-memo">ひとことメッセージ<span class="opt">任意</span></label>
+          <textarea id="f-memo" name="メッセージ" rows="3" placeholder="不安なこと・聞きたいことがあれば、お気軽に。"></textarea>
+        </div>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" class="btn btn-orange">この内容で体験を申し込む（その場で決めなくてOK）</button>
+      </div>
+      <p class="form-note">送信後、<b>24時間以内に赤澤よりご連絡</b>します。<br>無理な勧誘はしません。日程はそこから一緒に決めましょう。</p>
+    </form>
+
+    <div class="alt-cta">
+      <div class="or">— フォームが苦手な方は —</div>
+      <div class="cta-actions center" data-cta-location="reserve-alt">
+        <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで予約 <span class="fast">いちばん早い</span></a>
+        <a class="btn btn-tel js-tel-btn" hidden href="#">📞 電話する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="gfoot">
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <div class="logo">Align</div>
+        <p class="tag">体重より、見た目から変わる。<br>姿勢と習慣から「見た目」を変える<br>矢場町・栄のパーソナルジム</p>
+      </div>
+      <div class="f-nav">
+        <a href="index.html">ホーム</a>
+        <a href="concept.html">コンセプト</a>
+        <a href="trainer.html">トレーナー</a>
+        <a href="plans.html">料金プラン</a>
+        <a href="trial.html">体験・流れ</a>
+        <a href="shindan.html">ALIGN診断</a>
+        <a href="blog/align-story.html">ブログ</a>
+      </div>
+      <div class="f-info">
+        <b>ALIGN Personal Gym</b><br>
+        〒461-0005 愛知県名古屋市東区東桜1-10-29<br>
+        パークサイドビル栄 2F北<br>
+        栄駅 7A出口 徒歩30秒／矢場町駅 徒歩圏<br>
+        6:00–22:00・年中無休<br>
+        <span data-tel-only hidden>お電話 <a class="js-tel-link" href="#" style="color:var(--gold)"><span class="js-phone-text"></span></a><br></span>
+        Instagram <a href="https://www.instagram.com/align_personalgym" target="_blank" rel="noopener" style="color:var(--gold)">@align_personalgym</a>
+      </div>
+    </div>
+    <div class="f-btm"><span>© 2026 ALIGN Personal Gym</span><span class="en" style="letter-spacing:.2em">ALIGN — SAKAE / YABACHO, NAGOYA</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALIGN診断 — あなたが変われなかった理由、60秒でわかる。｜ALIGN Personal Gym</title>
+<meta name="description" content="10問・60秒。あなたが変われなかった理由と、いちばん合う始め方がわかる無料診断。矢場町・栄のパーソナルジムALIGN。運動が続かなかったのは、意志ではなく設計の問題かもしれません。">
+<link rel="canonical" href="https://align-well.jp/shindan.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://align-well.jp/shindan.html">
+<meta property="og:title" content="ALIGN診断 — あなたが変われなかった理由、60秒でわかる。">
+<meta property="og:description" content="10問・60秒。あなたが変われなかった理由と、いちばん合う始め方がわかる無料診断。">
+<meta property="og:image" content="https://align-well.jp/assets/images/og-home.jpg">
+<meta property="og:site_name" content="ALIGN Personal Gym">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+.sd{min-height:calc(100vh - 66px);display:flex;align-items:center;padding:40px 0 80px;background:linear-gradient(180deg,var(--cream),var(--pale))}
+.sd .stage{max-width:600px;margin:0 auto;width:100%}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 70px rgba(28,26,23,.08);padding:38px 34px;position:relative;overflow:hidden}
+@media(max-width:560px){.card{padding:28px 20px;border-radius:14px}}
+
+/* intro */
+.sd-intro{text-align:center}
+.sd-intro .eyebrow{margin-bottom:22px}
+.sd-intro h1{font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(24px,5vw,34px);line-height:1.55;margin-bottom:16px}
+.sd-intro h1 b{color:var(--orange);font-weight:400}
+.sd-intro p{font-size:14px;color:var(--mid);line-height:2;margin-bottom:8px}
+.sd-intro .meta{display:flex;justify-content:center;gap:20px;margin:24px 0 28px;font-size:12px;color:var(--muted);letter-spacing:.05em}
+.sd-intro .meta b{color:var(--ink);font-family:var(--num)}
+.sd-intro .btn{width:100%;max-width:340px;font-size:16px;padding:18px}
+
+/* progress */
+.sd-prog{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.sd-prog .track{flex:1;height:6px;background:var(--line);border-radius:4px;overflow:hidden}
+.sd-prog .fill{height:100%;background:var(--orange);border-radius:4px;transition:width .4s ease;width:0}
+.sd-prog .count{font-size:12px;color:var(--muted);white-space:nowrap;font-family:var(--num);letter-spacing:.02em}
+.sd-prog .count b{color:var(--orange);font-weight:700}
+
+/* question */
+.q-num{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.q-title{font-family:'Noto Serif JP',serif;font-weight:400;font-size:clamp(19px,3.4vw,23px);line-height:1.6;margin-bottom:24px;color:var(--ink)}
+.q-opts{display:flex;flex-direction:column;gap:11px}
+.q-opt{display:flex;align-items:center;gap:14px;text-align:left;background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:16px 18px;font-size:15px;color:var(--ink);cursor:pointer;transition:border-color .2s,background .2s,transform .12s;font-family:'Noto Sans JP',sans-serif;line-height:1.5}
+.q-opt:hover{border-color:var(--gold);background:#fff}
+.q-opt:active{transform:scale(.99)}
+.q-opt .mk{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);flex-shrink:0;transition:all .2s}
+.q-opt.sel{border-color:var(--orange);background:#fff7f3}
+.q-opt.sel .mk{border-color:var(--orange);background:var(--orange);box-shadow:inset 0 0 0 4px #fff}
+.q-back{margin-top:22px;font-size:12.5px;color:var(--muted);background:none;border:none;cursor:pointer;letter-spacing:.04em}
+.q-back:hover{color:var(--ink)}
+
+/* analyzing */
+.sd-analyze{text-align:center;padding:30px 0}
+.sd-analyze .ring{width:56px;height:56px;border:3px solid var(--line);border-top-color:var(--orange);border-radius:50%;margin:0 auto 22px;animation:sdspin .8s linear infinite}
+@keyframes sdspin{to{transform:rotate(360deg)}}
+.sd-analyze p{font-size:14px;color:var(--mid);letter-spacing:.06em}
+
+/* result */
+.sd-result .r-eyebrow{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:14px}
+.sd-result .r-type{font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(24px,4.6vw,32px);line-height:1.5;text-align:center;margin-bottom:8px}
+.sd-result .r-type b{color:var(--orange);font-weight:400}
+.sd-result .r-approve{font-size:14px;color:var(--mid);line-height:2;text-align:center;max-width:460px;margin:0 auto 26px}
+.sd-result .r-approve b{color:var(--ink);font-weight:500}
+.r-voice{background:var(--pale);border-radius:12px;padding:22px 24px;margin:0 0 24px}
+.r-voice .rv-stars{color:var(--orange);font-size:12px;letter-spacing:1.5px;margin-bottom:10px}
+.r-voice blockquote{font-family:'Noto Serif JP',serif;font-weight:300;font-size:14.5px;color:var(--ink);line-height:1.95;margin:0 0 10px}
+.r-voice .rv-name{font-size:12px;color:var(--muted)}
+.r-plan{border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin-bottom:22px}
+.r-plan .rp-lab{font-size:11.5px;letter-spacing:.1em;color:var(--gold);margin-bottom:8px}
+.r-plan .rp-name{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.r-plan .rp-price{font-family:var(--num);font-size:15px;color:var(--ink)}
+.r-plan .rp-price .per{color:var(--muted);font-size:12.5px;margin-left:6px}
+.r-plan .rp-desc{font-size:13px;color:var(--mid);line-height:1.9;margin-top:10px}
+.r-offer{background:#fff7f3;border:1px solid rgba(224,82,28,.2);border-radius:12px;padding:20px 24px;text-align:center;margin-bottom:22px}
+.r-offer .ro-main{font-size:14.5px;color:var(--ink);line-height:1.8}
+.r-offer .ro-main b{color:var(--orange);font-family:var(--num);font-size:18px;margin:0 3px}
+.r-offer .ro-cond{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.6}
+.r-offer .slot-counter{margin-top:12px;justify-content:center}
+.r-cta{display:flex;flex-direction:column;gap:12px}
+.r-cta .btn{width:100%;font-size:15.5px;padding:17px}
+.r-cta .line-note{font-size:12px;color:var(--muted);text-align:center;line-height:1.7}
+.r-share{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);text-align:center}
+.r-share .rs-t{font-size:12px;color:var(--muted);margin-bottom:12px;letter-spacing:.04em}
+.r-share .btn{background:#06C755;color:#fff;font-size:13.5px;padding:13px 22px}
+.r-retry{display:block;margin:18px auto 0;font-size:12px;color:var(--muted);background:none;border:none;cursor:pointer}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGZKV2KX43"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){gtag.q=gtag.q||[];dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZGZKV2KX43');
+</script>
+</head>
+<body>
+
+<nav class="gnav">
+  <div class="wrap">
+    <a href="index.html" class="logo">Align</a>
+    <div class="gnav-links">
+      <a href="concept.html">コンセプト</a>
+      <a href="trainer.html">トレーナー</a>
+      <a href="plans.html">料金プラン</a>
+      <a href="trial.html">体験・流れ</a>
+      <a href="shindan.html" class="current">診断</a>
+      <a href="blog/align-story.html">ブログ</a>
+      <a class="cta" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで予約</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a class="mlink" href="index.html"><span class="men">Top</span>ホーム</a>
+  <a class="mlink" href="concept.html"><span class="men">Concept</span>コンセプト</a>
+  <a class="mlink" href="trainer.html"><span class="men">Trainer</span>トレーナー</a>
+  <a class="mlink" href="plans.html"><span class="men">Plans</span>料金プラン</a>
+  <a class="mlink" href="trial.html"><span class="men">Trial</span>体験・流れ</a>
+  <a class="mlink" href="shindan.html"><span class="men">Check</span>ALIGN診断</a>
+  <a class="mlink" href="blog/align-story.html"><span class="men">Blog</span>ブログ</a>
+  <div class="m-cta">
+    <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで予約する</a>
+  </div>
+</div>
+
+<section class="sd">
+  <div class="wrap">
+    <div class="stage">
+      <div class="card" id="sdCard"><!-- JS render --></div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script>
+(function () {
+  function cfg(){ return window.ALIGN_CONFIG || {}; }  // 遅延評価（defer版config.jsの読込後に参照）
+  var card = document.getElementById('sdCard');
+
+  // ── 設問（全10問・単一選択）。各選択肢に4タイプへの加点 {r:リセット, b:積み上げ, d:設計, v:逆算}
+  var Q = [
+    { n:'Q1', t:'はじめに、差し支えなければ年代を教えてください。', meta:'age',
+      o:[ {l:'20代以下', a:'young'}, {l:'30代', a:'young'}, {l:'40代', a:'mature'}, {l:'50代以上', a:'mature'} ] },
+    { n:'Q2', t:'正直、いまの自分の見た目・体に点数をつけると？',
+      o:[ {l:'80点以上', s:{b:2}}, {l:'70点くらい', s:{b:1}}, {l:'50点くらい', s:{r:1}}, {l:'それ以下…', s:{r:2}} ] },
+    { n:'Q3', t:'鏡や写真の自分を見て、最近いちばん気になるのは？',
+      o:[ {l:'姿勢・立ち姿', s:{r:3}}, {l:'お腹まわり・体型', s:{b:2}}, {l:'疲れて見える／老けて見える', s:{r:2}}, {l:'特にないが、健康が心配', s:{v:1,d:1}} ] },
+    { n:'Q4', t:'過去、運動やダイエットが続かなかった最大の理由は？',
+      o:[ {l:'忙しくて時間が取れなかった', s:{d:1}}, {l:'効果を感じる前に飽きた', s:{d:3}}, {l:'やり方が合ってるか不安になった', s:{d:3}}, {l:'そもそも始めていない', s:{r:1,d:1}} ] },
+    { n:'Q5', t:'体の不調はありますか？',
+      o:[ {l:'肩こり・首', s:{r:3}}, {l:'腰', s:{r:3}}, {l:'疲れやすい', s:{r:1,v:1}}, {l:'特にない', s:{b:1}} ] },
+    { n:'Q6', t:'変わりたい理由に、いちばん近いのは？',
+      o:[ {l:'自分に自信を持ちたい', s:{d:1,r:1}}, {l:'人からの見られ方を変えたい', s:{b:2}}, {l:'イベント・期限がある（結婚式など）', s:{v:4}}, {l:'健康数値・将来のため', s:{v:1,r:1}} ] },
+    { n:'Q7', t:'理想の通い方は？',
+      o:[ {l:'週1以上でしっかり', s:{b:3}}, {l:'月2回くらい無理なく', s:{r:1,d:1}}, {l:'短期集中で一気に', s:{v:4}}, {l:'まだイメージがない', s:{d:1}} ] },
+    { n:'Q8', t:'トレーナーに求めるのは？',
+      o:[ {l:'追い込んでくれる', s:{b:3}}, {l:'丁寧に教えてくれる', s:{r:2}}, {l:'メンタル・習慣まで見てくれる', s:{d:3}}, {l:'相性が合えば何でも', s:{r:1}} ] },
+    { n:'Q9', t:'「3日坊主は、意志が弱いからだ」と思いますか？',
+      o:[ {l:'はい、そう思う', s:{d:3}}, {l:'いいえ', s:{d:1}}, {l:'わからない', s:{d:1}} ] },
+    { n:'Q10', t:'もし90分で「立ち姿」が変わるとしたら、見てみたいですか？',
+      o:[ {l:'はい、見てみたい', s:{}}, {l:'少し気になる', s:{}} ] }
+  ];
+
+  // ── タイプ定義
+  var TYPES = {
+    r: { key:'①', name:'リセット型',
+      approve:{ young:'あなたは、頑張れない人ではなく、<b>順番が違っただけ</b>の人。まず「整える」だけで、見た目は変わりはじめます。', mature:'あなたは、頑張れない人ではなく、<b>順番が違っただけ</b>の人。肩こりや後ろ姿の重さも、多くは姿勢が起点です。' },
+      voice:{ q:'産後すぐの体で、どこが歪んでいるのかを的確に指摘してくださり、自分の体と向き合う良いきっかけになりました。', n:'Y.N さん' },
+      plan:{ name:'ボディメイク 月2回プラン', price:'¥19,000/月', per:'（1回あたり ¥9,500）', desc:'痩せる前に、整える順番。ピラティス×コンディショニングで骨格を本来の位置へ。体験90分で、立ち姿の変化を写真で確認できます。' },
+      close:'まずは体験で、鏡の中の立ち姿の変化を。' },
+    b: { key:'②', name:'積み上げ型',
+      approve:{ young:'あなたは、<b>土台がある人</b>。我流の3年より、プロとの3ヶ月。骨格に合わせた最短ルートで、シルエットは変わります。', mature:'あなたは、<b>土台がある人</b>。あとは骨格に合わせた設計だけ。効率よく、疲れにくい身体へ。' },
+      voice:{ q:'我流で3年半やってきましたが、プロに教えてもらうと上達のスピードが全然違うと感じました！', n:'ムーンランド さん' },
+      plan:{ name:'月4回プラン', price:'¥38,000/月', per:'（1回あたり ¥9,500）', desc:'整った骨格の上に、しなやかな筋肉を。週1ペースで、あなたの骨格に合わせた最短ルートを設計します。' },
+      close:'体験で、あなたに合う「効かせ方」を体感してください。' },
+    d: { key:'③', name:'設計型',
+      approve:{ young:'続かなかったのは、意志ではなく<b>設計の問題</b>。行動心理の資格を持つトレーナーが、「続く仕組み」から一緒につくります。', mature:'続かなかったのは、意志ではなく<b>設計の問題</b>。今度こそ、と気負わなくて大丈夫。仕組みで続けます。' },
+      voice:{ q:'ただ身体を動かすだけではなく、コーチングで自分の目標や思考を整理してくれるところが唯一無二です。', n:'けんちゃん さん' },
+      plan:{ name:'月2回＋行動心理コーチング（エグゼクティブも）', price:'¥19,000/月〜', per:'', desc:'トレーニングに行動心理コーチングを重ね、「続かない理由」を初回で特定。意志の力に頼らない仕組みへ。' },
+      close:'まずは体験で、「続かなかった理由」を一緒に見つけましょう。' },
+    v: { key:'④', name:'逆算型',
+      approve:{ young:'期限があるあなたには、<b>逆算した専用プラン</b>を。今月の体験枠から始めれば、間に合います。', mature:'目標の日から<b>逆算した専用プラン</b>を。無理なく、でも確実に。今月の枠から始めれば間に合います。' },
+      voice:{ q:'「今まで見たことのない自分に出会いたい」という思いで通い始めました。丁寧に向き合ってくれます。', n:'Y.Y さん' },
+      plan:{ name:'短期集中コース', price:'総額 ¥129,000〜', per:'', desc:'ゴールの日から逆算して、頻度も内容もオーダーメイド。イベント・結婚式など、期限のある目標に。' },
+      close:'まずは体験で、逆算プランのイメージをつかんでください。' }
+  };
+  var TIE = ['r','d','v','b']; // 同点時の優先順（整える＝ブランドの核を既定に）
+
+  var state = { i:0, age:'young', ans:[], scores:{r:0,b:0,d:0,v:0} };
+  var started = false;
+
+  function ga(name, params){ if (typeof gtag==='function') gtag('event', name, params||{}); }
+
+  function renderIntro(){
+    card.innerHTML =
+      '<div class="sd-intro">'+
+      '<span class="eyebrow center">ALIGN 診断</span>'+
+      '<h1>あなたが変われなかった理由、<br><b>60秒</b>でわかる。</h1>'+
+      '<p>10個の質問に答えるだけ。<br>あなたに「いちばん合う始め方」が見つかります。</p>'+
+      '<div class="meta"><span>全 <b>10</b> 問</span><span>約 <b>60</b> 秒</span><span>無料</span></div>'+
+      '<button class="btn btn-orange" id="sdStart">診断をはじめる</button>'+
+      '</div>';
+    document.getElementById('sdStart').addEventListener('click', start);
+  }
+
+  function start(){
+    if (!started){ started = true; ga('shindan_start', {}); }
+    state.i = 0; state.ans = []; state.scores = {r:0,b:0,d:0,v:0};
+    renderQuestion();
+    card.scrollIntoView({block:'center', behavior:'smooth'});
+  }
+
+  function renderQuestion(){
+    var q = Q[state.i];
+    var pct = Math.round((state.i) / Q.length * 100);
+    var remain = Q.length - state.i;
+    var opts = q.o.map(function(o, idx){
+      var sel = state.ans[state.i] === idx ? ' sel' : '';
+      return '<button class="q-opt'+sel+'" data-idx="'+idx+'"><span class="mk"></span><span>'+o.l+'</span></button>';
+    }).join('');
+    card.innerHTML =
+      '<div class="sd-prog"><div class="track"><div class="fill" style="width:'+pct+'%"></div></div>'+
+      '<div class="count">あと <b>'+remain+'</b> 問</div></div>'+
+      '<div class="q-num">'+q.n+'</div>'+
+      '<div class="q-title">'+q.t+'</div>'+
+      '<div class="q-opts">'+opts+'</div>'+
+      (state.i>0 ? '<button class="q-back" id="sdBack">← ひとつ戻る</button>' : '');
+    Array.prototype.forEach.call(card.querySelectorAll('.q-opt'), function(btn){
+      btn.addEventListener('click', function(){ choose(parseInt(btn.getAttribute('data-idx'),10)); });
+    });
+    var back = document.getElementById('sdBack');
+    if (back) back.addEventListener('click', function(){ state.i--; renderQuestion(); });
+  }
+
+  function choose(idx){
+    var q = Q[state.i];
+    // 前回の加点を巻き戻し（戻る対応）
+    if (typeof state.ans[state.i] === 'number'){
+      var prev = q.o[state.ans[state.i]];
+      if (prev && prev.s) for (var k in prev.s) state.scores[k] -= prev.s[k];
+    }
+    var opt = q.o[idx];
+    state.ans[state.i] = idx;
+    if (q.meta === 'age') state.age = opt.a;
+    if (opt.s) for (var k2 in opt.s) state.scores[k2] += opt.s[k2];
+    // 選択の即時反映＋少し間をおいて次へ
+    Array.prototype.forEach.call(card.querySelectorAll('.q-opt'), function(b){ b.classList.remove('sel'); });
+    card.querySelector('.q-opt[data-idx="'+idx+'"]').classList.add('sel');
+    setTimeout(function(){
+      if (state.i < Q.length - 1){ state.i++; renderQuestion(); }
+      else analyze();
+    }, 260);
+  }
+
+  function analyze(){
+    card.innerHTML = '<div class="sd-analyze"><div class="ring"></div><p>あなたの回答を分析しています…</p></div>';
+    setTimeout(renderResult, 1500);
+  }
+
+  function decideType(){
+    var best = TIE[0], bestScore = -1;
+    TIE.forEach(function(k){ if (state.scores[k] > bestScore){ bestScore = state.scores[k]; best = k; } });
+    return best;
+  }
+
+  function renderResult(){
+    var key = decideType();
+    var T = TYPES[key];
+    var age = state.age;
+    var C = cfg();
+    var LINE = C.lineUrl || 'https://lin.ee/X7WmsSR';
+    ga('shindan_complete', { result_type: T.key + T.name });
+
+    var campaign = C.campaignActive !== false;
+    var offer = campaign
+      ? '<div class="ro-main">姿勢チェック体験 90分 <s>¥3,300</s> <b>¥0</b>（先着10名様）</div>'+
+        '<div class="ro-cond">ビフォーアフター写真つき／体験当日のご入会で入会金¥22,000も¥0（合計¥25,300おトク）。¥0は「体験当日ご入会の方」限定です。</div>'
+      : '<div class="ro-main">姿勢チェック体験 90分 <b>¥3,300</b>（税込）</div>'+
+        '<div class="ro-cond">ビフォーアフター写真つき。体験当日のご入会で入会金¥22,000が¥0に。</div>';
+
+    card.innerHTML =
+      '<div class="sd-result">'+
+      '<div class="r-eyebrow">Your Type</div>'+
+      '<div class="r-type">あなたは【<b>'+T.name+'</b>】</div>'+
+      '<p class="r-approve">'+T.approve[age]+'</p>'+
+      '<div class="r-voice"><div class="rv-stars">★★★★★</div><blockquote>「'+T.voice.q+'」</blockquote><div class="rv-name">— 同じタイプの方の声（'+T.voice.n+'／Googleクチコミ）</div></div>'+
+      '<div class="r-plan"><div class="rp-lab">あなたにおすすめの始め方</div><div class="rp-name">'+T.plan.name+'</div>'+
+      '<div class="rp-price">'+T.plan.price+'<span class="per">'+T.plan.per+'</span></div>'+
+      '<div class="rp-desc">'+T.plan.desc+'</div></div>'+
+      '<div class="r-offer">'+offer+'<div class="slot-counter"></div></div>'+
+      '<div class="r-cta">'+
+      '<a class="btn btn-orange" href="reserve.html?type='+encodeURIComponent(T.key)+'&utm_source=shindan&utm_medium=result">この診断結果つきで体験を申し込む</a>'+
+      '<a class="btn btn-line" href="'+LINE+'" target="_blank" rel="noopener" data-cta-location="shindan-result">LINEで予約・相談する</a>'+
+      '<div class="line-note">'+T.close+'<br>LINEの場合は、この結果画面をスクショして送っていただくとスムーズです。</div>'+
+      '</div>'+
+      '<div class="r-share"><div class="rs-t">友だちにも診断をすすめる</div>'+
+      '<a class="btn" href="https://line.me/R/msg/text/?'+encodeURIComponent('ALIGNの無料診断、面白かったよ！ https://align-well.jp/shindan.html')+'" target="_blank" rel="noopener">LINEでこの診断を送る</a></div>'+
+      '<button class="r-retry" id="sdRetry">もう一度診断する</button>'+
+      '</div>';
+
+    renderSlotCounter();
+    document.getElementById('sdRetry').addEventListener('click', renderIntro);
+  }
+
+  // 残枠カウンターをこのページでも描画（site.jsの初期化後に生成される要素のため）
+  function renderSlotCounter(){
+    var C = cfg();
+    var campaign = C.campaignActive !== false;
+    var remaining = Number(C.trialSlotsRemaining);
+    Array.prototype.forEach.call(document.querySelectorAll('.r-offer .slot-counter'), function(el){
+      if (!campaign || isNaN(remaining)) { el.hidden = true; return; }
+      if (remaining <= 0){ el.className = 'slot-counter is-full'; el.innerHTML = '<span>今月分は満枠です。来月分のご予約を受付中。</span>'; }
+      else { el.className = 'slot-counter' + (remaining<=3?' is-low':''); el.innerHTML = '今月の姿勢チェック体験枠 <b class="sc-num">残り'+remaining+'名</b>'; }
+    });
+  }
+
+  renderIntro();
+})();
+</script>
+</body>
+</html>

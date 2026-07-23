@@ -1,3 +1,7 @@
+// ⚠️ このAPIキーは「GET専用（読み取り専用）」であること。
+//    フロント配信で見えるのは静的サイトの仕様上許容だが、GET以外（POST/PUT/DELETE）の
+//    権限が付いていると第三者が記事を改ざん可能になる。microCMS管理画面で権限を確認し、
+//    GET以外が有効な場合は即ローテーションしGET専用キーを再発行すること。
 const MICROCMS_SERVICE_DOMAIN = 'k5y651526p';
 const MICROCMS_API_KEY = 'tY6t5jduK7vwqh6ugD2LUOICKJ9XJkrVFfe3';
 
