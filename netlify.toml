@@ -8,10 +8,22 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# 画像・フォント等は変更が稀 → 1日キャッシュ（immutable は使わない：ファイル名にハッシュが無く同名差替えが起きるため）
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+# JS/CSS は同名のまま中身を更新する → 毎回 ETag 再検証させ、編集が既訪ユーザーにも確実に届くようにする
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[redirects]]
   from = "/blog"
