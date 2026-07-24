@@ -55,9 +55,11 @@
   const ga = (name, params) => { if (typeof gtag === 'function') gtag('event', name, params || {}); };
 
   // ── キャンペーン価格の切替（.js-trial-price / .js-trial-strike / [data-when]）
+  //    価格表示は全ページ・全CTAで単一ソース。campaign中は「¥3,300（取消線）→ ¥0」で統一。
   const campaign = cfg.campaignActive !== false;
+  const normalPrice = yen(cfg.trialPriceNormal || 3300);
   document.querySelectorAll('.js-trial-price').forEach((el) => {
-    el.textContent = campaign ? '¥0' : yen(cfg.trialPriceNormal || 3300);
+    el.innerHTML = campaign ? ('<s class="p-was">' + normalPrice + '</s> ¥0') : normalPrice;
   });
   document.querySelectorAll('.js-trial-strike').forEach((el) => {
     if (campaign) { el.hidden = false; el.innerHTML = '<s>' + yen(cfg.trialPriceNormal || 3300) + '</s>'; }

@@ -378,6 +378,14 @@
   </div>
 </div>
 
+<!-- ============ OFFER BAND ============ -->
+<a class="offer-band" href="reserve.html" data-cta-location="offer-band">
+  <span class="ob-tag">先着10名様・今だけ</span>
+  <span class="ob-main">姿勢チェック体験（90分）が <span class="js-trial-strike"></span> <b>無料</b>。当日ご入会なら入会金¥22,000も¥0</span>
+  <span class="ob-sub">体験当日ご入会の方限定</span>
+  <span class="ob-go">無料で予約する →</span>
+</a>
+
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="ghost">A</div>
@@ -396,10 +404,11 @@
           <span class="cred">栄 7A出口 <b>徒歩30秒</b></span>
         </div>
         <div class="cta-row">
-          <a class="btn btn-orange" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで体験を予約&nbsp;<span class="p js-trial-price">¥3,300</span></a>
-          <a class="more-link" href="trial.html">体験の流れを見る<span>→</span></a>
+          <a class="btn btn-orange" href="reserve.html">姿勢チェック体験を予約&nbsp;<span class="p js-trial-price">¥3,300</span></a>
+          <a class="btn btn-ghost" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで予約</a>
         </div>
-        <span class="cta-note" style="display:block;margin-top:14px"><b>90分</b>・ビフォーアフター写真つき ／ LINEで「体験希望」と送るだけ</span>
+        <div class="slot-counter" style="margin-top:16px"></div>
+        <span class="cta-note" style="display:block;margin-top:10px"><b>90分</b>・ビフォーアフター写真つき ／ <a href="shindan.html" style="color:var(--gold);border-bottom:1px solid var(--gold)">60秒診断で自分のタイプを見る</a></span>
       </div>
       <div class="hero-slides reveal" id="heroSlides">
         <img src="assets/images/hero-session-squat.webp" alt="赤澤トレーナーによるパーソナル指導の様子" class="active" fetchpriority="high">
@@ -411,14 +420,7 @@
   </div>
 </header>
 
-<!-- ============ OFFER BAND ============ -->
-<a class="offer-band" href="reserve.html" data-cta-location="offer-band">
-  <span class="ob-tag">先着10名様</span>
-  <span class="ob-main" data-when="campaign">姿勢チェック体験90分が <span class="js-trial-strike"></span> <b>¥0</b>。当日入会で入会金¥22,000も¥0（計¥25,300おトク）</span>
-  <span class="ob-main" data-when="normal" hidden>体験当日のご入会で、入会金＋体験料が <b>¥25,300→¥0</b></span>
-  <span class="ob-sub">体験当日ご入会の方限定</span>
-  <span class="ob-go">予約する →</span>
-</a>
+
 
 <!-- ============ SHINDAN BANNER ============ -->
 <div class="wrap">
@@ -693,7 +695,7 @@
         <p class="hook" style="font-size:14px;color:var(--gold-l);margin:-2px 0 18px;line-height:1.85">太って見えるのも、肩こりも、原因は同じ「姿勢」かもしれません。</p>
         <p class="lead">カウンセリング・姿勢分析・体験トレーニングまで、ALIGNをまるごと。最後にビフォーアフターを写真で見比べます。変わるかどうか、その場で確かめてください。</p>
         <div class="price-line">
-          <span class="yen num"><span class="cur">¥</span>3,300<span class="tax">税込</span></span>
+          <span class="yen num" data-when="campaign"><span class="cur">¥</span>0<span class="tax">先着10名</span></span><span class="yen num" data-when="normal" hidden><span class="cur">¥</span>3,300<span class="tax">税込</span></span>
           <span class="min">90 min</span>
         </div>
         <div class="btns">
@@ -880,10 +882,11 @@
 <script src="assets/js/site.js" defer></script>
 <!-- 追従CTA -->
 <div class="float-cta">
-  <a class="f-trial" href="/trial.html">姿勢チェック体験 <b class="js-trial-price">&yen;3,300</b></a>
-  <a class="f-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">
-    <svg width="16" height="16" viewBox="0 0 20 20" fill="white" aria-hidden="true"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
-    LINEで相談する
+  <a class="f-shindan" href="/shindan.html" data-cta-location="float">◎ 診断</a>
+  <a class="f-trial" href="/reserve.html">体験 <b data-when="campaign">無料</b><b data-when="normal" hidden>&yen;3,300</b></a>
+  <a class="f-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener" data-cta-location="float">
+    <svg width="15" height="15" viewBox="0 0 20 20" fill="white" aria-hidden="true"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
+    LINE予約
   </a>
 </div>
 </body>
