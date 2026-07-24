@@ -292,6 +292,22 @@
 .rv-chip{font-size:10.5px;color:var(--gold);letter-spacing:.03em;background:var(--pale);border-radius:20px;padding:4px 11px;white-space:nowrap}
 .voice-cta{text-align:center;margin-top:32px}
 @media(max-width:860px){.reviews{grid-template-columns:1fr}.rating-band{gap:16px;padding:20px 24px}.rb-meta{border-left:0;padding-left:0;text-align:center}}
+/* クチコミ：クリックで全文モーダル */
+.rv{cursor:pointer}
+.rv:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.rv-more{display:inline-block;color:var(--orange);font-size:11.5px;font-weight:600;letter-spacing:.03em;margin:0 0 14px}
+.rvm{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(28,26,23,.55)}
+.rvm.on{display:flex}
+.rvm-box{background:#fff;border-radius:16px;max-width:560px;width:100%;max-height:86vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.32);animation:rvmIn .28s ease}
+@keyframes rvmIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.rvm-photo img{width:100%;max-height:340px;object-fit:cover;display:block;border-radius:16px 16px 0 0}
+.rvm-in{padding:26px 28px 30px}
+.rvm-stars{color:var(--orange);font-size:14px;letter-spacing:2px;margin-bottom:14px}
+.rvm-body{font-size:14.5px;line-height:2.05;color:var(--ink);white-space:pre-wrap;margin:0 0 18px;font-family:'Noto Sans JP',sans-serif}
+.rvm-name{font-size:12.5px;color:var(--muted)}
+.rvm-src{font-size:11px;color:var(--muted);margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.rvm-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:none;background:rgba(255,255,255,.92);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;display:grid;place-items:center;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+@media(max-width:560px){.rvm-in{padding:22px 20px 26px}}
 
 /* ── LINE hint ── */
 .line-hint{font-size:12.5px;color:rgba(250,250,248,.72);letter-spacing:.02em;margin-top:16px;line-height:1.75}
@@ -878,6 +894,46 @@
   </div>
 </footer>
 
+<!-- クチコミ全文モーダル -->
+<div class="rvm" id="rvModal" role="dialog" aria-modal="true" aria-label="クチコミ全文">
+  <div class="rvm-box">
+    <button class="rvm-close" type="button" aria-label="閉じる">&times;</button>
+    <div class="rvm-photo" id="rvmPhoto"></div>
+    <div class="rvm-in">
+      <div class="rvm-stars" aria-label="星5つ">★★★★★</div>
+      <p class="rvm-body" id="rvmBody"></p>
+      <div class="rvm-name" id="rvmName"></div>
+      <div class="rvm-src">Google マップのクチコミより（お名前はイニシャル表記）</div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  // 表示中の9カードと同じ並び順。全文は reviews.json より抽出。
+  var RV = [{"n": "Y.N", "b": "数あるパーソナルジムの中でどこに通うか迷っていましたが、こちらは駅からのアクセスや駐車場の利便性が高く、何より「マンツーマンでの丁寧なサポート」に惹かれて選びました。結果、大正解でした！\nジム内はとても清潔感があり、アロマの心地よい香りに包まれてリラックスしてトレーニングに励めます。お水のサービスがあるなど、細やかな配慮も嬉しいポイントです。\n何より赤澤さんのカウンセリングが素晴らしく、私自身が産後すぐで体でどこが歪んでいるのか、どこが弱っているのかを的確に指摘してくださり、自分の体と向き合う良いきっかけになりました。指導も非常に丁寧で、自宅でできるトレーニング方法や正しいフォームまでしっかり教えていただけるので、自己流にならず安心して取り組めています。\n通いやすさと質の高い指導の両方が揃っている、おすすめのジムです！", "p": "assets/images/reviews/r002-1.jpg"}, {"n": "とき", "b": "栄駅・矢場町駅から徒歩ですぐでアクセスが良く、とても通いやすいパーソナルジムです！\n\n店内は清潔感があり、アロマの香りも心地よく、リラックスした雰囲気の中でトレーニングができます。\n\n特に感動したのはトレーナーさんの指導です。フォームを一つひとつ丁寧に確認しながら、分かりやすく的確に教えてくれるので、初心者でも安心して取り組めました。補助もしっかりしてくれるので、正しいフォームで効かせたい部位を意識しながらトレーニングできます。\n\nまた、とても優しく話しやすい方なので、楽しくトレーニングできるのも魅力です！「運動初心者だけど始めてみたい」「ダイエットやボディメイクを頑張りたい」という方にもおすすめできるジムだと思います。\n\nこれからもよろしくお願いします！", "p": "assets/images/reviews/r009-1.jpg"}, {"n": "けんちゃん", "b": "栄でジムを探していましたが、ここはただ身体を動かすだけではなく、コーチングで自分の目標や思考を整理してくれるところが唯一無二です。食事管理も無理なく続けられており、おかげさまで身体だけでなくマインドも前向きになれました。店内はアロマの香りが漂う落ち着いた空間で、栄の喧騒を忘れて自分自身と向き合える貴重な時間になっています。この調子で頑張ります！！", "p": "assets/images/reviews/r012-1.jpg"}, {"n": "H", "b": "店内は清潔感があり、アロマもこだわっているみたいでとても癒される香りです！\n\nトレーナーさんはカウンセリングも丁寧で優しく、自分の目標や悩みに合わせてストレッチやピラティス、トレーニングをしてくれます。\nトレーニング中しんどくなりそうな時でも、あともうひと頑張りできるような声がけやサポートをしてくれるので、今までなかなか続かなかったジムがここでなら楽しく継続できそうです！！\n\nアクセスも栄駅からとても近く、天候に関係なくストレスなく通えそうなので、これからお世話になろうとおもいます！！", "p": "assets/images/reviews/r011-1.jpg"}, {"n": "しょうだい", "b": "肩の痛みと筋肉をつけたくて通いました！\n家から職場の道中にあり、栄駅から近いのでもの凄くありがたいです！\n\nジム内もアロマの香りがするので落ち着いた状態で話ができて、集中した状態でトレーニングをすることができました！\n\n元々トレーニング中に肩の痛みがあったのですが、ストレッチとコンディションを教えてくれて肩の痛みがなくなりました！\n\n定期的によろしくお願いします💪", "p": "assets/images/reviews/r021-1.jpg"}, {"n": "Y.Y", "b": "「今まで見たことのない自分に出会いたい」「自分に自信を持ちたい」という思いで通い始めました。\n\n車で通っていますが、近くにパーキングがたくさんあるので駐車場に困ることがなく、とても通いやすいです。今回はモニター特典を利用して始めることができたので、一歩踏み出すきっかけになりました。\n\nトレーナーさんは知識がとても豊富で、一つひとつ丁寧に分かりやすく教えてくださるので、安心してトレーニングに取り組めています。\n\nトレーニング中はとても辛いですが、終わった後の達成感やスッキリした気持ちは格別です。翌日には狙った部位がしっかり筋肉痛になるので、ちゃんと効かせられたことを実感でき、それが次のトレーニングへのモチベーションにもつながっています。\n\nまた、店内はアロマの香りでとても心地よく、落ち着いた空間でトレーニングに集中できるのも魅力です。\n\nまだ通い始めたばかりですが、これから自分の体がどう変わっていくのかとても楽しみです。目標に向かって頑張っていきたいと思います！", "p": "assets/images/reviews/r010-1.jpg"}, {"n": "T.N", "b": "まずはアクセスがとてもいいです！\n駅から歩いてすぐなので通うとなると便利でとても良いと感じました。コインパーキングも近くに複数あり車でも行きやすいです。\n次にジムの中がとても清潔でとても気持ちよくトレーニングできました！アロマの匂いも強すぎず集中してトレーニングができました。\n\nそして赤澤トレーナーの指導がとてもわかりやすく、良いところは良い、ここはもっとこうしましょうなどと褒めるだけではなく改善点も的確に教えていただけるのがとても好印象でした！自分のレベルに合わせた指導をしてもらえたのでそこもかなり好印象でした。\n友人や周りの人へぜひおすすめしたいと思えるジムです！", "p": "assets/images/reviews/r001-1.jpg"}, {"n": "ムーンランド", "b": "我流で筋トレを3年半やってきましたが、改めてプロに教えてもらうのと、我流では全然上達のスピードが違うなと感じました！\nピラティス要素も含まれていて、姿勢改善はもちろんのこと、その人にあったトレーニング方法を提案してくれるっというのも魅力的です！\nそれと、立地も良く、栄・矢場町からも近く、また、アロマのいい香りがフロア全体に広がっているため、いい香りに包まれてトレーニングできるのも魅力的だなと感じました！\n\n【料金の評価】手頃な料金", "p": "assets/images/reviews/r008-1.jpg"}, {"n": "あやか", "b": "30代半ばの女性で本格的に心身ともに変えていきたく、栄エリアでパーソナルジムを探していました！\n\nカウンセリングと体験トレーニングを受けてみて、説明が丁寧で分かりやすく運動苦手な私にとって通いやすいなと思いました。\n\n木材が多く使われていてリラックスできる空間と、アロマにこだわりがあるようで非常に落ち着いた空間で親身に話を聞いてくれました！\n\n自信をもてるようにこれから頑張ります！", "p": "assets/images/reviews/r017-1.jpg"}];
+  var cards = document.querySelectorAll('.reviews .rv');
+  var modal = document.getElementById('rvModal');
+  if (!modal || !cards.length) return;
+  var mBody = document.getElementById('rvmBody'), mName = document.getElementById('rvmName'), mPhoto = document.getElementById('rvmPhoto');
+  function openM(d){
+    mBody.textContent = d.b;
+    mName.textContent = d.n + ' さん';
+    mPhoto.innerHTML = d.p ? '<img src="' + d.p + '" alt="' + d.n + 'さんの投稿写真" loading="lazy">' : '';
+    modal.classList.add('on'); document.body.style.overflow = 'hidden';
+  }
+  function closeM(){ modal.classList.remove('on'); document.body.style.overflow = ''; }
+  Array.prototype.forEach.call(cards, function(card, i){
+    var d = RV[i]; if (!d) return;
+    card.setAttribute('role', 'button'); card.setAttribute('tabindex', '0');
+    var body = card.querySelector('.rv-body'), fc = card.querySelector('figcaption');
+    if (body && fc && !body.querySelector('.rv-more')) { var s = document.createElement('span'); s.className = 'rv-more'; s.textContent = '全文を読む →'; body.insertBefore(s, fc); }
+    card.addEventListener('click', function(){ openM(d); });
+    card.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openM(d); } });
+  });
+  modal.addEventListener('click', function(e){ if (e.target === modal || e.target.closest('.rvm-close')) closeM(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.classList.contains('on')) closeM(); });
+})();
+</script>
 <script src="assets/js/config.js?v=20260724" defer></script>
 <script src="assets/js/site.js?v=20260724" defer></script>
 <!-- 追従CTA -->

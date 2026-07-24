@@ -117,12 +117,10 @@
       <div class="slot-counter"></div>
     </div>
 
-    <form class="rsvform" action="https://formsubmit.co/align.personalgym@gmail.com" method="POST" data-cta-form="reserve">
-      <!-- FormSubmit 設定 -->
-      <input type="hidden" name="_subject" value="【ALIGN】姿勢チェック体験 予約フォーム">
-      <input type="hidden" name="_next" value="https://align-well.jp/thanks.html">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
+    <form class="rsvform" name="reserve" method="POST" data-netlify="true" netlify-honeypot="_honey" action="/thanks.html" data-cta-form="reserve">
+      <!-- Netlify Forms：送信はNetlifyが受信し「Forms」に蓄積（取りこぼしなし）。
+           メール通知はNetlify管理画面 Forms → reserve → Notifications で設定（認証メール不要）。 -->
+      <input type="hidden" name="form-name" value="reserve">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="診断タイプ" id="shindan-type" value="">
       <input type="hidden" name="流入元" id="utm-source" value="">
