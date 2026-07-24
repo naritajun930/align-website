@@ -133,9 +133,9 @@
 .hero-slides img.active{opacity:1}
 .hero-slides .cap{position:absolute;left:18px;bottom:14px;z-index:2;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.28em;color:#fff;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.4)}
 @media(max-width:860px){
-  .hero{padding:32px 0 40px}
+  .hero{padding:0 0 44px}
   .hero .grid{grid-template-columns:1fr;gap:22px}
-  .hero-slides{aspect-ratio:4/3;box-shadow:none;order:-1;margin:0 -28px;border-radius:0;width:calc(100% + 56px)}
+  .hero-slides{aspect-ratio:4/3;box-shadow:none;order:-1;margin:0 -28px 6px;border-radius:0;width:calc(100% + 56px)}
   .hero .eyebrow{margin-bottom:16px}
   .hero h1{font-size:clamp(28px,8vw,36px);margin-bottom:14px}
   .hero .hero-lead{margin:-2px 0 14px;font-size:14.5px}
@@ -236,7 +236,7 @@
 @media(max-width:720px){.fork-grid{grid-template-columns:1fr}}
 
 /* ── OFFER BAND ── */
-.offer-band{display:flex;align-items:center;justify-content:center;gap:9px 18px;flex-wrap:wrap;background:#fff7f3;border-top:1px solid rgba(224,82,28,.18);border-bottom:1px solid rgba(224,82,28,.18);padding:14px 24px;text-align:center;text-decoration:none}
+.offer-band{display:flex;align-items:center;justify-content:center;gap:9px 18px;flex-wrap:wrap;background:linear-gradient(180deg,#fff3ec,#fff8f4);border-top:1px solid rgba(224,82,28,.16);border-bottom:1px solid rgba(224,82,28,.16);padding:15px 24px;text-align:center;text-decoration:none}
 .offer-band:hover .ob-go{text-decoration:underline}
 .ob-tag{font-size:11px;letter-spacing:.1em;background:var(--orange);color:#fff;padding:4px 12px;border-radius:20px;font-weight:600}
 .ob-main{font-size:14px;color:var(--ink);letter-spacing:.02em}
@@ -379,7 +379,7 @@
 </div>
 
 <!-- ============ OFFER BAND ============ -->
-<a class="offer-band" href="reserve.html" data-cta-location="offer-band">
+<a class="offer-band" href="trial.html" data-cta-location="offer-band">
   <span class="ob-tag">先着10名様・今だけ</span>
   <span class="ob-main">姿勢チェック体験（90分）が <span class="js-trial-strike"></span> <b>無料</b>。当日ご入会なら入会金¥22,000も¥0</span>
   <span class="ob-sub">体験当日ご入会の方限定</span>
@@ -404,7 +404,7 @@
           <span class="cred">栄 7A出口 <b>徒歩30秒</b></span>
         </div>
         <div class="cta-row">
-          <a class="btn btn-orange" href="reserve.html">姿勢チェック体験を予約&nbsp;<span class="p js-trial-price">¥3,300</span></a>
+          <a class="btn btn-orange" href="trial.html">姿勢チェック体験を予約&nbsp;<span class="p js-trial-price">¥3,300</span></a>
           <a class="btn btn-ghost" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで予約</a>
         </div>
         <div class="slot-counter" style="margin-top:16px"></div>
@@ -600,7 +600,7 @@
       </figure>
     </div>
     <div class="voice-cta reveal">
-      <a class="more-link" href="https://maps.app.goo.gl/xPC9yH77nb2XYk2o9" target="_blank" rel="noopener">27件のクチコミをすべて読む<span>→</span></a>
+      <a class="more-link" href="testimonials.html">27件のクチコミをすべて読む<span>→</span></a>
     </div>
   </div>
 </section>
@@ -883,7 +883,7 @@
 <!-- 追従CTA -->
 <div class="float-cta">
   <a class="f-shindan" href="/shindan.html" data-cta-location="float">◎ 診断</a>
-  <a class="f-trial" href="/reserve.html">体験 <b data-when="campaign">無料</b><b data-when="normal" hidden>&yen;3,300</b></a>
+  <a class="f-trial" href="/trial.html">体験 <b data-when="campaign">無料</b><b data-when="normal" hidden>&yen;3,300</b></a>
   <a class="f-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener" data-cta-location="float">
     <svg width="15" height="15" viewBox="0 0 20 20" fill="white" aria-hidden="true"><path d="M10 1C5.03 1 1 4.47 1 8.73c0 2.92 1.87 5.47 4.65 6.9-.2.73-.74 2.66-.84 3.07-.14.51.19.5.4.36.16-.11 2.59-1.71 3.63-2.4.7.1 1.43.15 2.16.15 4.97 0 9-3.47 9-7.73S14.97 1 10 1z"/></svg>
     LINE予約

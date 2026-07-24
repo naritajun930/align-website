@@ -54,6 +54,21 @@
   const yen = (n) => '¥' + Number(n || 0).toLocaleString('ja-JP');
   const ga = (name, params) => { if (typeof gtag === 'function') gtag('event', name, params || {}); };
 
+  // ── 残枠の日付連動：trialSlotsRemaining が数値なら固定。"auto"（または非数値）は当月の日付から算出し、
+  //    cfg を書き換えて確定させる（以降 .slot-counter を読む全処理・診断ページが同じ値を参照する）。
+  //    月初=trialSlotsTotal → 月末=trialSlotsMin へ、前半で速く減る曲線（scarcityの自然な見え方）。
+  (function resolveSlots() {
+    const pinned = cfg.trialSlotsRemaining;
+    if (typeof pinned === 'number' && isFinite(pinned)) return;
+    const total = Number(cfg.trialSlotsTotal) || 10;
+    let floor = Number(cfg.trialSlotsMin); if (!isFinite(floor)) floor = 1;
+    const now = new Date();
+    const d = now.getDate();
+    const D = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate(); // 当月の日数
+    const prog = D > 1 ? Math.sqrt((d - 1) / (D - 1)) : 1;                   // 1日=0 → 末日=1
+    cfg.trialSlotsRemaining = Math.max(floor, Math.round(total - (total - floor) * prog));
+  })();
+
   // ── キャンペーン価格の切替（.js-trial-price / .js-trial-strike / [data-when]）
   //    価格表示は全ページ・全CTAで単一ソース。campaign中は「¥3,300（取消線）→ ¥0」で統一。
   const campaign = cfg.campaignActive !== false;

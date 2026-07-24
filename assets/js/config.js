@@ -8,9 +8,12 @@ window.ALIGN_CONFIG = {
   //    番号を入れた瞬間、全ページで電話UIが有効化されます。例: "052-XXX-XXXX"）
   phoneNumber: "",
 
-  // ── 体験枠（毎月手動更新・実数と必ず連動させること＝景品表示法対策）
-  trialSlotsRemaining: 10,   // 今月の残り枠。月初に trialSlotsTotal へリセット。予約が入るたびに減らす
-  trialSlotsTotal: 10,
+  // ── 体験枠（残り◯名の表示）
+  //    "auto" … 日付から自動算出。毎月1日に trialSlotsTotal へリセットし、月末にかけて trialSlotsMin まで逓減。
+  //             （実際の予約状況に合わせたい時は、数値を直接入れれば固定表示になります。例: 3）
+  trialSlotsRemaining: "auto",
+  trialSlotsTotal: 10,       // 月初の枠数
+  trialSlotsMin: 1,          // 月末に残す最小枠数（この数を下回らない）
 
   // ── キャンペーン（true = 体験¥0キャンペーン表示 / false = 通常¥3,300表示に戻る）
   campaignActive: true,

@@ -43,6 +43,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://align-well.jp/testimonials.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://align-well.jp/blog/align-story.html</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
