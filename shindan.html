@@ -152,6 +152,12 @@
 </head>
 <body>
 
+<!-- 診断完了の匿名ログ（Netlify Forms・個人情報は取得しない。管理画面 Forms → shindan-log に蓄積／CSV出力可） -->
+<form name="shindan-log" data-netlify="true" netlify-honeypot="_hp" hidden aria-hidden="true">
+  <input type="hidden" name="form-name" value="shindan-log">
+  <input type="text" name="タイプ"><input type="text" name="タイプキー"><input type="text" name="年代"><input type="text" name="スコア"><input type="text" name="完了日時"><input type="text" name="流入元"><input type="text" name="_hp">
+</form>
+
 <nav class="gnav">
   <div class="wrap">
     <a href="index.html" class="logo">Align</a>
@@ -488,6 +494,18 @@
     var C = cfg();
     var LINE = C.lineUrl || 'https://lin.ee/X7WmsSR';
     ga('shindan_complete', { result_type: T.key + T.name });
+    // 診断完了を匿名で記録（Netlify Forms「shindan-log」へ。個人情報なし・非同期・失敗しても表示に影響なし）
+    try {
+      var _log = new URLSearchParams();
+      _log.append('form-name', 'shindan-log');
+      _log.append('タイプ', T.name);
+      _log.append('タイプキー', T.key);
+      _log.append('年代', age === 'mature' ? '40代以上' : '30代以下');
+      _log.append('スコア', 'r' + state.scores.r + ' / b' + state.scores.b + ' / d' + state.scores.d + ' / v' + state.scores.v);
+      _log.append('完了日時', new Date().toLocaleString('ja-JP'));
+      _log.append('流入元', new URLSearchParams(location.search).get('utm_source') || '直接/不明');
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: _log.toString() }).catch(function () {});
+    } catch (e) {}
 
     var campaign = C.campaignActive !== false;
     var offer = campaign
