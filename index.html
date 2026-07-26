@@ -175,6 +175,11 @@
 .nayami .turn .t1{font-size:14px;color:var(--mid);margin-bottom:8px}
 .nayami .turn .t2{font-family:'Noto Serif JP',serif;font-size:clamp(21px,3.4vw,27px);line-height:1.75}
 .nayami .turn .t2 b{color:var(--orange);font-weight:400}
+.nayami .n-cta{display:block;margin-top:22px;background:#fff;border:1px solid var(--line);border-left:3px solid var(--orange);border-radius:10px;padding:17px 21px;text-decoration:none;transition:transform .25s,box-shadow .25s,border-color .25s}
+.nayami .n-cta:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(28,26,23,.08);border-color:var(--orange)}
+.nayami .n-cta .nc-t{display:block;font-size:15px;color:var(--ink);font-weight:600;line-height:1.6}
+.nayami .n-cta .nc-go{display:inline-block;margin-top:9px;font-size:14px;color:var(--orange);font-weight:600}
+.nayami .n-cta .nc-note{display:block;margin-top:6px;font-size:11.5px;color:var(--muted);letter-spacing:.03em}
 @media(max-width:860px){.nayami .grid{grid-template-columns:1fr;gap:32px}.nayami .photo{aspect-ratio:3/2}}
 
 /* ── METHOD ── */
@@ -522,6 +527,11 @@
           <div class="t1">その原因、体重ではなく——</div>
           <div class="t2 serif"><b>姿勢</b>と<b>習慣</b>かもしれません。</div>
         </div>
+        <a class="n-cta reveal" href="shindan.html" data-cta-location="nayami-shindan">
+          <span class="nc-t">あなたの「変われなかった理由」は、4タイプのどれ？</span>
+          <span class="nc-go">60秒のALIGN診断でたしかめる →</span>
+          <span class="nc-note">無料・登録なし・その場でわかります</span>
+        </a>
       </div>
     </div>
   </div>

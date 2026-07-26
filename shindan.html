@@ -123,8 +123,15 @@
 .r-offer .ro-main s{opacity:.5;font-size:.86em;margin-right:2px}
 .r-offer .ro-cond{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.6}
 .r-offer .slot-counter{margin-top:12px;justify-content:center}
+.r-next{text-align:center;font-size:13.5px;color:var(--mid);line-height:1.75;margin:2px 0 15px}
+.r-next b{color:var(--ink);font-weight:600}
 .r-cta{display:flex;flex-direction:column;gap:12px}
 .r-cta .btn{width:100%;font-size:15.5px;padding:17px}
+.r-cta .btn-primary{position:relative;flex-direction:column;gap:3px;padding:16px 18px;box-shadow:0 12px 30px rgba(6,199,85,.30)}
+.r-cta .btn-primary .bl-main{font-size:15.5px;font-weight:600;line-height:1.4}
+.r-cta .btn-primary .bl-sub{font-size:11.5px;font-weight:400;opacity:.96;letter-spacing:.02em;line-height:1.3}
+.r-cta .btn-primary::before{content:'かんたん10秒';position:absolute;top:-10px;right:16px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:600;padding:3px 11px;border-radius:20px;letter-spacing:.05em}
+.r-cta .r-or{text-align:center;font-size:11.5px;color:var(--muted);letter-spacing:.08em;margin:-2px 0}
 .r-cta .line-note{font-size:12px;color:var(--muted);text-align:center;line-height:1.7}
 .r-share{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);text-align:center}
 .r-share .rs-t{font-size:12px;color:var(--muted);margin-bottom:12px;letter-spacing:.04em}
@@ -532,10 +539,15 @@
         '<div class="rp-sub">続けるなら： '+T.plan.name+' <b>'+T.plan.price+'</b> '+T.plan.per+'</div></div>'+
       '<div class="r-secret">🔒 <b>あなたのタイプが、最初の90分でやるべき3つのこと</b>は、体験当日にお渡しする「タイプ別スタートシート」に書いてあります。</div>'+
       '<div class="r-offer">'+offer+'<div class="slot-counter"></div></div>'+
+      '<div class="r-next">診断はここまで。次は、<b>あなた（'+T.name+'）に合った「始め方」</b>を受け取りましょう。</div>'+
       '<div class="r-cta">'+
-        '<a class="btn btn-orange" id="sdCta" href="reserve.html?type='+encodeURIComponent(T.key)+'&utm_source=shindan&utm_medium=result">このタイプ専用メニューで体験を予約する</a>'+
-        '<a class="btn btn-line" href="'+LINE+'" target="_blank" rel="noopener" data-cta-location="shindan-result">LINEで相談する</a>'+
-        '<div class="line-note"><b style="color:var(--ink)">無理な勧誘はしません。その場で決めなくて、大丈夫です。</b><br>'+T.close+'（LINEなら結果をスクショして送るとスムーズです）</div>'+
+        '<a class="btn btn-line btn-primary" id="sdLine" href="'+LINE+'" target="_blank" rel="noopener" data-cta-location="shindan-result">'+
+          '<span class="bl-main">「'+T.name+'」の始め方をLINEで受け取る</span>'+
+          '<span class="bl-sub">友だち追加 → この結果をスクショで送るだけ</span>'+
+        '</a>'+
+        '<div class="r-or">──  もう決めている方は  ──</div>'+
+        '<a class="btn btn-orange" id="sdCta" href="reserve.html?type='+encodeURIComponent(T.key)+'&utm_source=shindan&utm_medium=result">このタイプ専用の体験を予約する（先着10名¥0）</a>'+
+        '<div class="line-note"><b style="color:var(--ink)">無理な勧誘はしません。その場で決めなくて、大丈夫です。</b><br>LINEでは、'+T.name+'に合わせた「最初の一歩」をお送りします。'+T.close+'</div>'+
       '</div>'+
       '<div class="r-share"><div class="rs-t">この結果を友だちに送る</div>'+
         '<a class="btn" href="https://line.me/R/msg/text/?'+encodeURIComponent('ALIGNの無料診断、面白かったよ！ https://align-well.jp/shindan.html')+'" target="_blank" rel="noopener">LINEでこの診断を送る</a></div>'+
@@ -550,6 +562,8 @@
     Array.prototype.forEach.call(card.querySelectorAll('.bar-fill'), function(f){ f.style.flexBasis = '0%'; }); // 初期0（transitionのため）
     var cta = document.getElementById('sdCta');
     if (cta) cta.addEventListener('click', function(){ ga('shindan_cta_click', { result_type: T.key + T.name }); });
+    var sdLine = document.getElementById('sdLine');
+    if (sdLine) sdLine.addEventListener('click', function(){ ga('shindan_line_click', { result_type: T.key + T.name }); });
     document.getElementById('sdRetry').addEventListener('click', function(){ speed = 0.5; renderIntro(); });
   }
 
