@@ -499,7 +499,11 @@
     var T = TYPES[key];
     var age = state.age;
     var C = cfg();
-    var LINE = C.lineUrl || 'https://lin.ee/X7WmsSR';
+    // 結果のLINEボタンは、タイプ別の合言葉「診断1〜4」を入力済みでLINEを開く
+    //（LINE公式アカウントの「キーワード応答」で、タイプ別メッセージが自動返信される）
+    var LINE_ID = (C && C.lineBasicId) || '@617qjkqf';
+    var LINE_KW = '診断' + ({ '①':'1', '②':'2', '③':'3', '④':'4' }[T.key] || '');
+    var LINE = 'https://line.me/R/oaMessage/' + encodeURIComponent(LINE_ID) + '/?' + encodeURIComponent(LINE_KW);
     ga('shindan_complete', { result_type: T.key + T.name });
     // 診断完了を匿名で記録（Netlify Forms「shindan-log」へ。個人情報なし・非同期・失敗しても表示に影響なし）
     try {
@@ -543,7 +547,7 @@
       '<div class="r-cta">'+
         '<a class="btn btn-line btn-primary" id="sdLine" href="'+LINE+'" target="_blank" rel="noopener" data-cta-location="shindan-result">'+
           '<span class="bl-main">「'+T.name+'」の始め方をLINEで受け取る</span>'+
-          '<span class="bl-sub">友だち追加 → この結果をスクショで送るだけ</span>'+
+          '<span class="bl-sub">タップして送信 → あなた専用の「始め方」が自動で届きます</span>'+
         '</a>'+
         '<div class="r-or">──  もう決めている方は  ──</div>'+
         '<a class="btn btn-orange" id="sdCta" href="reserve.html?type='+encodeURIComponent(T.key)+'&utm_source=shindan&utm_medium=result">このタイプ専用の体験を予約する（先着10名¥0）</a>'+
