@@ -277,7 +277,19 @@
     <div class="ghost-a">A</div>
     <div class="eyebrow center">Plans &amp; Pricing</div>
     <h1>料金は、ぜんぶ<br>ここに載せています。</h1>
-    <p>「詳しくは店舗で」とは言いません。金額も、含まれるものも、全部この1ページに。<br>そして正直に言うと、あなたに必要なのはこの中の1つだけです。<br>まず、いまの気持ちに近いほうを選んでください。</p>
+    <p>「詳しくは店舗で」とは言いません。金額も、含まれるものも、全部この1ページに。<br>そして正直に言うと、あなたに必要なのはこの中の1つだけです。</p>
+    <!-- 料金を探しに来た人が、最初の画面で金額に会えるように。詳細は各アンカーへ -->
+    <div class="price-glance">
+      <div class="pg-ttl">まずは、ざっくりの目安です<span>（すべて税込）</span></div>
+      <a class="pg-row" href="#monthly"><span class="pg-n">月額制</span><span class="pg-s">月2回から・気軽に続ける</span><span class="pg-p">¥19,000〜<i>/月</i></span></a>
+      <a class="pg-row" href="#tickets"><span class="pg-n">回数券</span><span class="pg-s">有効期限なし・自分のペースで</span><span class="pg-p">¥9,500〜11,000<i>/回</i></span></a>
+      <a class="pg-row" href="#course"><span class="pg-n">短期集中</span><span class="pg-s">1〜6ヶ月・お食事サポート込み</span><span class="pg-p">¥120,000〜<i>/月</i></span></a>
+      <a class="pg-row" href="#life"><span class="pg-n">エグゼクティブ</span><span class="pg-s">上記＋行動心理コーチング</span><span class="pg-p">¥120,000〜<i>/月</i></span></a>
+      <div class="pg-cta">
+        <a class="btn btn-line" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener" data-cta-location="plans-hero">LINEで相談する</a>
+        <a class="btn btn-ghost" href="shindan.html?from=plans-hero" data-cta-location="plans-hero-shindan">◎ 60秒診断で選ぶ</a>
+      </div>
+    </div>
     <div class="assure">
       <div><b>その場で決めなくてOK</b>無理な勧誘はしません</div>
       <div><b>料金はすべて明記</b>あとから増えません（税込）</div>
@@ -357,7 +369,7 @@
     <p class="track-lead">トレーニング・ピラティス・コンディショニング（ストレッチ）に、お食事サポート。1セッションは<b>50分・完全マンツーマン</b>です。通い方は「月額制」「回数券」「短期集中コース」の3つ。始めやすい順に並べています。表示はすべて税込。ここに書いていない料金は、かかりません。</p>
 
     <!-- subs -->
-    <div class="subttl"><span class="en-t">01 / Monthly</span><h3>月額制プラン — 無理なく、続ける。</h3></div>
+    <div class="subttl" id="monthly"><span class="en-t">01 / Monthly</span><h3>月額制プラン — 無理なく、続ける。</h3></div>
     <p class="subnote">毎月定額で、いちばん気軽な通い方。その日の身体に合わせて、トレーニング／ピラティス／ストレッチから選べます（50分/回）。</p>
     <div class="subs">
       <div class="sub">
@@ -388,7 +400,7 @@
     </div>
 
     <!-- tickets -->
-    <div class="subttl"><span class="en-t">02 / Tickets</span><h3>回数券 — 自分のペースで。</h3></div>
+    <div class="subttl" id="tickets"><span class="en-t">02 / Tickets</span><h3>回数券 — 自分のペースで。</h3></div>
     <p class="subnote">有効期限はありません。忙しい月があっても大丈夫。まとめるほど1回あたりが下がり、二人で通うペアはさらにお得です（50分/回）。</p>
     <div class="tix">
       <div class="tix-col">
@@ -413,7 +425,7 @@
     </div>
 
     <!-- basic program -->
-    <div class="subttl"><span class="en-t">03 / Course</span><h3>短期集中コース — 期限を決めて、変わる。</h3></div>
+    <div class="subttl" id="course"><span class="en-t">03 / Course</span><h3>短期集中コース — 期限を決めて、変わる。</h3></div>
     <p class="subnote">お食事サポート込み。「結婚式まで」「夏までに」——期限が決まっている方は、こちらが最短です。</p>
     <div class="bprog">
       <div class="bp">
