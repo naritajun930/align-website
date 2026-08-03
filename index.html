@@ -463,7 +463,8 @@
       </a>
       <div class="cta-row">
         <a class="btn btn-orange" href="trial.html"><span data-when="campaign">無料で予約する</span><span data-when="normal" hidden>体験を予約する</span>&nbsp;→</a>
-        <a class="btn btn-ghost light" href="https://lin.ee/X7WmsSR" target="_blank" rel="noopener">LINEで予約</a>
+        <!-- まだ予約は早い層の受け皿。LINEはナビ・追従バーに残るのでここは診断を出す -->
+        <a class="btn btn-ghost light" href="shindan.html" data-cta-location="hero-shindan">◎ 60秒で「変われなかった理由」を診断</a>
       </div>
       <div class="slot-counter on-dark" style="margin-top:14px"></div>
       <span class="cta-note"><b>90分</b>・ビフォーアフター写真つき・完全予約制</span>
@@ -513,15 +514,18 @@
         <div class="reveal" style="margin-bottom:28px">
           <span class="eyebrow">Check</span>
           <h2 class="serif" style="font-size:clamp(24px,4.2vw,32px);line-height:1.6;margin-top:16px">こんな「見た目」の悩み、<br>ありませんか。</h2>
+          <p class="checks-hint">当てはまるものをタップ → 60秒でその理由がわかります</p>
         </div>
+        <!-- 悩みに共感した瞬間に診断へ入れるよう、各項目をリンク化。
+             from=nayami で診断は即スタート、pre= はどの悩みが効いたかの計測に使う -->
         <div class="checks reveal">
-          <div class="check">体重は変わらないのに、太って見られる</div>
-          <div class="check">写真に写った自分の姿勢に、ぎょっとする</div>
-          <div class="check">ダイエットしても、なぜか垢抜けない</div>
-          <div class="check">デスクワークで、肩と首がずっと重い</div>
-          <div class="check">ジムに通っても、いつも続かない</div>
-          <div class="check">最近、後ろ姿が「老けた」気がする</div>
-          <div class="check">健康診断のたびに、運動しなきゃと思っている</div>
+          <a class="check" href="shindan.html?from=nayami&amp;pre=body">体重は変わらないのに、太って見られる</a>
+          <a class="check" href="shindan.html?from=nayami&amp;pre=posture">写真に写った自分の姿勢に、ぎょっとする</a>
+          <a class="check" href="shindan.html?from=nayami&amp;pre=body">ダイエットしても、なぜか垢抜けない</a>
+          <a class="check" href="shindan.html?from=nayami&amp;pre=tired">デスクワークで、肩と首がずっと重い</a>
+          <a class="check" href="shindan.html?from=nayami&amp;pre=none">ジムに通っても、いつも続かない</a>
+          <a class="check" href="shindan.html?from=nayami&amp;pre=tired">最近、後ろ姿が「老けた」気がする</a>
+          <a class="check" href="shindan.html?from=nayami&amp;pre=none">健康診断のたびに、運動しなきゃと思っている</a>
         </div>
         <div class="turn reveal">
           <div class="t1">その原因、体重ではなく——</div>

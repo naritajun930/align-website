@@ -592,7 +592,16 @@
     });
   }
 
-  renderIntro();
+  // トップの「悩みチェック」からタップで来た場合は、イントロを挟まずそのまま質問へ。
+  // （悩みに共感した瞬間の勢いを、もう1タップで止めないため）
+  var _q = new URLSearchParams(location.search);
+  if (_q.get('from') === 'nayami') {
+    renderIntro();             // 戻る/再診断の受け皿として器は用意しておく
+    ga('shindan_from_nayami', { worry: _q.get('pre') || '' });
+    start();
+  } else {
+    renderIntro();
+  }
 })();
 </script>
 </body>
