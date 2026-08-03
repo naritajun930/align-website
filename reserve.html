@@ -139,16 +139,13 @@
           <input type="text" id="f-name" name="お名前" required autocomplete="name" placeholder="例）赤澤 優">
         </div>
         <div class="field">
-          <label>ご希望の連絡方法<span class="req">必須</span></label>
-          <div class="radiorow">
-            <label><input type="radio" name="連絡方法" value="メール" checked> メール</label>
-            <label><input type="radio" name="連絡方法" value="電話"> 電話</label>
-            <label><input type="radio" name="連絡方法" value="LINE"> LINE</label>
-          </div>
+          <label for="f-email">メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="f-email" name="メールアドレス" required autocomplete="email" inputmode="email" placeholder="例）align@example.com">
         </div>
         <div class="field">
-          <label for="f-contact">ご連絡先（メールアドレス／電話番号）<span class="req">必須</span></label>
-          <input type="text" id="f-contact" name="連絡先" required placeholder="例）align@example.com ／ 090-xxxx-xxxx">
+          <label for="f-tel">電話番号<span class="req">必須</span></label>
+          <input type="tel" id="f-tel" name="電話番号" required autocomplete="tel" inputmode="tel" placeholder="例）090-1234-5678">
+          <p style="font-size:11.5px;color:var(--muted);line-height:1.7;margin-top:7px">確実にご連絡できるよう、メール・電話番号の両方をお願いしています。ご希望の方法で先にご連絡します。</p>
         </div>
       </div>
 
