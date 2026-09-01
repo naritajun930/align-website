@@ -6,7 +6,7 @@
 window.ALIGN_CONFIG = {
   // ── 電話番号（空文字のあいだ、全ページの電話ボタン・tel:リンク・住所欄の電話は自動的に非表示。
   //    番号を入れた瞬間、全ページで電話UIが有効化されます。例: "052-XXX-XXXX"）
-  phoneNumber: "",
+  phoneNumber: "080-6094-2119",
 
   // ── 体験枠（残り◯名の表示）
   //    "auto" … 日付から自動算出。毎月1日に trialSlotsTotal へリセットし、月末にかけて trialSlotsMin まで逓減。
