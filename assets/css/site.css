@@ -215,3 +215,16 @@ a.check:hover::after,a.check:focus-visible::after{opacity:1;right:12px}
   .float-cta a{flex:none;padding:15px 26px;font-size:13px}
   .float-cta a:hover{opacity:.9}
 }
+
+/* LPのお客様の声（Googleクチコミからの引用） */
+.lp-voices .lpv-h{font-family:'Noto Serif JP',serif;font-weight:400;font-size:clamp(19px,3.4vw,24px);letter-spacing:.04em;margin-bottom:22px}
+.lpv-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.lpv-card{margin:0;background:#fff;border:1px solid var(--line);border-left:3px solid var(--orange);border-radius:8px;padding:22px 24px}
+.lpv-stars{color:var(--orange);font-size:12px;letter-spacing:2px;margin-bottom:10px}
+.lpv-card blockquote{margin:0 0 14px;font-family:'Noto Serif JP',serif;font-weight:300;font-size:14.5px;line-height:2;color:var(--ink)}
+.lpv-card figcaption{font-size:12px;color:var(--mid);letter-spacing:.04em}
+.lpv-card figcaption span{display:inline-block;margin-left:8px;font-size:11px;color:var(--muted)}
+.lpv-more{margin-top:16px;font-size:13px}
+.lpv-more a{color:var(--orange);text-decoration:none;letter-spacing:.04em}
+.lpv-more a:hover{text-decoration:underline}
+@media(max-width:680px){.lpv-grid{grid-template-columns:1fr}}
