@@ -207,7 +207,7 @@
   <div class="wrap">
     <h2>ALIGN診断について</h2>
     <p>ALIGN診断は、<b>10の質問に答えるだけ</b>で、あなたが「変われなかった理由」と、いちばん合う始め方が約60秒でわかる無料診断です（登録不要）。回答から <b>順番ちがい／独学限界／意志だけで戦ってた／締切スイッチ</b> の4タイプに分け、姿勢・習慣・動機の傾向をグラフで可視化します。矢場町・栄のパーソナルジムALIGNが、姿勢と習慣から「見た目」を変えるためにご用意しました。運動が苦手な方、何度も続かなかった方にこそ受けていただきたい内容です。</p>
-    <p class="sd-links">診断のあとは：<a href="trial.html">姿勢チェック体験（90分・写真つき）</a> ／ <a href="concept.html">ALIGNのコンセプト</a> ／ <a href="trainer.html">トレーナー・赤澤について</a> ／ <a href="testimonials.html">お客様の声（★5.0）</a></p>
+    <p class="sd-links">診断のあとは：<a href="trial.html">体験セッション（90分・写真つき）</a> ／ <a href="concept.html">ALIGNのコンセプト</a> ／ <a href="trainer.html">トレーナー・赤澤について</a> ／ <a href="testimonials.html">お客様の声（★5.0）</a></p>
   </div>
 </section>
 
@@ -539,7 +539,7 @@
       '</div>'+
       '<div class="r-voice"><div class="rv-stars">★★★★★</div><blockquote>「'+T.voice.q+'」</blockquote><div class="rv-name">— 同じタイプの方の声（'+T.voice.n+'／Googleクチコミ）</div></div>'+
       '<div class="r-plan"><div class="rp-lab">あなた専用の始め方</div><div class="rp-name">'+T.exp+'</div>'+
-        '<div class="rp-menu">中身は「姿勢チェック体験（90分）」。あなたのタイプに合わせて、見るところ・進め方を最適化します。</div>'+
+        '<div class="rp-menu">中身は「体験セッション（90分）」。あなたのタイプに合わせて、見るところ・進め方を最適化します。</div>'+
         '<div class="rp-sub">続けるなら： '+T.plan.name+' <b>'+T.plan.price+'</b> '+T.plan.per+'</div></div>'+
       '<div class="r-secret">🔒 <b>あなたのタイプが、最初の90分でやるべき3つのこと</b>は、体験当日にお渡しする「タイプ別スタートシート」に書いてあります。</div>'+
       '<div class="r-offer">'+offer+'<div class="slot-counter"></div></div>'+
@@ -588,7 +588,7 @@
     Array.prototype.forEach.call(document.querySelectorAll('.r-offer .slot-counter'), function(el){
       if (!campaign){ el.hidden = true; return; }
       if (remaining <= 0){ el.className = 'slot-counter is-full'; el.innerHTML = '<span>今月分は満枠です。来月分のご予約を受付中。</span>'; }
-      else { el.className = 'slot-counter' + (remaining<=3?' is-low':''); el.innerHTML = '今月の姿勢チェック体験枠 <b class="sc-num">残り'+remaining+'名</b>'; }
+      else { el.className = 'slot-counter' + (remaining<=3?' is-low':''); el.innerHTML = '今月の体験セッション枠 <b class="sc-num">残り'+remaining+'名</b>'; }
     });
   }
 
