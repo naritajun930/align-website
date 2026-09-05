@@ -135,6 +135,16 @@
       <div class="fset">
         <div class="stitle">Step 1 — あなたのこと</div>
         <div class="field">
+          <label for="f-menu">ご希望の体験<span class="req">必須</span></label>
+          <select id="f-menu" name="希望の体験" required>
+            <option value="A｜姿勢分析×変化体感トレーニング" selected>A｜姿勢分析 × 変化体感トレーニング（迷ったらこちら）</option>
+            <option value="B｜美姿勢トレーニング">B｜美姿勢トレーニング（見た目・立ち姿）</option>
+            <option value="C｜フォーム総点検×本格トレーニング">C｜フォーム総点検 × 本格トレーニング</option>
+            <option value="まだ決めていない">まだ決めていない（当日相談したい）</option>
+          </select>
+          <p style="font-size:11.5px;color:var(--muted);line-height:1.7;margin-top:7px">3つとも90分・同料金です。当日に変更してもかまいません。</p>
+        </div>
+        <div class="field">
           <label for="f-name">お名前<span class="req">必須</span></label>
           <input type="text" id="f-name" name="お名前" required autocomplete="name" placeholder="例）赤澤 優">
         </div>
@@ -259,5 +269,14 @@
 
 <script src="assets/js/config.js?v=20260724" defer></script>
 <script src="assets/js/site.js?v=20260724" defer></script>
+<script>
+(function(){
+  var sel = document.getElementById('f-menu');
+  if (!sel) return;
+  var m = (new URLSearchParams(location.search).get('menu') || '').toUpperCase();
+  var idx = { A:0, B:1, C:2 };
+  if (m in idx) sel.selectedIndex = idx[m];
+})();
+</script>
 </body>
 </html>
