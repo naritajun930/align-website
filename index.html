@@ -52,7 +52,7 @@
       "name": "ダイエットもできますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "もちろんです。姿勢と習慣が整うと、身体は変わりやすい状態になります。「整えた結果、痩せて見た目が変わる」——それがALIGNの順番です。お食事サポートもプランに含まれます。"
+        "text": "もちろんです。姿勢と習慣が整うと、身体は変わりやすい状態になります。「整えた結果、痩せて見た目が変わる」。ALIGNはこの順番で進めます。お食事サポートもプランに含まれます。"
       }
     }
   ]
@@ -228,6 +228,14 @@
 .ob-go{font-size:12px;color:var(--orange);font-weight:600;letter-spacing:.04em}
 @media(max-width:600px){.offer-band{gap:6px 12px;padding:13px 18px}.ob-main{font-size:13px;width:100%}.ob-sub{font-size:11px;width:100%}}
 
+.fact-tags{padding:22px 0 6px;background:var(--cream)}
+.fact-tags .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.fact-tags span{font-size:12.5px;color:var(--mid);background:#fff;border:1px solid var(--line);
+  border-radius:30px;padding:8px 15px;white-space:nowrap;letter-spacing:.01em}
+.fact-tags b{color:var(--ink);font-weight:600}
+@media(max-width:560px){.fact-tags{padding:18px 0 4px}.fact-tags span{font-size:11.5px;padding:7px 12px}}
+.about-fact{background:var(--pale);padding:40px 0;border-top:1px solid var(--line)}
+.about-fact p{max-width:760px;margin:0 auto;font-size:13.5px;color:var(--mid);line-height:2.15}
 /* ── SHINDAN banner ── */
 .shindan-banner{display:flex;align-items:center;gap:16px;justify-content:center;flex-wrap:wrap;max-width:var(--maxw);margin:18px auto 0;padding:15px 24px;background:var(--dark);color:var(--cream);border-radius:12px;text-decoration:none;transition:transform .25s}
 .shindan-banner:hover{transform:translateY(-2px)}
@@ -378,7 +386,7 @@
       <a href="concept.html">コンセプト</a>
       <a href="trainer.html">トレーナー</a>
       <a href="plans.html">料金プラン</a>
-      <a href="trial.html">体験・流れ</a>
+      <a href="trial.html">体験を予約</a>
       <a href="shindan.html">診断</a>
       <a href="blog/align-story.html">ブログ</a>
       <a href="#access">アクセス</a>
@@ -392,7 +400,7 @@
   <a class="mlink" href="concept.html"><span class="men">Concept</span>コンセプト</a>
   <a class="mlink" href="trainer.html"><span class="men">Trainer</span>トレーナー</a>
   <a class="mlink" href="plans.html"><span class="men">Plans</span>料金プラン</a>
-  <a class="mlink" href="trial.html"><span class="men">Trial</span>体験・流れ</a>
+  <a class="mlink" href="trial.html"><span class="men">Trial</span>体験を予約</a>
   <a class="mlink" href="shindan.html"><span class="men">Check</span>ALIGN診断</a>
   <a class="mlink" href="blog/align-story.html"><span class="men">Blog</span>ブログ</a>
   <div class="m-cta">
@@ -428,10 +436,22 @@
       <span class="cta-note"><b>90分</b>・ビフォーアフター写真つき・完全予約制</span>
     </div>
   </div>
-  <span class="hero-cap">Align Personal Gym — Sakae, Nagoya</span>
+  <span class="hero-cap">Align Personal Gym ／ Sakae, Nagoya</span>
 </header>
 
 
+
+<!-- ============ FACT TAGS ============ -->
+<section class="fact-tags reveal">
+  <div class="wrap">
+    <span>#完全マンツーマン<b>貸切</b></span>
+    <span>#栄7A出口 <b>徒歩30秒</b></span>
+    <span>#<b>6:00-22:00</b> 年中無休</span>
+    <span>#体験90分 <b>先着10名¥0</b></span>
+    <span>#ウェア・タオル<b>¥300</b>で手ぶら</span>
+    <span>#運動が苦手な人にこそ</span>
+  </div>
+</section>
 
 <!-- ============ TRUST BAND ============ -->
 <section class="trust-band reveal">
@@ -486,7 +506,7 @@
           <a class="check" href="shindan.html?from=nayami&amp;pre=none">健康診断のたびに、運動しなきゃと思っている</a>
         </div>
         <div class="turn reveal">
-          <div class="t1">その原因、体重ではなく——</div>
+          <div class="t1">その原因は、体重ではなく</div>
           <div class="t2 serif"><b>姿勢</b>と<b>習慣</b>かもしれません。</div>
         </div>
         <a class="n-cta reveal" href="shindan.html" data-cta-location="nayami-shindan">
@@ -511,25 +531,25 @@
       <div class="mcard reveal">
         <div class="ph"><img class="img-cover" src="assets/images/session-machine.webp" alt="ピラティス・コンディショニングのセッション風景" loading="lazy"></div>
         <div class="body">
-          <div class="mn">01 · Align — 整える</div>
-          <h3>骨格から、<b>1回で立ち姿が変わる。</b></h3>
-          <p>ピラティス×コンディショニングで、骨格を本来の位置へ。同じ体重でも、細く・若く見える理由はここにあります。体験のその日に、鏡でわかります。</p>
+          <div class="mn">01 · Align ／ 整える</div>
+          <h3>骨格を整えると、<b>立ち姿が変わる。</b></h3>
+          <p>ピラティスとコンディショニングで、首・肩・骨盤の位置を整えます。同じ体重でも細く見えるかどうかは、ここで決まります。</p>
         </div>
       </div>
       <div class="mcard reveal">
         <div class="ph"><img class="img-cover" src="assets/images/session-cable.webp" alt="パーソナルトレーニングの様子" loading="lazy"></div>
         <div class="body">
-          <div class="mn">02 · Build — 鍛える</div>
-          <h3>整った骨格に、<b>しなやかな筋肉を。</b></h3>
-          <p>土台が整ってから鍛えるから、効く。疲れにくく、どんな服も着こなせるシルエットへ。あなたの骨格に合わせた最短ルートを設計します。</p>
+          <div class="mn">02 · Build ／ 鍛える</div>
+          <h3>整ってから鍛えると、<b>効きが変わる。</b></h3>
+          <p>先に骨格を整えるので、狙った場所に効かせられます。あなたの身体に合わせて、遠回りしない順番を組みます。</p>
         </div>
       </div>
       <div class="mcard reveal">
         <div class="ph"><img class="img-cover" src="assets/images/counseling.webp" alt="行動心理コーチングのカウンセリング風景" loading="lazy"></div>
         <div class="body">
-          <div class="mn">03 · Last — 続ける</div>
-          <h3>続かない理由を、<b>初回で特定する。</b></h3>
-          <p>三日坊主は意志の弱さではなく、設計の問題。行動心理カウンセラーの資格を持つトレーナーが、続く仕組みそのものをつくります。</p>
+          <div class="mn">03 · Last ／ 続ける</div>
+          <h3>続かなかった理由を、<b>初回で見つける。</b></h3>
+          <p>三日坊主は意志ではなく、設計の問題です。行動心理カウンセラーの資格を持つトレーナーが、続けられる形に組み替えます。</p>
         </div>
       </div>
     </div>
@@ -831,7 +851,7 @@
       </div>
       <div class="faq-item">
         <div class="q">ダイエットもできますか？</div>
-        <div class="a">もちろんです。姿勢と習慣が整うと、身体は変わりやすい状態になります。「整えた結果、痩せて見た目が変わる」——それがALIGNの順番です。お食事サポートもプランに含まれます。</div>
+        <div class="a">もちろんです。姿勢と習慣が整うと、身体は変わりやすい状態になります。「整えた結果、痩せて見た目が変わる」。ALIGNはこの順番で進めます。お食事サポートもプランに含まれます。</div>
       </div>
     </div>
   </div>
@@ -884,6 +904,13 @@
   </div>
 </section>
 
+<!-- ============ ABOUT（事実の要約・SEO） ============ -->
+<section class="about-fact">
+  <div class="wrap">
+    <p>ALIGNは、名古屋・栄／矢場町の完全マンツーマン専門パーソナルジムです。栄駅7A出口から徒歩30秒、地下鉄矢場町駅からも徒歩圏で、6:00〜22:00・年中無休で営業しています。ピラティスとコンディショニングで姿勢と骨格を整えてから鍛えるため、体重が変わらなくても見た目の印象が変わります。猫背や反り腰、肩こりのご相談も多くいただきます。トレーナーは元・高校保健体育教師の赤澤優ひとりで、運動が苦手な方や、これまでジムが続かなかった方の指導を得意としています。はじめての方は、90分の体験セッションからご利用いただけます。</p>
+  </div>
+</section>
+
 <footer class="gfoot">
   <div class="wrap">
     <div class="f-top">
@@ -896,7 +923,7 @@
         <a href="concept.html">コンセプト</a>
         <a href="trainer.html">トレーナー</a>
         <a href="plans.html">料金プラン</a>
-        <a href="trial.html">体験・流れ</a>
+        <a href="trial.html">体験を予約</a>
         <a href="testimonials.html">お客様の声</a>
         <a href="sakae-personal-gym.html">栄・矢場町のジム案内</a>
         <a href="posture.html">姿勢改善</a>
