@@ -113,6 +113,12 @@
 .mn .go:hover{background:var(--orange);border-color:var(--orange);color:#fff}
 .menu-note{max-width:1000px;margin:24px auto 0;text-align:center;font-size:13px;color:var(--mid);line-height:2}
 .menu-note b{color:var(--ink);font-weight:500}
+.mn{cursor:pointer}
+.mn[aria-selected="true"]{border-color:var(--orange);box-shadow:0 0 0 1px var(--orange) inset}
+.mn:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.js-s4-t,.js-s5-t,.js-s4-b,.js-s5-b{transition:opacity .22s ease}
+.swapping{opacity:0}
+@media(prefers-reduced-motion:reduce){.js-s4-t,.js-s5-t,.js-s4-b,.js-s5-b{transition:none}}
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGZKV2KX43"></script>
@@ -199,9 +205,9 @@
       <h2>選べる、3つの体験。</h2>
       <p>やることの土台は同じ。<b>90分のどこに時間を使うか</b>だけが違います。迷ったら A を選んでください。</p>
     </div>
-    <div class="menu-grid reveal">
+    <div class="menu-grid reveal" role="tablist" aria-label="体験の種類">
 
-      <article class="mn pick">
+      <article class="mn pick" role="tab" tabindex="0" aria-selected="true" data-menu="A">
         <span class="rec">迷ったらこちら</span>
         <div class="men">A · Posture</div>
         <h3>姿勢分析 ×<br>変化体感トレーニング</h3>
@@ -211,10 +217,10 @@
           <li>まず自分の状態を知りたい</li>
           <li>運動は久しぶり</li>
         </ul>
-        <a class="go" href="reserve.html?menu=A">この体験で申し込む</a>
+        <a class="go" href="reserve.html?menu=A" data-stop>この体験で申し込む</a>
       </article>
 
-      <article class="mn">
+      <article class="mn" role="tab" tabindex="0" aria-selected="false" data-menu="B">
         <div class="men">B · Beauty</div>
         <h3>美姿勢<br>トレーニング</h3>
         <p class="catch">体重より、鏡に映る「立ち姿」から変える。</p>
@@ -223,10 +229,10 @@
           <li>後ろ姿・写真写りが気になる</li>
           <li>産後の変化が気になる</li>
         </ul>
-        <a class="go" href="reserve.html?menu=B">この体験で申し込む</a>
+        <a class="go" href="reserve.html?menu=B" data-stop>この体験で申し込む</a>
       </article>
 
-      <article class="mn">
+      <article class="mn" role="tab" tabindex="0" aria-selected="false" data-menu="C">
         <div class="men">C · Form</div>
         <h3>フォーム総点検 ×<br>本格トレーニング</h3>
         <p class="catch">効かせ方を、根本から見直す90分。</p>
@@ -235,7 +241,7 @@
           <li>しっかり追い込みたい</li>
           <li>効かせられている自信がない</li>
         </ul>
-        <a class="go" href="reserve.html?menu=C">この体験で申し込む</a>
+        <a class="go" href="reserve.html?menu=C" data-stop>この体験で申し込む</a>
       </article>
 
     </div>
@@ -249,7 +255,7 @@
     <div class="sec-head reveal">
       <span class="eyebrow center">Flow — 90 min</span>
       <h2>当日の流れ。</h2>
-      <p>はじめての場所は、それだけで緊張するもの。だから当日やることを、先に全部お見せします。</p>
+      <p>はじめての場所は、それだけで緊張するもの。だから当日やることを、先に全部お見せします。<br><b>上で選んだ体験によって、Step 04・05 の中身が変わります。</b></p>
     </div>
 
     <div class="step reveal">
@@ -282,8 +288,8 @@
     <div class="step reveal">
       <div class="no">Step<b>04</b></div>
       <div>
-        <h3><small>Posture Analysis</small>姿勢分析</h3>
-        <p>太って見える・老けて見える原因を、姿勢から特定します。首の角度、肩のライン、骨盤の位置。自分では気づけなかった癖が、ここで見えてきます。</p>
+        <h3><small class="js-s4-en">Posture Analysis</small><span class="js-s4-t">姿勢分析</span></h3>
+        <p class="js-s4-b">太って見える・老けて見える原因を、姿勢から特定します。首の角度、肩のライン、骨盤の位置。自分では気づけなかった癖が、ここで見えてきます。</p>
       </div>
       <div class="ph"><img class="img-cover" src="assets/images/posture.webp" alt="姿勢分析の様子" loading="lazy"></div>
     </div>
@@ -291,8 +297,8 @@
     <div class="step reveal">
       <div class="no">Step<b>05</b></div>
       <div>
-        <h3><small>Trial Session</small>体験トレーニング</h3>
-        <p>分析結果に合わせて、ピラティス×トレーニングを実際に体験。きつさで追い込むのではなく、「効いている場所がわかる」動きを、マンツーマンで丁寧に。</p>
+        <h3><small class="js-s5-en">Trial Session</small><span class="js-s5-t">体験トレーニング</span></h3>
+        <p class="js-s5-b">分析結果に合わせて、ピラティス×トレーニングを実際に体験。きつさで追い込むのではなく、「効いている場所がわかる」動きを、マンツーマンで丁寧に。</p>
       </div>
       <div class="ph"><img class="img-cover" src="assets/images/session-coaching.webp" alt="体験トレーニングの様子" loading="lazy"></div>
     </div>
@@ -447,5 +453,67 @@
     LINE予約
   </a>
 </div>
+<script>
+(function(){
+  var M = {
+    A: { s4en:'Posture Analysis', s4t:'姿勢分析（いちばん時間をかけます）',
+         s4b:'太って見える・老けて見える原因を、姿勢から特定します。首の角度、肩のライン、骨盤の位置。自分では気づけなかったクセを、言葉にしてお伝えします。',
+         s5en:'Trial Session', s5t:'変化を体感するトレーニング',
+         s5b:'分析結果に合わせて、その場で変化が出る種目から始めます。きつさで追い込むのではなく、「効いている場所がわかる」感覚を優先します。' },
+    B: { s4en:'Body Line Check', s4t:'姿勢分析（見た目・立ち姿を重点的に）',
+         s4b:'同じ体重でも「細く見える／太って見える」を分けているのは、骨盤と肩甲骨の位置です。後ろ姿や写真写りが気になる原因も、ここで特定します。',
+         s5en:'Beauty Session', s5t:'美姿勢トレーニング',
+         s5b:'骨盤・肩甲骨まわりを中心に、ボディラインに直結する動きへ。鏡の中の立ち姿が変わるところまでを、この90分のゴールにします。' },
+    C: { s4en:'Mobility Check', s4t:'姿勢＆可動域チェック',
+         s4b:'狙った部位に効かせられない原因は、フォーム以前に可動域にあることが多いです。肩甲骨と股関節の動きを確認し、いまの身体で何がボトルネックかを洗い出します。',
+         s5en:'Form Check', s5t:'フォーム総点検＆本格トレーニング',
+         s5b:'主要種目のフォームを一つずつ修正しながら、強度を上げていきます。「効いている場所が変わる」のを、その場で体感してください。' }
+  };
+  var cards = [].slice.call(document.querySelectorAll('.mn[data-menu]'));
+  if (!cards.length) return;
+  var q = function(s){ return document.querySelector(s); };
+  var targets = ['.js-s4-en','.js-s4-t','.js-s4-b','.js-s5-en','.js-s5-t','.js-s5-b'].map(q);
+
+  function apply(key, focus){
+    var m = M[key]; if (!m) return;
+    cards.forEach(function(c){
+      var on = c.getAttribute('data-menu') === key;
+      c.setAttribute('aria-selected', on ? 'true' : 'false');
+      c.classList.toggle('pick', on);
+    });
+    targets.forEach(function(el){ if (el) el.classList.add('swapping'); });
+    setTimeout(function(){
+      var set = function(sel,v){ var el=q(sel); if(el) el.textContent=v; };
+      set('.js-s4-en',m.s4en); set('.js-s4-t',m.s4t); set('.js-s4-b',m.s4b);
+      set('.js-s5-en',m.s5en); set('.js-s5-t',m.s5t); set('.js-s5-b',m.s5b);
+      targets.forEach(function(el){ if (el) el.classList.remove('swapping'); });
+    }, 200);
+    // ページ内の予約リンクに選択を反映
+    document.querySelectorAll('a[href*="reserve"]').forEach(function(a){
+      if (a.hasAttribute('data-stop')) return;
+      a.setAttribute('href', 'reserve.html?menu=' + key);
+    });
+    try { history.replaceState(null,'', location.pathname + '?menu=' + key); } catch(e){}
+    if (focus) { try { document.querySelector('.mn[data-menu="'+key+'"]').focus(); } catch(e){} }
+  }
+
+  cards.forEach(function(c){
+    c.addEventListener('click', function(e){
+      if (e.target.closest('[data-stop]')) return;   // 「この体験で申し込む」は通常遷移
+      apply(c.getAttribute('data-menu'));
+    });
+    c.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); apply(c.getAttribute('data-menu')); return; }
+      var i = cards.indexOf(c), n = null;
+      if (e.key === 'ArrowRight') n = cards[(i+1) % cards.length];
+      if (e.key === 'ArrowLeft')  n = cards[(i-1+cards.length) % cards.length];
+      if (n) { e.preventDefault(); apply(n.getAttribute('data-menu'), true); }
+    });
+  });
+
+  var init = (new URLSearchParams(location.search).get('menu')||'A').toUpperCase();
+  apply(M[init] ? init : 'A');
+})();
+</script>
 </body>
 </html>
